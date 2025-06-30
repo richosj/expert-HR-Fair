@@ -1,9 +1,198 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    {{> meta }}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="반응형 웹사이트">
+    <meta name="keywords" content="웹사이트, 반응형, HTML, CSS">
+    <meta name="author" content="ALL4LAND">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com/">
+    <meta property="og:title" content="Your Website Title">
+    <meta property="og:description" content="반응형 웹사이트">
+    <meta property="og:image" content="https://your-domain.com/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://your-domain.com/">
+    <meta property="twitter:title" content="Your Website Title">
+    <meta property="twitter:description" content="반응형 웹사이트">
+    <meta property="twitter:image" content="https://your-domain.com/og-image.jpg">
+
+    <title>Your Website Title</title>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov-dynamic-subset.min.css" />
+    <link rel="stylesheet" href="/scss/main.scss" />
 </head>
 <body>
-    메인
+<div id="wrap">
+
+    <div class="visual">
+
+        <div class="scroll-move">
+            <i></i>
+        </div>
+    </div>
+
+    <nav id="nav">
+        <ul>
+            <li><a href="#">HR Fair소개</a></li>
+            <li><a href="#">프로그램</a></li>
+            <li><a href="#">찾아오시는길</a></li>
+        </ul>
+    </nav>
+
+    <section class="track-list">
+      <div class="track">
+        <div class="track__title">#track1<br><span>Performance</span></div>
+        <ul class="track__sessions">
+          <li class="session">
+            <label class="session__checkbox">
+              <input type="checkbox" title="세션 선택" />
+              <span class="custom-checkbox"></span>
+            </label>
+            <div class="session__info">
+              <div class="session__time">13:30~14:20</div>
+              <div class="session__title">(리더십) 동아시아로 리더십 플레이북DC or BGF리테일</div>
+              <div class="session__speaker">박석주 상무<br><span>엑스퍼트컨설팅</span></div>
+            </div>
+          </li>
+          <li class="session session--selected">
+            <label class="session__checkbox">
+              <input type="checkbox" checked title="세션 선택" />
+              <span class="custom-checkbox"></span>
+            </label>
+            <div class="session__info">
+              <div class="session__time">14:40~15:30</div>
+              <div class="session__title">(사업성과) 영업, CX, 마케팅컨설팅활동을 통한 직접적 사업성과 향상 사례</div>
+              <div class="session__speaker">박석주 상무<br><span>엑스퍼트컨설팅</span></div>
+            </div>
+          </li>
+          <li class="session">
+            <label class="session__checkbox">
+              <input type="checkbox" title="세션 선택" />
+              <span class="custom-checkbox"></span>
+            </label>
+            <div class="session__info">
+              <div class="session__time">15:50~16:40</div>
+              <div class="session__title">(조직개발) 기아 조직개발의 목표와 방향, 그리고 '25년 팀 단위 워크숍 수행 사례</div>
+              <div class="session__speaker">박석주 상무<br><span>엑스퍼트컨설팅</span></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="track">
+        <div class="track__title">#track2<br><span>AI in HRD</span></div>
+        <ul class="track__sessions">
+          <li class="session">
+            <label class="session__checkbox">
+              <input type="checkbox" title="세션 선택" />
+              <span class="custom-checkbox"></span>
+            </label>
+            <div class="session__info">
+              <div class="session__time">13:30~14:20</div>
+              <div class="session__title">(리더십) 동아시아로 리더십 플레이북DC or BGF리테일</div>
+              <div class="session__speaker">박석주 상무<br><span>엑스퍼트컨설팅</span></div>
+            </div>
+          </li>
+          <li class="session">
+            <label class="session__checkbox">
+              <input type="checkbox" title="세션 선택" />
+              <span class="custom-checkbox"></span>
+            </label>
+            <div class="session__info">
+              <div class="session__time">14:40~15:30</div>
+              <div class="session__title">(사업성과) 영업, CX, 마케팅컨설팅활동을 통한 직접적 사업성과 향상 사례</div>
+              <div class="session__speaker">박석주 상무<br><span>엑스퍼트컨설팅</span></div>
+            </div>
+          </li>
+          <li class="session session--selected">
+            <label class="session__checkbox">
+              <input type="checkbox" checked title="세션 선택" />
+              <span class="custom-checkbox"></span>
+            </label>
+            <div class="session__info">
+              <div class="session__time">15:50~16:40</div>
+              <div class="session__title">(조직개발) 기아 조직개발의 목표와 방향, 그리고 '25년 팀 단위 워크숍 수행 사례</div>
+              <div class="session__speaker">박석주 상무<br><span>엑스퍼트컨설팅</span></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="track">
+        <div class="track__title">#track3<br><span>New Solution</span></div>
+        <ul class="track__sessions">
+          <li class="session">
+            <label class="session__checkbox">
+              <input type="checkbox" title="세션 선택" />
+              <span class="custom-checkbox"></span>
+            </label>
+            <div class="session__info">
+              <div class="session__time">13:30~14:20</div>
+              <div class="session__title">(리더십) 동아시아로 리더십 플레이북DC or BGF리테일</div>
+              <div class="session__speaker">박석주 상무<br><span>엑스퍼트컨설팅</span></div>
+            </div>
+          </li>
+          <li class="session session--selected">
+            <label class="session__checkbox">
+              <input type="checkbox" checked title="세션 선택" />
+              <span class="custom-checkbox"></span>
+            </label>
+            <div class="session__info">
+              <div class="session__time">14:40~15:30</div>
+              <div class="session__title">(사업성과) 영업, CX, 마케팅컨설팅활동을 통한 직접적 사업성과 향상 사례</div>
+              <div class="session__speaker">박석주 상무<br><span>엑스퍼트컨설팅</span></div>
+            </div>
+          </li>
+          <li class="session">
+            <label class="session__checkbox">
+              <input type="checkbox" title="세션 선택" />
+              <span class="custom-checkbox"></span>
+            </label>
+            <div class="session__info">
+              <div class="session__time">15:50~16:40</div>
+              <div class="session__title">(조직개발) 기아 조직개발의 목표와 방향, 그리고 '25년 팀 단위 워크숍 수행 사례</div>
+              <div class="session__speaker">박석주 상무<br><span>엑스퍼트컨설팅</span></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <footer id="footer" class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <a href="#about">
+                    <span>HR FAIR 프로그램 안내</span>
+                    <i></i>
+                </a>
+            </div>
+            <div class="footer-content">
+
+            </div>
+        </div>
+    </footer>
+
+    <div class="fixed-btn">
+        <a href="#top">
+            참
+            가
+            신
+            청
+            및
+            내
+            역
+        </a>
+    </div>
+</div>
+<!-- //wrap -->
 </body>
 </html>
