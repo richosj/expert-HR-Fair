@@ -1,0 +1,8 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+
+// 범례 스타일
+.legend-wrap{
+    display: none;
+}

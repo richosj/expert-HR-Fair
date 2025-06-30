@@ -1,0 +1,74 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+
+.control-group{
+    display: flex;
+    gap: 1.2rem;
+    flex-direction: column;
+}
+
+.btn-control-btn,
+.btn-control-popup{
+    position: relative;
+    background: linear-gradient(to bottom, #fff, #fff);
+    border: 1px solid #fff;
+    border-radius: 0.8rem;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    transition: all 0.4s;
+    .btn-tooltip {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        left: -90px;
+        top: 50%;
+        transform: translateY(-50%) translateX(20%);
+        background: #222;
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: 500;
+        padding: 0.6rem 1.2rem;
+        border-radius: 0.8rem;
+        white-space: nowrap;
+        z-index: 10;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        pointer-events: none;
+        transition: all .5s;
+      }
+      .btn-tooltip::after {
+        content: '';
+        position: absolute;
+        right: -8px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-width: 6px 0 6px 8px;
+        border-style: solid;
+        border-color: transparent transparent transparent #222;
+      }
+      &:hover .btn-tooltip {
+        // opacity: 1;
+        // visibility: visible;
+        // transform: translateX(0%) translateY(-50%);
+      }
+      &:hover {
+        background: linear-gradient(to bottom, #3658D3, #17A595);
+        .svg-icon{
+            background: #fff !important;
+        }
+      }
+}
+
+@media screen and (max-width: $desktop) {
+  .control-group{
+    gap:1rem 0;
+  }
+  .zoom-control{
+    display: flex;
+    gap: 1rem 0;
+  }
+}
