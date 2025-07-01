@@ -1,0 +1,212 @@
+// =============================
+// 참가신청 폼 스타일
+// =============================
+
+.open-apply {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    &__btn {
+      width: 60px;
+      height: 294px;
+      background-color: rgba(44, 123, 239, 1);
+      border-radius: 4px 0 0 4px;
+      font-weight: 700;
+      color: #fff;
+      font-size: 18px;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  
+.apply {
+    transform: translateX(100%);
+    overflow-y: auto;
+    z-index: 101;
+    width: 360px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100dvh;
+    background: #18191c;
+    padding: 32px 24px 24px 24px;
+    color: #fff;
+    font-family: "SUIT", sans-serif;
+    &__title {
+      font-size: 22px;
+      font-weight: 900;
+      margin-bottom: 10px;
+      letter-spacing: -1px;
+    }
+    &__subtitle {
+      font-size: 15px;
+      color: #bdbdbd;
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+    &__session-list {
+      margin: 0 0 18px 0;
+      padding: 0;
+      list-style: none;
+    }
+    &__session-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0 8px;
+      background: #232428;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 13px;
+      margin-bottom: 8px;
+      position: relative;
+    }
+    &__session-time {
+      font-weight: 700;
+      color: #6ea8ff;
+      min-width: 70px;
+      display: inline-block;
+    }
+    &__session-title {
+      flex: 1;
+      color: #fff;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+    &__session-remove {
+      background: none;
+      border: none;
+      color: #6ea8ff;
+      font-size: 15px;
+      cursor: pointer;
+      margin-left: 4px;
+      padding: 0;
+      font-weight: 700;
+    }
+    &__notice {
+      background: #232428;
+      color: #bdbdbd;
+      font-size: 12px;
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    &__notice-icon {
+      color: #6ea8ff;
+      font-size: 15px;
+      font-weight: 900;
+    }
+    &__form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    &__form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 0;
+      &--row {
+        flex-direction: row;
+        gap: 8px;
+        align-items: flex-end;
+      }
+      &--checkbox {
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+        margin-top: 6px;
+        margin-bottom: 2px;
+      }
+    }
+    &__form-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    label {
+      font-size: 13px;
+      color: #bdbdbd;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      background: #232428;
+      border: 1.5px solid #232428;
+      border-radius: 6px;
+      color: #fff;
+      font-size: 15px;
+      padding: 10px 12px;
+      font-family: inherit;
+      font-weight: 500;
+      outline: none;
+      transition: border 0.2s;
+      box-sizing: border-box;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus {
+      border: 1.5px solid #6ea8ff;
+    }
+    &__form-btn {
+      background: #232428;
+      color: #6ea8ff;
+      border: 1.5px solid #6ea8ff;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 12px;
+      cursor: pointer;
+      height: 40px;
+      margin-bottom: 0;
+      transition: background 0.2s, color 0.2s;
+    }
+    &__form-btn:hover {
+      background: #6ea8ff;
+      color: #232428;
+    }
+    input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: #6ea8ff;
+      margin-right: 4px;
+    }
+    &__form-privacy-link {
+      color: #6ea8ff;
+      font-size: 12px;
+      font-weight: 700;
+      margin-left: 4px;
+      cursor: pointer;
+    }
+    &__submit {
+      width: 100%;
+      background: #338aff;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 900;
+      border: none;
+      border-radius: 8px;
+      padding: 14px 0;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: background 0.2s;
+      box-shadow: 0 2px 8px 0 rgba(44,123,239,0.10);
+    }
+    &__submit:hover {
+      background: #1d5fd3;
+    }
+  }
+  
+  .apply-open{
+    .apply{
+      transform: translateX(0);
+    }
+  }

@@ -1,0 +1,81 @@
+
+
+.footer{
+    background: rgba(17, 17, 19, 1);
+    &-links{
+        display: flex;
+        justify-content: center;
+        padding: 40px 0 45px;
+        a{
+          display: flex;
+          align-items: center;
+          gap: 0 33px;
+          font-family: "SUIT";
+          font-weight: 500;
+          font-size: 30px;
+          line-height: 40px;
+          color: #fff;
+          i{
+            display: block;
+            width: 48px;
+            height: 48px;
+            background: url("@/assets/images/line-md_arrow-right.svg") no-repeat center center / contain;
+          }
+        }
+    }
+    &-content{
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid #fff;
+        padding: 6rem 5rem;
+    }
+    &-call{
+        display: flex;
+        align-items: center;
+        gap: 0 14px;
+        i{
+            width: 48px;
+            height: 48px;
+            background: url("@/assets/images/ico-agent.svg") no-repeat center center / contain;
+        }
+        a{
+            color: #fff;
+            font-family: "SUIT";
+            font-weight: 900;
+            font-size: 30px;
+        }
+    }
+    &-right{
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+    &-social{
+        display: flex;
+        align-items: center;
+        gap: 0 16px;
+        justify-content: flex-end;
+        &__link{
+            width: 48px;
+            height: 48px;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: contain;
+            &.blog{
+                background-image: url("@/assets/images/ico-blog.svg");
+            }
+            &.youtube{
+                background-image: url("@/assets/images/ico-youtube.svg");
+            }
+            &.instargram{
+                background-image: url("@/assets/images/ico-instagram.svg");
+            }
+        }
+    }
+    &-copyright{
+        color: #fff;
+        font-family: "SUIT";
+        font-weight: 400;
+        font-size: 12px;
+    }
+}

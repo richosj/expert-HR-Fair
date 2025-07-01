@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="반응형 웹사이트">
+    <meta name="keywords" content="웹사이트, 반응형, HTML, CSS">
+    <meta name="author" content="ALL4LAND">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com/">
+    <meta property="og:title" content="Your Website Title">
+    <meta property="og:description" content="반응형 웹사이트">
+    <meta property="og:image" content="https://your-domain.com/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://your-domain.com/">
+    <meta property="twitter:title" content="Your Website Title">
+    <meta property="twitter:description" content="반응형 웹사이트">
+    <meta property="twitter:image" content="https://your-domain.com/og-image.jpg">
+
+    <title>Your Website Title</title>
+    <link rel="stylesheet" as="style"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov-dynamic-subset.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css" />
+</head>
+
+<body>
+    <div id="wrap">
+        {{> nav}}
+
+        <div class="session">
+            <div class="session-container">
+                <div class="session-top">
+                    <div class="sub-title">
+                        <div class="sub-title-text">
+                            EXPERTconsulting 2025 <b>HR Fair</b>
+                        </div>
+                        <div class="sub-title-date">
+                            2025.9.4 am10~pm5
+                        </div>
+                    </div>
+                    <div class="sub-title-hi">
+                        Hi-AI
+                    </div>
+                    <div class="sub-title-video"><img src="./assets/images/Location.png" alt=""></div>
+
+                    <div class="program-morning">
+                        <div class="program-title">
+                            오전 프로그램
+                        </div>
+                        <ul class="program-list">
+                            <li class="program-item">
+                                <div class="program-item-time">
+                                    <div>10:30~11:00</div>
+                                    <p>인사말 & 인재개발 실태조사 결과발표</p>
+                                </div>
+                                <div class="speaker">
+                                    <div class="speaker-info">
+                                        <div class="name">박선경 사장</div>
+                                        <div class="aff">엑스퍼트컨설팅</div>
+                                    </div>
+                                    <button type="button" class="details"></button>
+                                </div>
+                            </li>
+                            <li class="program-item">
+                                <div class="program-item-time">
+                                    <div>10:30~11:00</div>
+                                    <p>인사말 & 인재개발 실태조사 결과발표</p>
+                                </div>
+                                <div class="speaker">
+                                    <div class="speaker-info">
+                                        <div class="name">박선경 사장</div>
+                                        <div class="aff">엑스퍼트컨설팅</div>
+                                    </div>
+                                    <button type="button" class="details"></button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="scroll-move">
+                    <i></i>
+                </div>
+            </div>
+
+            <div class="session-content">
+                <header>
+                    <h2>오후 프로그램 <span>TRACK</span></h2>
+                    <button>시간별 보기</button>
+                </header>
+
+                <div class=""></div>
+
+                <div class="image"></div>
+
+            </div>
+
+        </div>
+
+        {{> footer}}
+
+        {{> apply}}
+    </div>
+    <!-- //wrap -->
+    <script type="module" src="./js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+</body>
+
+</html>

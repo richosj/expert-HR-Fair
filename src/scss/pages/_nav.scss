@@ -1,0 +1,31 @@
+
+.nav {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 35px;
+    z-index: 100;
+    background-color: rgba(30, 31, 33, 0.5);
+    padding: 11px 17px;
+    border-radius: 7px;
+    -webkit-backdrop-filter: blur(120px);
+    backdrop-filter: blur(120px);
+    &-wrap {
+      display: flex;
+      gap: 20px;
+    }
+    &-anchor {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+      color: #fff;
+      font-weight: 700;
+      padding: 8px 19px;
+      font-size: 16px;
+      &.current{
+          background-color: rgba(20, 21, 23, 1);
+      }
+    }
+  }
+  

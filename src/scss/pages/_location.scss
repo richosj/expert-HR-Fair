@@ -1,0 +1,148 @@
+
+.location{
+    height: 100dvh;
+    background-color: #000;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 200px;
+    &-top{
+        position: relative;
+    }
+    &-container{
+        position: relative;
+        height: 100%;
+    }
+    &-content{
+        position: absolute;
+        bottom: 40px;
+        left: 0;
+        right: 0;
+        //height: 100%;
+        display: flex;
+        gap:0 15px;
+    }
+    &-transport{
+        width: 217px;
+        border-radius: 5px;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 31px 24px;
+        color: #fff;
+        .block{
+            +.block{
+                margin-top: 25px;
+            }
+            &-title{
+                font-family: "SUIT";
+                font-weight: 600;
+                font-size: 16px;
+                margin-bottom: 10px;
+                display: flex;
+                align-items: center;
+                gap:0 4px;
+                i{
+                    display: block;
+                    background-repeat: no-repeat;
+                    background-position: 0 0;
+                    width:24px;
+                    height: 24px;
+                    &.ico-subway{
+                        background-image: url("@/assets/images/ico-subway.svg");
+                    }
+                    &.ico-bus{
+                        background-image: url("@/assets/images/ico-bus.svg");
+                    }
+                }
+            }
+            .how{
+                div{
+                    display: flex;
+                    align-items: center;
+                    gap:0 4px;
+                    +div{
+                        margin-top: 4px;
+                    }
+                    span{
+                        font-family: 'SUIT';
+                        font-weight: 400;
+                        font-size: 14px;
+                    }
+                }
+            }
+            &.bus{
+                .how{
+                    font-family: 'SUIT';
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 18px;
+                }
+            }
+        }
+        
+        
+        
+    }
+    &-map{
+        flex:1;
+        border-radius: 5px;
+        overflow: hidden;
+        position: relative;
+        .address{
+            padding: 24px;
+            background: rgba(62, 64, 69, 0.8);
+            color: #fff;
+            font-family: "SUIT";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            text-align: right;
+            padding: 12px;
+            div{
+                font-size: 13px;
+                font-weight: 700;
+                b{
+                    font-weight: 900;
+                    font-size: 15px;
+                }
+            }
+            p{
+                color: rgba(255, 255, 255, 0.8);
+                font-size: 13px;
+                font-weight: 400;
+                margin-top: 5px;
+            }
+        }
+    }
+}
+
+.sub-title{
+    color: #fff;
+    
+    &-text{
+        font-family: "SUIT";
+        font-weight: 400;
+        font-size: 35px;
+        b{
+            font-weight: 900;
+        }
+    }
+    &-date{
+        font-family: "SUIT";
+        font-weight: 900;
+        font-size: 35px;
+        margin-top: 15px;
+    }
+    &-hi{
+        position: absolute;
+        right: 0;
+        top: 0;
+        color: #fff;
+        font-family: "SUIT";
+        font-weight: 900;
+        font-size: 80px;
+        line-height: 1;
+    }
+    &-video{
+        padding-top: 60px;
+    }
+}

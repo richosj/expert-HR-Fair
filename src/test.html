@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=400, initial-scale=1.0" />
+  <title>참가신청</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      font-family: sans-serif;
+      font-size: 10px;
+      background-color: #111;
+      color: #fff;
+    }
+    .container {
+      width: 400px;
+      background: #1a1a1a;
+      border: 2px solid #007bff;
+      padding: 16px;
+    }
+    .title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+    .section {
+      border-top: 1px solid #444;
+      padding-top: 16px;
+      margin-top: 16px;
+    }
+    .session-item {
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .session-time {
+      color: #bbb;
+      margin-bottom: 2px;
+    }
+    .notice {
+      font-size: 1rem;
+      color: #aaa;
+      margin: 12px 0;
+    }
+    .form-group {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+    .form-group label {
+      width: 100%;
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+    .form-group input[type="text"],
+    .form-group input[type="email"] {
+      flex: 1;
+      padding: 8px;
+      background: #222;
+      border: 1px solid #444;
+      color: #fff;
+    }
+    .form-half {
+      width: 48%;
+    }
+    .form-half + .form-half {
+      margin-left: 4%;
+    }
+    .btn-sub {
+      background: #333;
+      border: 1px solid #555;
+      color: #fff;
+      padding: 6px;
+      font-size: 1rem;
+      margin-left: 8px;
+    }
+    .checkbox-group {
+      margin-top: 10px;
+      font-size: 1rem;
+    }
+    .submit-btn {
+      background: #007bff;
+      color: #fff;
+      font-size: 1.3rem;
+      padding: 12px;
+      border: none;
+      width: 100%;
+      margin-top: 16px;
+    }
+    .trash {
+      font-size: 0.9rem;
+      color: #6cf;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">참가신청</div>
+
+    <div class="section">
+      <div class="session-item">
+        <div>
+          <div class="session-time">14:30~15:20</div>
+          [자료집] 엑스퍼트가 추천하는 중견기업의 연간 교육 베스트 사례 : 뷰웍스
+        </div>
+        <div class="trash">휴지통</div>
+      </div>
+      <div class="session-item">
+        <div>
+          <div class="session-time">14:30~15:20</div>
+          구성원들의 심리적 안전감을 위한 최적 솔루션, DEIB 워크숍
+        </div>
+        <div class="trash">휴지통</div>
+      </div>
+      <div class="session-item">
+        <div>
+          <div class="session-time">15:30~16:20</div>
+          (조직개발) 기업 조직개발의 목표와 방향, 그리고 '25년 단위 워크숍 수행 사례
+        </div>
+        <div class="trash">휴지통</div>
+      </div>
+    </div>
+
+    <div class="notice">
+      ※ 2024년 HR Fair에 등록하신 이력이 있는 경우, 해당 정보를 활용하여 신청을 진행하실 수 있습니다.
+    </div>
+
+    <div class="section">
+      <div class="form-group">
+        <label>이름</label>
+        <input type="text" />
+      </div>
+      <div class="form-group">
+        <label>연락처</label>
+        <div style="display: flex;">
+          <input type="text" style="flex:1;" />
+          <button class="btn-sub">인증번호보내기</button>
+          <button class="btn-sub">인증확인</button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>회사명</label>
+        <div style="display: flex; gap: 4%;">
+          <input type="text" class="form-half" />
+          <input type="text" class="form-half" placeholder="업종" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>주소</label>
+        <input type="text" />
+      </div>
+      <div class="form-group">
+        <label>상세주소</label>
+        <input type="text" />
+      </div>
+      <div class="form-group">
+        <label>부서명</label>
+        <div style="display: flex; gap: 4%;">
+          <input type="text" class="form-half" />
+          <input type="text" class="form-half" placeholder="직급" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>이메일</label>
+        <input type="email" />
+      </div>
+      <div class="checkbox-group">
+        <label><input type="checkbox" /> 개인정보정보활용 동의합니다. <span style="color:#888">내용보기 ></span></label>
+      </div>
+      <button class="submit-btn">참가신청 완료</button>
+    </div>
+  </div>
+</body>
+</html>
