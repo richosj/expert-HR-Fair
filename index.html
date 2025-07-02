@@ -43,54 +43,54 @@
             </div>
         </nav>
         <!-- home -->
-        <div class="home">
-            <div class="home1">
-                <div class="home1-container">
-                    <div class="home1-title">
-                        <div class="home1-title-text">
-                            EXPERTconsulting 2025 <br class="mobile-block"><b>HR Fair</b>
-                        </div>
-                        <div class="home1-title-date">
-                            2025.9.4 am10~pm5
-                        </div>
+        <div class="home1">
+            <div class="home1-container">
+                <div class="home1-title">
+                    <div class="home1-title-text">
+                        EXPERTconsulting 2025 <br class="mobile-block"><b>HR Fair</b>
                     </div>
-                    <div class="home1-hi">
-                        Hi-AI
+                    <div class="home1-title-date">
+                        2025.9.4 am10~pm5
+                    </div>
+                </div>
+                <div class="home1-hi">
+                    Hi-AI
+                </div>
+
+                <div class="home1-content">
+                    <div class="home1-content-text">
+                        <p>대한민국 최고의 HR 전문 기업 엑스퍼트컨설팅이 <br class="mobile-block">창립 31주년을 맞아<br class="mobile-hidden">
+                            2025 HR FAIR : Hi-AI를 개최합니다.</p>
+                        <p>AI로 가속화되는 변화의 시대, 조직의 성장과 <br class="mobile-block">혁신의 중심은 언제나 사람입니다. <br>
+                            발전되는 기술을 어떻게 활용할지 고민하고, 가치를 창출하여 <br class="mobile-block">성과로 연결하는 것은 <br
+                                class="mobile-hidden">
+                            결국 사람의 몫입니다.
+                        </p>
+
+                        <p>이번 HR FAIR에서는 AI와 인간 지능(Human Intelligence)의 교차점에서 <br class="mobile-hidden">
+                            HR의 새로운 가능성을 모색하고, 이를 실제 현장에 적용한 다양한 사례를 공유합니다. <br>
+                            사람과 기술이 만나는 HR의 내일, 그 방향을 찾는 <br class="mobile-block">자리에 함께하세요.</p>
                     </div>
 
-                    <div class="home1-content">
-                        <div class="home1-content-text">
-                            <p>대한민국 최고의 HR 전문 기업 엑스퍼트컨설팅이 <br class="mobile-block">창립 31주년을 맞아<br class="mobile-hidden">
-                                2025 HR FAIR : Hi-AI를 개최합니다.</p>
-                            <p>AI로 가속화되는 변화의 시대, 조직의 성장과 <br class="mobile-block">혁신의 중심은 언제나 사람입니다. <br>
-                                발전되는 기술을 어떻게 활용할지 고민하고, 가치를 창출하여 <br class="mobile-block">성과로 연결하는 것은 <br
-                                    class="mobile-hidden">
-                                결국 사람의 몫입니다.
-                            </p>
+                    <div class="home1-shape">
+                        <div class="shape-img">
+                            <span class="shape-img-wrap">
+                                <img src="./assets/images/shape.png" alt="">
+                            </span>
+                            <span class="shdow"><img src="./assets/images/shadow.png" alt=""></span>
 
-                            <p>이번 HR FAIR에서는 AI와 인간 지능(Human Intelligence)의 교차점에서 <br class="mobile-hidden">
-                                HR의 새로운 가능성을 모색하고, 이를 실제 현장에 적용한 다양한 사례를 공유합니다. <br>
-                                사람과 기술이 만나는 HR의 내일, 그 방향을 찾는 <br class="mobile-block">자리에 함께하세요.</p>
-                        </div>
-
-                        <div class="home1-shape">
-                            <div class="shape-img">
-                                <span class="shape-img-wrap">
-                                    <img src="./assets/images/shape.png" alt="">
-                                </span>
-                                <span class="shdow"><img src="./assets/images/shadow.png" alt=""></span>
-
-                                <div class="shape-tag shape-tag-1">AI in HRD</div>
-                                <div class="shape-tag shape-tag-2">Spcial session</div>
-                                <div class="shape-tag shape-tag-3">Performance</div>
-                                <div class="shape-tag shape-tag-4">NewSolution</div>
-                                <div class="shape-tag shape-tag-5">Public HRD</div>
-                                <div class="shape-tag shape-tag-6">HRM</div>
-                            </div>
+                            <div class="shape-tag shape-tag-1">AI in HRD</div>
+                            <div class="shape-tag shape-tag-2">Spcial session</div>
+                            <div class="shape-tag shape-tag-3">Performance</div>
+                            <div class="shape-tag shape-tag-4">NewSolution</div>
+                            <div class="shape-tag shape-tag-5">Public HRD</div>
+                            <div class="shape-tag shape-tag-6">HRM</div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="home2-wraps">
             <div class="home2">
                 <div class="home2-container">
                     <div class="home2-left">
@@ -298,6 +298,116 @@
           </div>
         </aside>    </div>
     <!-- //wrap -->
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const video = document.querySelector('.visual__video video');
+            video.addEventListener('loadeddata', () => {
+                video.classList.add('loaded');
+            });
+
+            const home1TL = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".home1",
+                start: "top top",
+                end: "+=150%",
+                scrub: .4,
+                pin: true,
+                anticipatePin: 1,
+            }
+            });
+
+            // 동시에 양쪽에서 가운데로 나타남
+            home1TL.to(".home1-title", {
+                opacity: 1,
+                x: 0, // 여기서 x: 0은 translateX(0)과 동일
+            ease: "power2.out"
+            }, 0);
+
+            home1TL.to(".home1-hi", {
+                opacity: 1,
+                x: 0,
+                ease: "power2.out"
+            }, 0);
+            
+            home1TL.to(".home1-content-text p", {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out",
+            stagger: 0.3 // 한 줄씩 순차적으로
+            }, ">"); // 이전 애니메이션 끝난 후 시작
+
+            home1TL.to(".home1-shape", {
+            opacity: 1,
+            x: 0,
+            duration: 1,
+            ease: "power2.out"
+            }, ">-0.5"); // 약간 겹치게 (자연스럽게)
+
+            home1TL.to(".home1-shape", {
+                opacity: 1,
+                x: 0,
+                duration: 1,
+                ease: "power2.out"
+            }, ">-0.5"); // content 끝나고 약간 겹쳐서 실행
+
+            home1TL.to(".shape-tag", {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                stagger: 0.15, // 하나씩 순차 등장
+                ease: "power2.out"
+            }, ">-0.3"); // shape 들어오고 바로 이어서 실행
+
+            // home2 좌우 슬라이드 인 + 모형 등장
+            const home2TL = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".home2",
+                    start: "top top",
+                    end: "+=150%",
+                    scrub: .4,
+                    pin: true,
+                    anticipatePin: 1,
+                }
+            });
+            home2TL.fromTo(".home2-left", {
+                opacity: 0,
+                x: -80
+            }, {
+                opacity: 1,
+                x: 0,
+                duration: 1,
+                ease: "power2.out"
+            })
+            .fromTo(".home2-right", {
+                opacity: 0,
+                x: 80
+            }, {
+                opacity: 1,
+                x: 0,
+                duration: 1,
+                ease: "power2.out"
+            }, ">-0.5")
+            .fromTo(".home2-shape", {
+                opacity: 0,
+                scale: 0.8
+            }, {
+                opacity: 1,
+                scale: 1,
+                duration: 0.8,
+                ease: "power2.out"
+            }, ">-0.2");
+        })
+
+        
+        
+
+
+    </script>
 </body>
 
 </html>
