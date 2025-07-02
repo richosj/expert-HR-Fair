@@ -63,30 +63,32 @@
                 </div>
             </div>
         </div>
-        <div class="home2">
-            <div class="home2-container">
-                <div class="home2-left">
-                    <div class="home2-content">
-                        <div class="home2-title">
-                            HR 실태조사 결과발표
-                        </div>
-                        <div class="home2-text">
-                            데이터로 들여다보는 대한민국 HR의 오늘과 내일. 조직과 <br>인재 관리의 현재 위치를 진단하고, 미래 방향성을 조망하는 시간.
-                        </div>
-                    </div>
-                </div>
-                <div class="home2-right">
-                    <div class="home2-content">
-                        <div class="home2-title">신규 프로그램 및 사례 발표</div>
-                        <div class="home2-text">
-                            조직이 마주한 현실적인 문제, 그 해답을 현장에서 찾다. 엑스퍼트가 제안하는<br>
-                            최신 HR 솔루션과 실제 사례를 통해 조직의 변화와 혁신을 이끄는 여섯 개의 트랙.
+        <div class="home2-wraps">
+            <div class="home2">
+                <div class="home2-container">
+                    <div class="home2-left">
+                        <div class="home2-content">
+                            <div class="home2-title">
+                                HR 실태조사 결과발표
+                            </div>
+                            <div class="home2-text">
+                                데이터로 들여다보는 대한민국 HR의 오늘과 내일. 조직과 <br>인재 관리의 현재 위치를 진단하고, 미래 방향성을 조망하는 시간.
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="home2-shape">
-                    <div class="shape-img">
-                        <span class="shape-img-wrap"><img src="./assets/images/shape2.png" alt=""></span>
+                    <div class="home2-right">
+                        <div class="home2-content">
+                            <div class="home2-title">신규 프로그램 및 사례 발표</div>
+                            <div class="home2-text">
+                                조직이 마주한 현실적인 문제, 그 해답을 현장에서 찾다. 엑스퍼트가 제안하는<br>
+                                최신 HR 솔루션과 실제 사례를 통해 조직의 변화와 혁신을 이끄는 여섯 개의 트랙.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="home2-shape">
+                        <div class="shape-img">
+                            <span class="shape-img-wrap"><img src="./assets/images/shape2.png" alt=""></span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -148,7 +150,62 @@
             ease: "power2.out"
             }, ">-0.5"); // 약간 겹치게 (자연스럽게)
 
+            home1TL.to(".home1-shape", {
+                opacity: 1,
+                x: 0,
+                duration: 1,
+                ease: "power2.out"
+            }, ">-0.5"); // content 끝나고 약간 겹쳐서 실행
+
+            home1TL.to(".shape-tag", {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                stagger: 0.15, // 하나씩 순차 등장
+                ease: "power2.out"
+            }, ">-0.3"); // shape 들어오고 바로 이어서 실행
+
+            // home2 좌우 슬라이드 인 + 모형 등장
+            const home2TL = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".home2",
+                    start: "top top",
+                    end: "+=150%",
+                    scrub: .4,
+                    pin: true,
+                    anticipatePin: 1,
+                }
+            });
+            home2TL.fromTo(".home2-left", {
+                opacity: 0,
+                x: -80
+            }, {
+                opacity: 1,
+                x: 0,
+                duration: 1,
+                ease: "power2.out"
+            })
+            .fromTo(".home2-right", {
+                opacity: 0,
+                x: 80
+            }, {
+                opacity: 1,
+                x: 0,
+                duration: 1,
+                ease: "power2.out"
+            }, ">-0.5")
+            .fromTo(".home2-shape", {
+                opacity: 0,
+                scale: 0.8
+            }, {
+                opacity: 1,
+                scale: 1,
+                duration: 0.8,
+                ease: "power2.out"
+            }, ">-0.2");
         })
+
+        
         
 
 

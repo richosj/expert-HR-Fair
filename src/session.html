@@ -72,12 +72,12 @@
 
         <div class="session-track">
             <div class="session-track-wrap">
-                <header>
+                <header class="sticky-header">
                     <h2>오후 프로그램 <span>TRACK</span></h2>
                     <button><i class="ico-time"></i>시간별 보기</button>
                 </header>
 
-                <div class="session-content">
+                <div class="session-content scroll-area">
                     <div class="session-item">
                         <div class="session-item-title">
                             <span>#track1</span>
@@ -433,11 +433,12 @@
                     </div>
                     <!-- // 카테고리6 -->
                 </div>
-            </div>            
+            </div>
+            <div class="track-image"><img src="./assets/images/sc1.png" alt=""></div>
         </div>
         <!-- //session-track -->
 
-        <div class="session-track">
+        <div class="session-track" style="display: none;">
             <div class="session-track-wrap">
                 <header>
                     <h2>오후 프로그램 <span>TRACK</span></h2>
@@ -660,5 +661,115 @@
 </div>
 
 <script type="module" src="./js/main.js"></script>
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+    // 최상단 섹션 페이드인
+    gsap.to('.session-top', {
+      opacity: 1,
+      y: 0,
+      duration: 1.2,
+      ease: "power4.out"
+    });
+
+    // 타이틀 애니메이션 순차 등장
+    gsap.to('.sub-title-text', {
+      delay: 0.4,
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: "power3.out"
+    });
+
+    gsap.to('.sub-title-date', {
+      delay: 0.6,
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: "power3.out"
+    });
+
+    gsap.to('.sub-title-hi', {
+      delay: 0.8,
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: "power3.out"
+    });
+
+    gsap.to('.sub-hrc-ver', {
+      delay: 1.0,
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: "power3.out"
+    });
+
+    gsap.to('.sub-title-video', {
+        delay: 1.4,
+        onStart: () => {
+            const el = document.querySelector('.sub-title-video');
+            el.classList.add('blur-reveal');
+        }
+    });
+
+    gsap.to('.program-morning', {
+        delay: 1.7,
+        opacity: 1,
+        scale: 1,
+        filter: 'blur(0px)',
+        duration: 2,
+        ease: "power3.out"
+    });
+
+    
+
+   // track-image 등장
+ScrollTrigger.create({
+  trigger: '.session-track',
+  start: 'top top',
+  end: 'bottom bottom',
+  onEnter: () => document.querySelector('.track-image').classList.add('show'),
+  onLeaveBack: () => document.querySelector('.track-image').classList.remove('show')
+});
+
+// track-image 사라지게 (footer 도달 시)
+ScrollTrigger.create({
+  trigger: 'footer',
+  start: 'top bottom',
+  onEnter: () => document.querySelector('.track-image').classList.remove('show'),
+  onLeaveBack: () => document.querySelector('.track-image').classList.add('show')
+});
+
+// header 등장
+ScrollTrigger.create({
+  trigger: '.session-track',
+  start: 'top center',
+  end: 'bottom bottom',
+  onEnter: () => document.querySelector('.sticky-header').classList.add('show'),
+  onLeaveBack: () => document.querySelector('.sticky-header').classList.remove('show')
+});
+
+// session-content 올라오는 애니
+gsap.fromTo('.session-content',
+  { y: 80, opacity: 0 },
+  {
+    y: 0,
+    opacity: 1,
+    duration: 1,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: '.session-track',
+      start: 'top center',
+      end: 'bottom 100%',
+      scrub: true
+    }
+  }
+);
+
+
+
+  });    
+</script>
+
 </body>
 </html>
