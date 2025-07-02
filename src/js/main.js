@@ -17,6 +17,8 @@ applyClose.addEventListener('click', () => {
 
 gsap.registerPlugin(ScrollTrigger);
 
+
+
 const applyBtn = document.querySelector(".open-apply");
 const footer = document.querySelector(".footer");
 

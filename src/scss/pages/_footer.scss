@@ -1,6 +1,8 @@
 
 
 .footer{
+    z-index: 2;
+    position: relative;
     background: rgba(17, 17, 19, 1);
     @media (max-width: 900px) {
         padding-bottom: 60px;
