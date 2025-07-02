@@ -1,7 +1,6 @@
 .session{
   &-top{
-    padding-left: 10vw;
-    padding-right: 10vw;
+    
     padding-top: 200px;
     background-color: #000;
     min-height: 100dvh;
@@ -27,7 +26,8 @@
   display: flex;
   justify-content: space-between;
   padding-top: 135px;
-  gap:0 172px;
+  margin: 0 auto;
+  max-width: 1200px;
   @media (max-width: 1024px) {
     flex-direction: column;
     gap: 20px;
@@ -37,7 +37,8 @@
     color: #fff;
     font-weight: 700;
     font-size: 14px;
-    padding-left: 70px;
+    //padding-left: 70px;
+    width: 250px;
     @media (max-width: 1024px) {
       padding-left: 0;
       padding-top: 10px;
@@ -118,8 +119,12 @@
 
 .session-track{
   background-color: #E7E7E7;
-  padding: 27px 60px 35px;
+  padding: 27px 0 35px;
   min-height: 100dvh;
+  &-wrap{
+    max-width: 1200px;
+    margin: 0 auto;
+  }
   @media (max-width: 1024px) {
     padding: 27px 20px 35px;
   }
