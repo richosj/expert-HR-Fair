@@ -112,8 +112,10 @@ export default defineConfig(({ mode }) => {
         name: 'cleanup-html',
         closeBundle() {
           const distPath = path.resolve(__dirname, 'dist')
+          if (!fs.existsSync(distPath)) return
+      
           const htmlFiles = fs.readdirSync(distPath).filter(f => f.endsWith('.html'))
-
+      
           htmlFiles.forEach(file => {
             const filePath = path.join(distPath, file)
             let content = fs.readFileSync(filePath, 'utf-8')
@@ -121,9 +123,10 @@ export default defineConfig(({ mode }) => {
             content = content.replace(/<link rel="modulepreload" [^>]+?>/g, '')
             fs.writeFileSync(filePath, content)
           })
-
+      
           console.log('✅ 빌드 후 modulepreload & crossorigin 제거 완료')
         }
+      
       }
     ]
   }

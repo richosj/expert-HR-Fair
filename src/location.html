@@ -2,37 +2,7 @@
 <html lang="ko">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="반응형 웹사이트">
-  <meta name="keywords" content="웹사이트, 반응형, HTML, CSS">
-  <meta name="author" content="ALL4LAND">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="manifest" href="site.webmanifest">
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://your-domain.com/">
-  <meta property="og:title" content="Your Website Title">
-  <meta property="og:description" content="반응형 웹사이트">
-  <meta property="og:image" content="https://your-domain.com/og-image.jpg">
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://your-domain.com/">
-  <meta property="twitter:title" content="Your Website Title">
-  <meta property="twitter:description" content="반응형 웹사이트">
-  <meta property="twitter:image" content="https://your-domain.com/og-image.jpg">
-
-  <title>Your Website Title</title>
-  <link rel="stylesheet" as="style"
-    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov-dynamic-subset.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css" />
+  {{> meta}}
 </head>
 
 <body>
@@ -44,14 +14,19 @@
         <div class="location-top">
           <div class="sub-title">
             <div class="sub-title-text">
-              EXPERTconsulting 2025 <b>HR Fair</b>
+              EXPERTconsulting 2025 <br class="mobile-block"><b>HR Fair</b>
             </div>
             <div class="sub-title-date">
-              2025.9.4 am10~pm5
+              2025.9.4 <span class="mobile-hidden">am10~pm5</span>
             </div>
           </div>
-          <div class="sub-title-hi">
-            Hi-AI
+          <div class="sub-title-hi-wrap">
+            <div class="sub-hrc-ver">
+              HR FAIR conference
+            </div>
+            <div class="sub-title-hi">
+              Hi-AI
+            </div>
           </div>
           <div class="sub-title-video"><img src="./assets/images/Location.png" alt=""></div>
         </div>
@@ -94,6 +69,4 @@
   </div>
   <!-- //wrap -->
   <script type="module" src="./js/main.js"></script>
-</body>
-
-</html>
+</body></html>

@@ -4,84 +4,143 @@
     </button>
 </div>
 
-
-
 <aside class="apply">
+  <button class="apply__close"></button>
+  <div class="apply-wrap">
+    
+  
   <h2 class="apply__title">참가신청</h2>
   <div class="apply__subtitle">오후 세션 신청내역</div>
+  <div class="apply_empty">
+    <div class="text">신청하신 내역이 없습니다.</div>
+  </div>
+
   <ul class="apply__session-list">
     <li class="apply__session-item">
-      <span class="apply__session-time">14:30~15:20</span>
-      <span class="apply__session-title">[제조업] 엑스퍼트가 추천하는 중견기업의 연간 교육 베스트 사례 : 뷰웍스</span>
+      <div class="apply__session-item-info">
+        <span class="apply__session-time">14:30~15:20</span>
+        <span class="apply__session-title">[제조업] 엑스퍼트가 추천하는 중견기업의 연간 교육 베스트 사례 : 뷰웍스</span>
+      </div>
       <button class="apply__session-remove">[휴지통]</button>
     </li>
     <li class="apply__session-item">
-      <span class="apply__session-time">14:30~15:20</span>
-      <span class="apply__session-title">구성원들의 심리적 안전감을 위한 최적 솔루션, DEIB 워크숍</span>
+      <div class="apply__session-item-info">
+        <span class="apply__session-time">14:30~15:20</span>
+        <span class="apply__session-title">[제조업] 엑스퍼트가 추천하는 중견기업의 연간 교육 베스트 사례 : 뷰웍스</span>
+      </div>
       <button class="apply__session-remove">[휴지통]</button>
     </li>
     <li class="apply__session-item">
-      <span class="apply__session-time">15:20~16:20</span>
-      <span class="apply__session-title">(조직개발) 기아 조직개발의 목표와 방향, 그리고 '25년 팀 단위 워크샵 수행 사례</span>
+      <div class="apply__session-item-info">
+        <span class="apply__session-time">14:30~15:20</span>
+        <span class="apply__session-title">[제조업] 엑스퍼트가 추천하는 중견기업의 연간 교육 베스트 사례 : 뷰웍스</span>
+      </div>
       <button class="apply__session-remove">[휴지통]</button>
     </li>
   </ul>
   <div class="apply__notice">
-    <span class="apply__notice-icon">ⓘ</span>
-    2024년 HR Fair에 등록하신 이력이 있는 경우, 해당 정보를 활용하여 신청을 진행하실 수 있습니다.
+    2024년 HR Fair에 등록하신 이력이 있는 경우, <br>해당 정보를 활용하여 신청을 진행하실 수 있습니다.
   </div>
+
+  <div class="notice-block">
+    <div class="text">2025 HR Fair 참가를 신청하셨다면, 신청 내역은 <br>휴대폰 인증을 통해 확인하실 수 있습니다</div>
+    <div class="apply__notice">
+      2024년 HR Fair에 등록하신 이력이 있는 경우, <br>해당 정보를 활용하여 신청을 진행하실 수 있습니다.
+    </div>
+  </div>
+
+  <div class="apply-success">
+    <div class="text1">신청이 완료되었습니다.</div>
+    <div class="text2">신청하신 세션 내역은 변경이 불가하오니,<br>세션 변경을 원하실 경우<br>전화 상담을 통해 문의해 주시기 바랍니다. </div>
+  </div>
+
+  <div class="apply-success-btn">
+    <button type="button" class="form-btn">내용 확인 하였습니다.</button>
+  </div>
+
+  <div class="apply-success-links">
+    <a href="#">신규로 등록하기</a>
+    <a href="#">시간표 다운로드</a>
+  </div>
+
+  <h2 class="apply__subtitle">신청정보 입력</h2>
   <form class="apply__form">
     <div class="apply__form-group">
-      <label for="apply-name">이름</label>
-      <input type="text" id="apply-name" placeholder="이름 입력" />
-    </div>
-    <div class="apply__form-group apply__form-group--row">
-      <div class="apply__form-col">
-        <label for="apply-phone">연락처</label>
-        <input type="text" id="apply-phone" placeholder="연락처 입력" />
-      </div>
-      <button type="button" class="apply__form-btn">[인증번호보내기]</button>
-    </div>
-    <div class="apply__form-group apply__form-group--row">
-      <div class="apply__form-col">
-        <input type="text" placeholder="인증번호 입력" />
-      </div>
-      <button type="button" class="apply__form-btn">[인증확인]</button>
-    </div>
-    <div class="apply__form-group">
-      <label for="apply-company">회사명</label>
-      <input type="text" id="apply-company" placeholder="회사명 입력" />
-    </div>
-    <div class="apply__form-group">
-      <label for="apply-business">업종</label>
-      <input type="text" id="apply-business" placeholder="업종 입력" />
-    </div>
-    <div class="apply__form-group">
-      <label for="apply-address">주소</label>
-      <input type="text" id="apply-address" placeholder="주소 입력" />
-    </div>
-    <div class="apply__form-group">
-      <label for="apply-detail-address">상세주소</label>
-      <input type="text" id="apply-detail-address" placeholder="상세주소 입력" />
-    </div>
-    <div class="apply__form-group apply__form-group--row">
-      <div class="apply__form-col">
-        <label for="apply-dept">부서명</label>
-        <input type="text" id="apply-dept" placeholder="부서명 입력" />
-      </div>
-      <div class="apply__form-col">
-        <label for="apply-position">직급</label>
-        <input type="text" id="apply-position" placeholder="직급 입력" />
+      <label>이름</label>
+      <div class="apply__form-input">
+        <input type="text"  class="input" />
       </div>
     </div>
     <div class="apply__form-group">
-      <label for="apply-email">이메일</label>
-      <input type="email" id="apply-email" placeholder="이메일 입력" />
+      <label>연락처</label>
+      <div class="apply__form-input">
+        <div class="cols">
+          <input type="text" id="" class="input" />
+          <button class="form-btn">인증번호보내기</button>
+        </div>
+        <div class="cols">
+          <input type="text" id="" class="input" />
+          <button class="form-btn">인증확인</button>
+        </div>
+      </div>
     </div>
-    <div class="apply__form-group apply__form-group--checkbox">
-      <input type="checkbox" id="apply-privacy" />
-      <label for="apply-privacy">개인정보활용 동의합니다. <span class="apply__form-privacy-link">내용보기 &gt;</span></label>
+
+    <div class="apply__form-group set">
+      <div class="fir">
+        <label>회사명</label>
+        <div class="apply__form-input">
+          <input type="text" class="input" />
+        </div>
+      </div>
+      <div class="sec">
+        <label>업종</label>
+        <div class="apply__form-input">
+          <input type="text" class="input" />
+        </div>
+      </div>
+    </div>
+
+    <div class="apply__form-group">
+      <label>주소소</label>
+      <div class="apply__form-input">
+        <input type="text" class="input" />
+      </div>
+    </div>
+
+    <div class="apply__form-group">
+      <label>상세주소</label>
+      <div class="apply__form-input">
+        <input type="text" class="input" />
+      </div>
+    </div>
+
+    <div class="apply__form-group set">
+      <div class="fir">
+        <label>부서명명</label>
+        <div class="apply__form-input">
+          <input type="text" class="input" />
+        </div>
+      </div>
+      <div class="sec">
+        <label>직급</label>
+        <div class="apply__form-input">
+          <input type="text" class="input" />
+        </div>
+      </div>
+    </div>
+
+    <div class="apply__form-group">
+      <label>이메일</label>
+      <div class="apply__form-input">
+        <input type="text" class="input" />
+      </div>
+    </div>
+    
+    <div class="apply__form-checkbox">
+      <label for="apply-privacy"><input type="checkbox" id="apply-privacy" /> 개인정보활용 동의합니다.</label>
+      <a href="#" class="apply__form-privacy-link">내용보기</a>
     </div>
     <button type="submit" class="apply__submit">참가신청 완료</button>
   </form>
+  </div>
 </aside>

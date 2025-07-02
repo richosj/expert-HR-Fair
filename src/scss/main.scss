@@ -32,6 +32,9 @@
       contain;
     animation: scrollBounce 2s ease-in-out infinite;
   }
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 @keyframes scrollBounce {

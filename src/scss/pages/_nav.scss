@@ -1,31 +1,68 @@
 
 .nav {
     position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 35px;
-    z-index: 100;
-    background-color: rgba(30, 31, 33, 0.5);
-    padding: 11px 17px;
-    border-radius: 7px;
-    -webkit-backdrop-filter: blur(120px);
-    backdrop-filter: blur(120px);
-    &-wrap {
-      display: flex;
-      gap: 20px;
+    z-index: 101;
+    .mobile-menu-close{
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 48px;
+      height: 48px;
+      //background-image: url("@/assets/images/codex_close.png");
+      background-size: contain;
     }
-    &-anchor {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 5px;
-      color: #fff;
-      font-weight: 700;
-      padding: 8px 19px;
-      font-size: 16px;
-      &.current{
-          background-color: rgba(20, 21, 23, 1);
+    @media (min-width: 901px) {
+      left: 50%;
+      transform: translateX(-50%);
+      top: 35px;
+      background-color: rgba(30, 31, 33, 0.5);
+      padding: 11px 17px;
+      border-radius: 7px;
+      -webkit-backdrop-filter: blur(120px);
+      backdrop-filter: blur(120px);
+      
+      &-wrap {
+        display: flex;
+        gap: 20px;
+      }
+      &-anchor {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        color: #fff;
+        font-weight: 700;
+        padding: 8px 19px;
+        font-size: 16px;
+        &.current{
+            background-color: rgba(20, 21, 23, 1);
+        }
+      }
+    }
+    @media (max-width: 900px) {
+      background: rgba(30, 31, 33, 0.5);
+      padding: 38px 32px;
+      display: none;
+      .mobile-menu-close{
+        display: block;
       }
     }
   }
   
+.mobile-menu{
+  display: none;
+  width: 48px;
+  height: 48px;
+  background-image: url("@/assets/images/codex_menu.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  z-index: 100;
+  @media (max-width: 900px) {
+    display: block;
+  }
+}

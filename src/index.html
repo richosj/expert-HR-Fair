@@ -2,58 +2,104 @@
 <html lang="ko">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="반응형 웹사이트">
-  <meta name="keywords" content="웹사이트, 반응형, HTML, CSS">
-  <meta name="author" content="ALL4LAND">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="manifest" href="site.webmanifest">
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://your-domain.com/">
-  <meta property="og:title" content="Your Website Title">
-  <meta property="og:description" content="반응형 웹사이트">
-  <meta property="og:image" content="https://your-domain.com/og-image.jpg">
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://your-domain.com/">
-  <meta property="twitter:title" content="Your Website Title">
-  <meta property="twitter:description" content="반응형 웹사이트">
-  <meta property="twitter:image" content="https://your-domain.com/og-image.jpg">
-
-  <title>Your Website Title</title>
-  <link rel="stylesheet" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov-dynamic-subset.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css" />
+    {{> meta}}
 </head>
 
 <body>
-  <div id="wrap">
-    <div class="visual">
-      <div class="visual__video"><video src="/randing.mp4" autoplay muted loop></video></div>
-      <div class="scroll-move">
-        <i></i>
-      </div>
+    <div id="wrap">
+        <div class="visual">
+            <div class="visual__video"><video src="./randing.mp4" autoplay muted loop></video></div>
+            <div class="scroll-move">
+                <i></i>
+            </div>
+        </div>
+        {{> nav}}
+
+        <!-- home -->
+        <div class="home">
+            <div class="home1">
+                <div class="home1-container">
+                    <div class="home1-title">
+                        <div class="home1-title-text">
+                            EXPERTconsulting 2025 <br class="mobile-block"><b>HR Fair</b>
+                        </div>
+                        <div class="home1-title-date">
+                            2025.9.4 am10~pm5
+                        </div>
+                    </div>
+                    <div class="home1-hi">
+                        Hi-AI
+                    </div>
+
+                    <div class="home1-content">
+                        <div class="home1-content-text">
+                            <p>대한민국 최고의 HR 전문 기업 엑스퍼트컨설팅이 <br class="mobile-block">창립 31주년을 맞아<br class="mobile-hidden">
+                                2025 HR FAIR : Hi-AI를 개최합니다.</p>
+                            <p>AI로 가속화되는 변화의 시대, 조직의 성장과 <br class="mobile-block">혁신의 중심은 언제나 사람입니다. <br>
+                                발전되는 기술을 어떻게 활용할지 고민하고, 가치를 창출하여 <br class="mobile-block">성과로 연결하는 것은 <br
+                                    class="mobile-hidden">
+                                결국 사람의 몫입니다.
+                            </p>
+
+                            <p>이번 HR FAIR에서는 AI와 인간 지능(Human Intelligence)의 교차점에서 <br class="mobile-hidden">
+                                HR의 새로운 가능성을 모색하고, 이를 실제 현장에 적용한 다양한 사례를 공유합니다. <br>
+                                사람과 기술이 만나는 HR의 내일, 그 방향을 찾는 <br class="mobile-block">자리에 함께하세요.</p>
+                        </div>
+
+                        <div class="home1-shape">
+                            <div class="shape-img">
+                                <span class="shape-img-wrap">
+                                    <img src="./assets/images/shape.png" alt="">
+                                </span>
+                                <span class="shdow"><img src="./assets/images/shadow.png" alt=""></span>
+
+                                <div class="shape-tag shape-tag-1">AI in HRD</div>
+                                <div class="shape-tag shape-tag-2">Spcial session</div>
+                                <div class="shape-tag shape-tag-3">Performance</div>
+                                <div class="shape-tag shape-tag-4">NewSolution</div>
+                                <div class="shape-tag shape-tag-5">Public HRD</div>
+                                <div class="shape-tag shape-tag-6">HRM</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="home2">
+                <div class="home2-container">
+                    <div class="home2-left">
+                        <div class="home2-content">
+                            <div class="home2-title">
+                                HR 실태조사 결과발표
+                            </div>
+                            <div class="home2-text">
+                                데이터로 들여다보는 대한민국 HR의 오늘과 내일. 조직과 <br>인재 관리의 현재 위치를 진단하고, 미래 방향성을 조망하는 시간.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="home2-right">
+                        <div class="home2-content">
+                            <div class="home2-title">신규 프로그램 및 사례 발표</div>
+                            <div class="home2-text">
+                                조직이 마주한 현실적인 문제, 그 해답을 현장에서 찾다. 엑스퍼트가 제안하는<br>
+                                최신 HR 솔루션과 실제 사례를 통해 조직의 변화와 혁신을 이끄는 여섯 개의 트랙.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="home2-shape">
+                        <div class="shape-img">
+                            <span class="shape-img-wrap"><img src="./assets/images/shape2.png" alt=""></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // home -->
+
+        {{> footer}}
+        {{> apply}}
     </div>
-
-    {{> nav}}
-
-    {{> home}}
-
-    {{> footer}}
-
-    {{> apply}}
-  </div>
-  <!-- //wrap -->
-  <script type="module" src="./js/main.js"></script>
-
+    <!-- //wrap -->
+    <script type="module" src="./js/main.js"></script>
 </body>
 
 </html>

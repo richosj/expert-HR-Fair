@@ -95,3 +95,15 @@ ol {
   overflow: hidden;
 }
 
+.mobile-block{
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
+.mobile-hidden{
+  @media (max-width: 900px) {
+    display: none;
+  }
+}
