@@ -1,5 +1,29 @@
 import '@/scss/main.scss';
 
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+const lenis = new Lenis({
+  duration: 1.2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  smooth: true,
+  smoothTouch: false
+});
+
+// raf loop
+function raf(time) {
+  lenis.raf(time)
+  requestAnimationFrame(raf)
+}
+requestAnimationFrame(raf)
+
+// ScrollTrigger와 동기화
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000);
+});
+ScrollTrigger.update();
+
+
 const body = document.querySelector('body');
 const openApplyBtn = document.querySelector('.open-apply__btn');
 const openApply = document.querySelector('.open-apply');
@@ -13,11 +37,6 @@ openApplyBtn.addEventListener('click', () => {
 applyClose.addEventListener('click', () => {
   body.classList.remove('apply-open');
 });
-
-
-gsap.registerPlugin(ScrollTrigger);
-
-
 
 const applyBtn = document.querySelector(".open-apply");
 const footer = document.querySelector(".footer");
@@ -71,3 +90,5 @@ detailsBtns.forEach(btn => {
 });
 modalClose?.addEventListener('click', closeModal);
 modalBackdrop?.addEventListener('click', closeModal);
+
+

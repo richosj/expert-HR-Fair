@@ -25,6 +25,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease;
+    &:hover{
+      background: linear-gradient(357.9deg, #441675 30.56%, #0028F4 98.56%);
+    }
   }
   @media (max-width: 1024px) {
     left: 0;
