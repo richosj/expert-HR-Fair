@@ -97,15 +97,20 @@ video{
             }
         }
         &-date{
-            font-size: 20px;
-            font-weight: 700;
+            font-size: 40px;
+            font-weight: 400;
             padding-top: 16px;
+            b{
+                font-weight: 700;
+            }
+
         }
     }
     &-hi{
         font-size: 120px;
         font-weight: 900;
         line-height: 1;
+        padding-top: 45px;
     }
     &-content{
         position: relative;
@@ -134,7 +139,7 @@ video{
     &-shape{
         position: absolute;
         right: 0;
-        top: 0;
+        bottom: 0;
         @media screen and (max-width: 1024px) {
             position: static;
             margin-top: 2rem;
@@ -166,12 +171,12 @@ video{
                 padding: 0 15px;
             }
             &.shape-tag-1{
-                top: 32px;
+                top: 133px;
                 left: 86px;
             }
             &.shape-tag-2{
-                top: 124px;
-                left: -24px;
+                top: 233px;
+                left: 85px;
             }
             &.shape-tag-3{
                 top: 293px;
@@ -233,7 +238,7 @@ video{
 .home2{
     position: relative;
     z-index: 2;
-    height: 100dvh;
+    min-height: 100dvh;
     padding: 100px 0;
 //    background: url("@/assets/images/bg2.svg") no-repeat center center / cover;
     @media screen and (max-width: 1024px) {
@@ -257,7 +262,7 @@ video{
     &-title{
         color: #fff;
         font-weight: 700;
-        font-size: 27px;
+        font-size: 32px;
         line-height: 32px;
         @media screen and (max-width: 768px) {
             font-size: 20px;
@@ -267,8 +272,8 @@ video{
     &-text{
         color: #fff;
         font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
+        font-size: 20px;
+        line-height: 28px;
         padding-top: 16px;
         @media screen and (max-width: 738px) {
             font-size: 14px;
