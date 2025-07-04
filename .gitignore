@@ -2,8 +2,9 @@
 node_modules/
 
 # 빌드 결과물
-dist/
+
 build/
+src/
 
 # OS/IDE 관련 파일
 .DS_Store

@@ -350,11 +350,24 @@
   font-size: 13px;
 }
 
-
+@keyframes expandCircle {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
 // 팝업(모달) 스타일
 .custom-modal {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
   position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 2000;
   left: 0;
   top: 0;
@@ -363,20 +376,39 @@
   justify-content: center;
   align-items: center;
   font-family: 'SUIT', sans-serif;
-
+  transition: all 0.3s ease-in-out;
   &.active {
-    display: flex;
+    transition: all 0s ease-in-out;
+    opacity: 1;
+    visibility: visible;
+    .custom-modal__backdrop{
+      opacity: 1;
+      visibility: visible;
+      animation: expandCircle 1s ease-out forwards;
+    }
+    .custom-modal__content{
+      transform: translateY(0px);
+      opacity: 1;
+      transition: all 0.3s .4s ease-in-out;
+    }
   }
 
   &__backdrop {
     position: absolute;
-    left: 0; top: 0; right: 0; bottom: 0;
-    width: 100vw; height: 100vh;
-    background: rgba(0,0,0,0.85);
-    z-index: 1;
+    top: 50%;
+    left: 50%;
+    width: calc(100vw * 1.5);
+    height: calc(100vw * 1.5);
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
   }
   &__content {
     position: relative;
+    transform: translateY(-30px);
+    opacity: 0;
+    transition: all 0s 0s ease-in-out;
     z-index: 2;
     background: #3E4045;
     border-radius: 15x;

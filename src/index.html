@@ -97,7 +97,8 @@
                         <div class="home2-shape">
                             <div class="shape-img">
                                 <div class="video">
-                                    <video src="./shape1.webm" autoplay muted loop></video>
+                                    <!-- <video src="./shape1.webm" autoplay muted loop></video> -->
+                                     <img src="./assets/images/frames/S10_00000.png" class="image-sequence" alt="">
                                 </div>
                             </div>
                         </div>
@@ -127,6 +128,39 @@
                 video.classList.add('loaded');
             });
 
+            const totalFrames = 212;
+            const framePrefix = "./assets/images/frames/S10_"; // 경로는 상황 맞게 수정
+            const image = document.querySelector(".image-sequence");
+
+            // 프리로드
+            function preloadFrames(total, prefix) {
+            const images = [];
+            for (let i = 0; i < total; i++) {
+                const padded = String(i).padStart(5, "0");
+                const src = `${prefix}${padded}.png`;
+                const img = new Image();
+                img.src = src;
+                images.push(img);
+            }
+            return images;
+            }
+
+            preloadFrames(totalFrames, framePrefix);
+
+            // 애니메이션
+            const frameData = { frame: 0 };
+
+            gsap.to(frameData, {
+                frame: totalFrames - 1,
+                duration: 3,
+                ease: "none",
+                repeat: -1,
+                onUpdate: () => {
+                    const current = Math.floor(frameData.frame);
+                    const padded = String(current).padStart(5, "0");
+                    image.src = `${framePrefix}${padded}.png`;
+                }
+            });
             // PC에서만 애니메이션 실행 (1024px 이상)
             const isDesktop = window.innerWidth >= 1024;
             
@@ -262,13 +296,15 @@
                 ease: "power1.out"
             }, "-=1.0");
 
-            // .bg 자연스러운 전환 (pin 제거, transition 활용)
+            // .bg 고정 (home 전체에서)
             gsap.timeline({
                 scrollTrigger: {
                     trigger: ".home",
                     start: "top top",
-                    end: "bottom bottom",
+                    end: "+=150%",
                     scrub: 5,
+                    pin: ".home .bg",
+                    pinSpacing: false, // 배경이라 공간 안 생기게
                 }
             });
 
