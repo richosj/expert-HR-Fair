@@ -35,6 +35,7 @@
     fetch(link.href, fetchOpts);
   }
 })();
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 const body = document.querySelector("body");
 const openApplyBtn = document.querySelector(".open-apply__btn");
 document.querySelector(".open-apply");
@@ -45,7 +46,6 @@ openApplyBtn.addEventListener("click", () => {
 applyClose.addEventListener("click", () => {
   body.classList.remove("apply-open");
 });
-gsap.registerPlugin(ScrollTrigger);
 const applyBtn = document.querySelector(".open-apply");
 const footer = document.querySelector(".footer");
 ScrollTrigger.create({

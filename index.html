@@ -10,15 +10,18 @@
         href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov-dynamic-subset.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css" />
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>  <script type="module" src="./assets/js/main.js"></script>
+    <script src="./lib/gsap/gsap.min.js"></script>
+    <script src="./lib/gsap/ScrollTrigger.min.js"></script>
+    <script src="./lib/gsap/ScrollToPlugin.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis"></script>
+  <script type="module" src="./assets/js/main.js"></script>
   <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 
 <body>
     <div id="wrap">
         <div class="visual">
-            <div class="visual__video"><video src="./randing.mp4" autoplay muted loop></video></div>
+            <div class="visual__video"><video id="heroVideo" src="./randing.mp4" autoplay muted loop></video></div>
             <div class="scroll-move">
                 <i></i>
             </div>
@@ -43,82 +46,98 @@
             </div>
         </nav>
         <!-- home -->
-        <div class="home1">
-            <div class="home1-container">
-                <div class="home1-title">
-                    <div class="home1-title-text">
-                        EXPERTconsulting 2025 <br class="mobile-block"><b>HR Fair</b>
+        <div class="home">
+            <div class="home1">
+                
+                <div class="home1-container">
+                    <div class="shape1"><img src="./assets/images/shape1.svg" alt=""></div>
+                    <div class="home1-title">
+                        <div class="home1-title-text">
+                            2025 <b>HR FAIR</b>
+                        </div>
+                        <div class="home1-title-date">
+                            2025.9.4  <span>대한상공회의소 국제회의장 B2F</span>
+                        </div>
+                        <div class="home1-hi">
+                            Hi-AI
+                        </div>
                     </div>
-                    <div class="home1-title-date">
-                        2025.9.4 am10~pm5
-                    </div>
-                </div>
-                <div class="home1-hi">
-                    Hi-AI
-                </div>
+                    <div class="home1-content">
+                        <div class="home1-content-text">
+                            <p>
+                                대한민국 최고의 HR 전문 기업 엑스퍼트컨설팅이<br>
+                                창립 31주년을 맞아 2025 HR FAIR : Hi-AI를 개최합니다.
+                            </p>
 
-                <div class="home1-content">
-                    <div class="home1-content-text">
-                        <p>대한민국 최고의 HR 전문 기업 엑스퍼트컨설팅이 <br class="mobile-block">창립 31주년을 맞아<br class="mobile-hidden">
-                            2025 HR FAIR : Hi-AI를 개최합니다.</p>
-                        <p>AI로 가속화되는 변화의 시대, 조직의 성장과 <br class="mobile-block">혁신의 중심은 언제나 사람입니다. <br>
-                            발전되는 기술을 어떻게 활용할지 고민하고, 가치를 창출하여 <br class="mobile-block">성과로 연결하는 것은 <br
-                                class="mobile-hidden">
-                            결국 사람의 몫입니다.
-                        </p>
+                            <p>
+                                AI로 가속화되는 변화의 시대, 조직의 성장과 혁신의 중심은 언제나 사람입니다. <br>
+                            발전되는 기술을 어떻게 활용할지 고민하고,가치를 창출하여 성과로<br>
+                            연결하는 것은 결국 사람의 몫입니다.
+                            </p>
 
-                        <p>이번 HR FAIR에서는 AI와 인간 지능(Human Intelligence)의 교차점에서 <br class="mobile-hidden">
-                            HR의 새로운 가능성을 모색하고, 이를 실제 현장에 적용한 다양한 사례를 공유합니다. <br>
-                            사람과 기술이 만나는 HR의 내일, 그 방향을 찾는 <br class="mobile-block">자리에 함께하세요.</p>
-                    </div>
+                            <p>
+                                이번 HR FAIR에서는 AI와 인간 지능(Human Intelligence)의 교차점에서<br>
+                                HR의 새로운 가능성을 모색하고, 이를 실제 현장에 적용한 다양한 사례를 공유합니다. <br>
+                                사람과 기술이 만나는 HR의 내일, 그 방향을 찾는 자리에 함께하세요.
+                            </p>
+                        </div>
 
-                    <div class="home1-shape">
-                        <div class="shape-img">
-                            <span class="shape-img-wrap">
-                                <img src="./assets/images/shape.png" alt="">
-                            </span>
-                            <span class="shdow"><img src="./assets/images/shadow.png" alt=""></span>
-
-                            <div class="shape-tag shape-tag-1">AI in HRD</div>
-                            <div class="shape-tag shape-tag-2">Spcial session</div>
-                            <div class="shape-tag shape-tag-3">Performance</div>
-                            <div class="shape-tag shape-tag-4">NewSolution</div>
-                            <div class="shape-tag shape-tag-5">Public HRD</div>
-                            <div class="shape-tag shape-tag-6">HRM</div>
+                        <div class="home1-shape">
+                            <div class="shape-video">
+                                <div class="video">
+                                    <video src="./shape2.mp4" autoplay muted loop></video>
+                                </div>
+                                <div class="shape-tag shape-tag-1">AI in HRD</div>
+                                <div class="shape-tag shape-tag-2">Spcial session</div>
+                                <div class="shape-tag shape-tag-3">HRM</div>
+                                <div class="shape-tag shape-tag-4">NewSolution</div>
+                                <div class="shape-tag shape-tag-5">Public HRD</div>
+                                <div class="shape-tag shape-tag-6">Performance</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="home2-wraps">
-            <div class="home2">
-                <div class="home2-container">
-                    <div class="home2-left">
-                        <div class="home2-content">
-                            <div class="home2-title">
-                                HR 실태조사 결과발표
-                            </div>
-                            <div class="home2-text">
-                                데이터로 들여다보는 대한민국 HR의 오늘과 내일. 조직과 <br>인재 관리의 현재 위치를 진단하고, 미래 방향성을 조망하는 시간.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="home2-right">
-                        <div class="home2-content">
-                            <div class="home2-title">신규 프로그램 및 사례 발표</div>
-                            <div class="home2-text">
-                                조직이 마주한 현실적인 문제, 그 해답을 현장에서 찾다. 엑스퍼트가 제안하는<br>
-                                최신 HR 솔루션과 실제 사례를 통해 조직의 변화와 혁신을 이끄는 여섯 개의 트랙.
+            <div class="home2-wraps">
+                <div class="home2">
+                    <div class="shape-2"><img src="./assets/images/shape2.svg" alt=""></div>
+                    <div class="home2-container">
+                        <div class="home2-left">
+                            <div class="home2-content">
+                                <div class="home2-title">
+                                    HR 실태조사 결과발표
+                                </div>
+                                <div class="home2-text">
+                                    데이터로 들여다보는 대한민국 HR의 오늘과 내일. <br>
+                                    조직과 인재 관리의 현재 위치를 진단하고, <br>
+                                    미래 방향성을 조망하는 시간.
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="home2-shape">
-                        <div class="shape-img">
-                            <span class="shape-img-wrap"><img src="./assets/images/shape2.png" alt=""></span>
+                        <div class="home2-right">
+                            <div class="home2-content">
+                                <div class="home2-title">신규 프로그램 및 사례 발표</div>
+                                <div class="home2-text">
+                                    조직이 마주한 현실적인 문제, 그 해답을 현장에서 찾다.  <br>
+                                    엑스퍼트가 제안하는 최신 HR 솔루션과 실제 사례를 통해 <br>
+                                    조직의 변화와 혁신을 이끄는 여섯 개의 트랙.
+                                </div>
+                            </div>
                         </div>
+                        <div class="home2-shape">
+                            <div class="shape-img">
+                                <div class="video">
+                                    <video src="./shape1.mp4" autoplay muted loop></video>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="home2-slogan"> Human Intelligence AI</div>
                     </div>
                 </div>
             </div>
+
+            <div class="bg"></div>
+            
         </div>
         <!-- // home -->
 
@@ -302,111 +321,219 @@
     <script>
 
         document.addEventListener('DOMContentLoaded', () => {
-            gsap.registerPlugin(ScrollTrigger);
-
+            gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+            
             const video = document.querySelector('.visual__video video');
             video.addEventListener('loadeddata', () => {
                 video.classList.add('loaded');
             });
 
+            // 비디오 재생 문제 해결
+            // const video = document.querySelector('.visual__video video');
+            // if (video) {
+            //     video.addEventListener('loadedmetadata', () => {
+            //         video.currentTime = 0;
+            //         video.play().catch(e => console.log('비디오 자동재생 실패:', e));
+            //     });
+                
+            //     // 비디오 로드 실패 시 재시도
+            //     video.addEventListener('error', () => {
+            //         console.log('비디오 로드 실패, 재시도 중...');
+            //         setTimeout(() => {
+            //             video.load();
+            //         }, 1000);
+            //     });
+            // }
+
+            // home1 타임라인: 위에서 아래로 + 우에서 좌로 (진짜 부드럽게)
             const home1TL = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".home1",
-                start: "top top",
-                end: "+=150%",
-                scrub: .4,
-                pin: true,
-                anticipatePin: 1,
-            }
-            });
-
-            // 동시에 양쪽에서 가운데로 나타남
-            home1TL.to(".home1-title", {
-                opacity: 1,
-                x: 0, // 여기서 x: 0은 translateX(0)과 동일
-            ease: "power2.out"
-            }, 0);
-
-            home1TL.to(".home1-hi", {
-                opacity: 1,
-                x: 0,
-                ease: "power2.out"
-            }, 0);
-            
-            home1TL.to(".home1-content-text p", {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            ease: "power2.out",
-            stagger: 0.3 // 한 줄씩 순차적으로
-            }, ">"); // 이전 애니메이션 끝난 후 시작
-
-            home1TL.to(".home1-shape", {
-            opacity: 1,
-            x: 0,
-            duration: 1,
-            ease: "power2.out"
-            }, ">-0.5"); // 약간 겹치게 (자연스럽게)
-
-            home1TL.to(".home1-shape", {
-                opacity: 1,
-                x: 0,
-                duration: 1,
-                ease: "power2.out"
-            }, ">-0.5"); // content 끝나고 약간 겹쳐서 실행
-
-            home1TL.to(".shape-tag", {
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                stagger: 0.15, // 하나씩 순차 등장
-                ease: "power2.out"
-            }, ">-0.3"); // shape 들어오고 바로 이어서 실행
-
-            // home2 좌우 슬라이드 인 + 모형 등장
-            const home2TL = gsap.timeline({
                 scrollTrigger: {
-                    trigger: ".home2",
-                    start: "top top",
-                    end: "+=150%",
-                    scrub: .4,
-                    pin: true,
-                    anticipatePin: 1,
+                    trigger: ".home1",
+                    start: "top center",
+                    end: "bottom center",
+                    scrub: 3, // 훨씬 더 부드럽게
                 }
             });
-            home2TL.fromTo(".home2-left", {
+
+            // 제목과 내용: 위에서 아래로
+            home1TL.fromTo(".home1-title", {
                 opacity: 0,
-                x: -80
+                y: -60
             }, {
                 opacity: 1,
-                x: 0,
-                duration: 1,
-                ease: "power2.out"
+                y: 0,
+                duration: 3,
+                ease: "power1.out"
             })
-            .fromTo(".home2-right", {
+            .fromTo(".home1-hi", {
+                opacity: 0,
+                y: -40
+            }, {
+                opacity: 1,
+                y: 0,
+                duration: 2.5,
+                ease: "power1.out"
+            }, "-=2.0")
+            .fromTo(".home1-content-text p", {
+                opacity: 0,
+                y: -30
+            }, {
+                opacity: 1,
+                y: 0,
+                duration: 2,
+                ease: "power1.out",
+                stagger: 0.6
+            }, "-=1.8");
+
+            // shape1: 우에서 좌로
+            home1TL.fromTo(".shape1", {
                 opacity: 0,
                 x: 80
             }, {
                 opacity: 1,
                 x: 0,
-                duration: 1,
-                ease: "power2.out"
-            }, ">-0.5")
-            .fromTo(".home2-shape", {
+                duration: 3,
+                ease: "power1.out"
+            }, "-=2.5");
+
+            // home1-shape 비디오: 우에서 좌로
+            home1TL.fromTo(".home1-shape .shape-video", {
                 opacity: 0,
-                scale: 0.8
+                x: 70
             }, {
                 opacity: 1,
-                scale: 1,
-                duration: 0.8,
-                ease: "power2.out"
-            }, ">-0.2");
+                x: 0,
+                duration: 2.8,
+                ease: "power1.out"
+            }, "-=2.2");
+
+            // shape 태그들: 우에서 좌로 (순차적으로)
+            home1TL.fromTo(".shape-tag", {
+                opacity: 0,
+                x: 50
+            }, {
+                opacity: 1,
+                x: 0,
+                duration: 2,
+                stagger: 0.3,
+                ease: "power1.out"
+            }, "-=2.0");
+
+            // home2 타임라인: 좌에서 우로 (진짜 부드럽게)
+            const home2TL = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".home2",
+                    start: "top center",
+                    end: "bottom center",
+                    scrub: 3, // 훨씬 더 부드럽게
+                }
+            });
+
+            // shape2: 좌에서 우로
+            home2TL.fromTo(".shape-2", {
+                opacity: 0,
+                x: -80
+            }, {
+                opacity: 1,
+                x: 0,
+                duration: 3,
+                ease: "power1.out"
+            });
+
+            // home2-left와 home2-right: 동시에 좌우에서 중앙으로
+            home2TL.fromTo([".home2-left", ".home2-right"], {
+                opacity: 0,
+                x: (i) => i === 0 ? -70 : 70
+            }, {
+                opacity: 1,
+                x: 0,
+                duration: 2.8,
+                ease: "power1.out"
+            }, "-=1.5");
+
+            // home2-shape 비디오: 좌에서 우로
+            home2TL.fromTo(".home2-shape .video", {
+                opacity: 0,
+                x: -60
+            }, {
+                opacity: 1,
+                x: 0,
+                duration: 2.5,
+                ease: "power1.out"
+            }, "-=1.2");
+
+            // home2-slogan: 좌에서 우로
+            home2TL.fromTo(".home2-slogan", {
+                opacity: 0,
+                x: -40
+            }, {
+                opacity: 1,
+                x: 0,
+                duration: 2,
+                ease: "power1.out"
+            }, "-=1.0");
+
+            // .bg도 고정 (home 전체에서)
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".home",
+                    start: "top top",
+                    end: "+=150%",
+                    scrub: 3, // 훨씬 더 부드럽게
+                    pin: ".home .bg",
+                    pinSpacing: false, // 배경이라 공간 안 생기게
+                }
+            });
+
+            // home2에 도달하면 .bg2 클래스 추가
+            ScrollTrigger.create({
+                trigger: ".home2",
+                start: "top center",
+                onEnter: () => {
+                    document.querySelector(".home .bg").classList.add("bg2");
+                },
+                onLeaveBack: () => {
+                    document.querySelector(".home .bg").classList.remove("bg2");
+                }
+            });
         })
 
-        
-        
+        // 반응형 비디오 전환 스크립트
+        function handleVideoSource() {
+            const video = document.getElementById('heroVideo');
+            const currentSrc = video.src;
+            const isMobile = window.innerWidth <= 1024;
+            const targetSrc = isMobile ? './randing-mobile.mp4' : './randing.mp4';
+            
+            // 현재 소스와 타겟 소스가 다를 때만 변경
+            if (!currentSrc.includes(targetSrc.split('/').pop())) {
+                const currentTime = video.currentTime;
+                const wasPlaying = !video.paused;
+                
+                // 새 비디오 로드
+                video.src = targetSrc;
+                video.load();
+                
+                // 로드 완료 후 이전 상태 복원
+                video.addEventListener('loadeddata', function onLoad() {
+                    video.currentTime = currentTime;
+                    if (wasPlaying) {
+                        video.play();
+                    }
+                    video.removeEventListener('loadeddata', onLoad);
+                }, { once: true });
+            }
+        }
 
+        // 초기 로드 시 실행
+        handleVideoSource();
 
+        // 리사이즈 시 실행 (디바운싱 적용)
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(handleVideoSource, 150);
+        });
     </script>
 </body>
 
