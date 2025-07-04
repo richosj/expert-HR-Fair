@@ -172,7 +172,7 @@
             </div>
           </footer>        <div class="open-apply">
             <button type="button" class="open-apply__btn">
-                참가신청 및 내역
+                <span>참가신청 및 내역</span>
             </button>
         </div>
         
@@ -339,9 +339,9 @@
             const home1TL = gsap.timeline({
                 scrollTrigger: {
                     trigger: ".home1",
-                    start: "top center",
-                    end: "bottom center",
-                    scrub: 3, // 훨씬 더 부드럽게
+                    start: "top bottom", // 더 위쪽에서 시작
+                    end: "center center",
+                    scrub: 5, // 더 천천히
                 }
             });
 
@@ -413,9 +413,9 @@
             const home2TL = gsap.timeline({
                 scrollTrigger: {
                     trigger: ".home2",
-                    start: "top center",
-                    end: "bottom center",
-                    scrub: 3, // 훨씬 더 부드럽게
+                    start: "top bottom", // 더 위쪽에서 시작
+                    end: "center center",
+                    scrub: 5, // 더 천천히
                 }
             });
 
@@ -463,22 +463,21 @@
                 ease: "power1.out"
             }, "-=1.0");
 
-            // .bg도 고정 (home 전체에서)
+            // .bg 자연스러운 전환 (pin 제거, transition 활용)
             gsap.timeline({
                 scrollTrigger: {
                     trigger: ".home",
                     start: "top top",
-                    end: "+=150%",
-                    scrub: 3, // 훨씬 더 부드럽게
-                    pin: ".home .bg",
-                    pinSpacing: false, // 배경이라 공간 안 생기게
+                    end: "bottom bottom",
+                    scrub: 5,
                 }
             });
 
-            // home2에 도달하면 .bg2 클래스 추가
+            // home2에 도달하면 .bg2 클래스 추가 (더 부드럽게)
             ScrollTrigger.create({
                 trigger: ".home2",
-                start: "top center",
+                start: "top 80%", // 더 일찍 시작
+                end: "bottom 20%", // 더 늦게 끝남
                 onEnter: () => {
                     document.querySelector(".home .bg").classList.add("bg2");
                 },

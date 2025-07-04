@@ -330,6 +330,8 @@ ol {
   transition: all 0.5s ease;
 }
 .open-apply__btn {
+  position: relative;
+  overflow: hidden;
   width: 60px;
   height: 294px;
   background-color: rgb(44, 123, 239);
@@ -342,10 +344,30 @@ ol {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease;
 }
-.open-apply__btn:hover {
+.open-apply__btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
   background: linear-gradient(357.9deg, #441675 30.56%, #0028F4 98.56%);
+  z-index: 0;
+  transition: transform 0.6s ease;
+  transform: translateX(-50%);
+  opacity: 0.7;
+}
+.open-apply__btn:hover::before {
+  transform: translateX(0%);
+}
+.open-apply__btn:hover span {
+  color: #fff;
+}
+.open-apply__btn span, .open-apply__btn svg, .open-apply__btn * {
+  position: relative;
+  z-index: 1;
 }
 @media (max-width: 1024px) {
   .open-apply {
@@ -374,6 +396,7 @@ ol {
   background: url("../images/extend.png") no-repeat center center/contain;
   opacity: 0;
   transition: all 0.5s 0.5s ease;
+  visibility: hidden;
 }
 
 .apply {
@@ -386,6 +409,7 @@ ol {
   height: 100dvh;
   background: rgb(17, 17, 19);
   color: #fff;
+  transition: all 0.5s ease;
 }
 @media (max-width: 640px) {
   .apply {
@@ -663,7 +687,7 @@ video {
   width: 100vw;
   height: 100dvh;
   z-index: 1;
-  transition: all 0.6s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .home .bg.bg2 {
   background-image: url("../images/bg2.png");
