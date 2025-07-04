@@ -126,7 +126,7 @@ ol {
 }
 
 .footer {
-  z-index: 2;
+  z-index: 15;
   position: relative;
   background: rgb(17, 17, 19);
 }
@@ -327,7 +327,6 @@ ol {
   right: 0;
   bottom: 0;
   z-index: 100;
-  transition: all 0.5s ease;
 }
 .open-apply__btn {
   position: relative;
@@ -646,6 +645,7 @@ video {
   overflow: hidden;
   transform-origin: top center;
   position: relative;
+  z-index: 15;
 }
 .visual__video {
   position: relative;
@@ -687,7 +687,7 @@ video {
   width: 100vw;
   height: 100dvh;
   z-index: 1;
-  transition: all 0.3s ease-in-out;
+  transition: background-image 0.3s ease-in-out;
 }
 .home .bg.bg2 {
   background-image: url("../images/bg2.png");
@@ -1404,9 +1404,23 @@ video {
   font-size: 13px;
 }
 
+@keyframes expandCircle {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
 .custom-modal {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
   position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 2000;
   left: 0;
   top: 0;
@@ -1415,23 +1429,39 @@ video {
   justify-content: center;
   align-items: center;
   font-family: "SUIT", sans-serif;
+  transition: all 0.3s ease-in-out;
 }
 .custom-modal.active {
-  display: flex;
+  transition: all 0s ease-in-out;
+  opacity: 1;
+  visibility: visible;
+}
+.custom-modal.active .custom-modal__backdrop {
+  opacity: 1;
+  visibility: visible;
+  animation: expandCircle 1s ease-out forwards;
+}
+.custom-modal.active .custom-modal__content {
+  transform: translateY(0px);
+  opacity: 1;
+  transition: all 0.3s 0.4s ease-in-out;
 }
 .custom-modal__backdrop {
   position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.85);
-  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 150vw;
+  height: 150vw;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
 }
 .custom-modal__content {
   position: relative;
+  transform: translateY(-30px);
+  opacity: 0;
+  transition: all 0s 0s ease-in-out;
   z-index: 2;
   background: #3E4045;
   border-radius: 15x;

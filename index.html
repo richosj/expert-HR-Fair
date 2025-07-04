@@ -14,18 +14,14 @@
     <script src="./lib/gsap/ScrollTrigger.min.js"></script>
     <script src="./lib/gsap/ScrollToPlugin.min.js"></script>
     <script src="https://unpkg.com/@studio-freight/lenis"></script>
+    <script src="https://www.lordin.net/common/js/ScrollSmoother.js"></script>
   <script type="module" src="./assets/js/main.js"></script>
   <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 
 <body>
+    
     <div id="wrap">
-        <div class="visual">
-            <div class="visual__video"><video id="heroVideo" src="./randing.mp4" autoplay muted loop></video></div>
-            <div class="scroll-move">
-                <i></i>
-            </div>
-        </div>
         
         <button type="button" class="mobile-menu">
             
@@ -44,7 +40,17 @@
                     <span>찾아오시는길</span>
                 </a>
             </div>
-        </nav>
+        </nav>        <div id="smoother-wrapper">
+            <div id="smoother-content">
+
+            
+        <div class="visual">
+            <div class="visual__video"><video id="heroVideo" src="./randing.mp4" autoplay muted loop></video></div>
+            <div class="scroll-move">
+                <i></i>
+            </div>
+        </div>
+
         <!-- home -->
         <div class="home">
             <div class="home1">
@@ -127,7 +133,8 @@
                         <div class="home2-shape">
                             <div class="shape-img">
                                 <div class="video">
-                                    <video src="./shape1.webm" autoplay muted loop></video>
+                                    <!-- <video src="./shape1.webm" autoplay muted loop></video> -->
+                                     <img src="./frame/S10_00000.png" class="image-sequence" alt="">
                                 </div>
                             </div>
                         </div>
@@ -140,7 +147,6 @@
             
         </div>
         <!-- // home -->
-
         <footer id="footer" class="footer">
             <div class="footer-container">
               <div class="footer-links">
@@ -170,7 +176,10 @@
                   </div>
               </div>
             </div>
-          </footer>        <div class="open-apply">
+          </footer>            </div>
+        </div>
+        
+        <div class="open-apply">
             <button type="button" class="open-apply__btn">
                 <span>참가신청 및 내역</span>
             </button>
@@ -323,11 +332,100 @@
         document.addEventListener('DOMContentLoaded', () => {
             gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
             
+            // 이미지 프리로드 함수
+            function preloadImages() {
+                const imagesToPreload = [
+                    './assets/images/shape1.svg',
+                    './assets/images/shape2.svg',
+                    './frame/S10_00000.png',
+                    './frame/S10_00001.png',
+                    './frame/S10_00002.png',
+                    './frame/S10_00003.png',
+                    './frame/S10_00004.png',
+                    './frame/S10_00005.png',
+                    './frame/S10_00006.png',
+                    './frame/S10_00007.png',
+                    './frame/S10_00008.png',
+                    './frame/S10_00009.png',
+                    './frame/S10_00010.png'
+                ];
+                
+                const imagePromises = imagesToPreload.map(src => {
+                    return new Promise((resolve, reject) => {
+                        const img = new Image();
+                        img.onload = () => resolve(img);
+                        img.onerror = () => reject(new Error(`Failed to load ${src}`));
+                        img.src = src;
+                    });
+                });
+                
+                return Promise.all(imagePromises);
+            }
+            
+            // 이미지 로드 완료 후 애니메이션 시작
+            preloadImages().then(() => {
+                console.log('이미지 프리로드 완료');
+                initAnimations();
+            }).catch(error => {
+                console.log('이미지 로드 실패:', error);
+                initAnimations(); // 실패해도 애니메이션은 시작
+            });
+            
+            function initAnimations() {
+                if(window.innerWidth > 768) {
+                    ScrollTrigger.normalizeScroll(true);
+                    ScrollTrigger.config({autoRefreshEvents: "visibilitychange,DOMContentLoaded,load"});
+                    const smoother = ScrollSmoother.create({
+                    wrapper: "#smoother-wrapper",
+                    content: "#smoother-content",
+                    smooth: 1.1,
+                    speed: 1,
+                    normalizeScroll: true,
+                    ignoreMobileResize: true,
+                    smoothTouch: 0.1,
+                        effects: true,
+                        preventDefault: true,
+                        normalizeScroll: {allowNestedScroll: true} // 중첩 스크롤 허용
+                    });
+                }
             const video = document.querySelector('.visual__video video');
             video.addEventListener('loadeddata', () => {
                 video.classList.add('loaded');
             });
 
+            const totalFrames = 212;
+            const framePrefix = "./frame/S10_"; // 경로는 상황 맞게 수정
+            const image = document.querySelector(".image-sequence");
+
+            // 프리로드
+            function preloadFrames(total, prefix) {
+            const images = [];
+            for (let i = 0; i < total; i++) {
+                const padded = String(i).padStart(5, "0");
+                const src = `${prefix}${padded}.png`;
+                const img = new Image();
+                img.src = src;
+                images.push(img);
+            }
+            return images;
+            }
+
+            preloadFrames(totalFrames, framePrefix);
+
+            // 애니메이션
+            const frameData = { frame: 0 };
+
+            gsap.to(frameData, {
+                frame: totalFrames - 1,
+                duration: 3,
+                ease: "none",
+                repeat: -1,
+                onUpdate: () => {
+                    const current = Math.floor(frameData.frame);
+                    const padded = String(current).padStart(5, "0");
+                    image.src = `${framePrefix}${padded}.png`;
+                }
+            });
             // PC에서만 애니메이션 실행 (1024px 이상)
             const isDesktop = window.innerWidth >= 1024;
             
@@ -335,155 +433,183 @@
                 return; // 모바일에서는 애니메이션 비활성화
             }
 
-            // home1 타임라인: 위에서 아래로 + 우에서 좌로 (진짜 부드럽게)
+            // home1 타임라인: 더 이쁘고 부드럽게
             const home1TL = gsap.timeline({
                 scrollTrigger: {
                     trigger: ".home1",
-                    start: "top bottom", // 더 위쪽에서 시작
+                    start: "top bottom",
                     end: "center center",
-                    scrub: 5, // 더 천천히
+                    scrub: 4, // 적당한 속도
                 }
             });
 
-            // 제목과 내용: 위에서 아래로
+            // 제목: 위에서 아래로 + 살짝 회전
             home1TL.fromTo(".home1-title", {
                 opacity: 0,
-                y: -60
+                y: -80,
+                rotationX: -15
             }, {
                 opacity: 1,
                 y: 0,
-                duration: 3,
-                ease: "power1.out"
+                rotationX: 0,
+                duration: 2.5,
+                ease: "power2.out"
             })
             .fromTo(".home1-hi", {
                 opacity: 0,
-                y: -40
+                y: -50,
+                scale: 0.8
             }, {
                 opacity: 1,
                 y: 0,
-                duration: 2.5,
-                ease: "power1.out"
-            }, "-=2.0")
+                scale: 1,
+                duration: 2,
+                ease: "back.out(1.7)"
+            }, "-=1.8")
             .fromTo(".home1-content-text p", {
                 opacity: 0,
-                y: -30
+                y: -40,
+                rotationY: -5
             }, {
                 opacity: 1,
                 y: 0,
-                duration: 2,
-                ease: "power1.out",
-                stagger: 0.6
-            }, "-=1.8");
+                rotationY: 0,
+                duration: 1.8,
+                ease: "power2.out",
+                stagger: 0.4
+            }, "-=1.5");
 
-            // shape1: 우에서 좌로
+            // shape1: 우에서 좌로 + 살짝 회전
             home1TL.fromTo(".shape1", {
                 opacity: 0,
-                x: 80
+                x: 100,
+                rotation: 10
             }, {
                 opacity: 1,
                 x: 0,
-                duration: 3,
-                ease: "power1.out"
-            }, "-=2.5");
-
-            // home1-shape 비디오: 우에서 좌로
-            home1TL.fromTo(".home1-shape .shape-video", {
-                opacity: 0,
-                x: 70
-            }, {
-                opacity: 1,
-                x: 0,
-                duration: 2.8,
-                ease: "power1.out"
-            }, "-=2.2");
-
-            // shape 태그들: 우에서 좌로 (순차적으로)
-            home1TL.fromTo(".shape-tag", {
-                opacity: 0,
-                x: 50
-            }, {
-                opacity: 1,
-                x: 0,
-                duration: 2,
-                stagger: 0.3,
-                ease: "power1.out"
+                rotation: 0,
+                duration: 2.5,
+                ease: "power2.out"
             }, "-=2.0");
 
-            // home2 타임라인: 좌에서 우로 (진짜 부드럽게)
+            // home1-shape 비디오: 우에서 좌로 + 스케일
+            home1TL.fromTo(".home1-shape .shape-video", {
+                opacity: 0,
+                x: 80,
+                scale: 0.9
+            }, {
+                opacity: 1,
+                x: 0,
+                scale: 1,
+                duration: 2.2,
+                ease: "power2.out"
+            }, "-=1.8");
+
+            // shape 태그들: 우에서 좌로 + 바운스 효과
+            home1TL.fromTo(".shape-tag", {
+                opacity: 0,
+                x: 60,
+                scale: 0.7
+            }, {
+                opacity: 1,
+                x: 0,
+                scale: 1,
+                duration: 1.5,
+                stagger: 0.2,
+                ease: "back.out(1.2)"
+            }, "-=1.6");
+
+            // home2 타임라인: 더 이쁘고 부드럽게
             const home2TL = gsap.timeline({
                 scrollTrigger: {
                     trigger: ".home2",
-                    start: "top bottom", // 더 위쪽에서 시작
+                    start: "top bottom",
                     end: "center center",
-                    scrub: 5, // 더 천천히
+                    scrub: 4, // 적당한 속도
                 }
             });
 
-            // shape2: 좌에서 우로
+            // shape2: 좌에서 우로 + 회전
             home2TL.fromTo(".shape-2", {
                 opacity: 0,
-                x: -80
+                x: -100,
+                rotation: -10
             }, {
                 opacity: 1,
                 x: 0,
-                duration: 3,
-                ease: "power1.out"
+                rotation: 0,
+                duration: 2.5,
+                ease: "power2.out"
             });
 
-            // home2-left와 home2-right: 동시에 좌우에서 중앙으로
+            // home2-left와 home2-right: 동시에 좌우에서 중앙으로 + 스케일
             home2TL.fromTo([".home2-left", ".home2-right"], {
                 opacity: 0,
-                x: (i) => i === 0 ? -70 : 70
+                x: (i) => i === 0 ? -80 : 80,
+                scale: 0.9
             }, {
                 opacity: 1,
                 x: 0,
-                duration: 2.8,
-                ease: "power1.out"
-            }, "-=1.5");
+                scale: 1,
+                duration: 2.2,
+                ease: "power2.out"
+            }, "-=1.8");
 
-            // home2-shape 비디오: 좌에서 우로
+            // home2-shape 비디오: 좌에서 우로 + 바운스
             home2TL.fromTo(".home2-shape .video", {
                 opacity: 0,
-                x: -60
+                x: -70,
+                scale: 0.8
             }, {
                 opacity: 1,
                 x: 0,
-                duration: 2.5,
-                ease: "power1.out"
-            }, "-=1.2");
+                scale: 1,
+                duration: 2,
+                ease: "back.out(1.4)"
+            }, "-=1.5");
 
-            // home2-slogan: 좌에서 우로
+            // home2-slogan: 좌에서 우로 + 살짝 회전
             home2TL.fromTo(".home2-slogan", {
                 opacity: 0,
-                x: -40
+                x: -50,
+                rotationY: -15
             }, {
                 opacity: 1,
                 x: 0,
-                duration: 2,
-                ease: "power1.out"
-            }, "-=1.0");
+                rotationY: 0,
+                duration: 1.8,
+                ease: "power2.out"
+            }, "-=1.3");
 
-            // .bg 자연스러운 전환 (pin 제거, transition 활용)
-            gsap.timeline({
+            // .bg 안정적인 고정 (ScrollSmoother 호환)
+            const bgTimeline = gsap.timeline({
                 scrollTrigger: {
                     trigger: ".home",
                     start: "top top",
-                    end: "bottom bottom",
-                    scrub: 5,
+                    end: "bottom top",
+                    scrub: 2,
+                    pin: ".home .bg",
+                    pinSpacing: false,
+                    anticipatePin: 1,
+                    onUpdate: (self) => {
+                        // 스크롤 진행도에 따라 bg2 클래스 토글
+                        const progress = self.progress;
+                        const bg = document.querySelector(".home .bg");
+                        if (progress > 0.5) {
+                            bg.classList.add("bg2");
+                        } else {
+                            bg.classList.remove("bg2");
+                        }
+                    }
                 }
             });
 
-            // home2에 도달하면 .bg2 클래스 추가 (더 부드럽게)
-            ScrollTrigger.create({
-                trigger: ".home2",
-                start: "top 80%", // 더 일찍 시작
-                end: "bottom 20%", // 더 늦게 끝남
-                onEnter: () => {
-                    document.querySelector(".home .bg").classList.add("bg2");
-                },
-                onLeaveBack: () => {
-                    document.querySelector(".home .bg").classList.remove("bg2");
-                }
+            // bg 애니메이션 추가 (깜빡임 방지)
+            bgTimeline.fromTo(".home .bg", {
+                opacity: 0.8
+            }, {
+                opacity: 1,
+                duration: 1
             });
 
             // 리사이즈 시 애니메이션 재설정
@@ -499,6 +625,7 @@
                     }
                 }, 300);
             });
+            }
         })
 
         // 반응형 비디오 전환 스크립트
