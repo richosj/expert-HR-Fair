@@ -1,11 +1,11 @@
 
 .location{
-    height: 100dvh;
+    //height: 100dvh;
     background-color: #000;
-    padding-left: 10vw;
-    padding-right: 10vw;
+    // padding-left: 10vw;
+    // padding-right: 10vw;
     padding-top: 200px;
-    @media (max-width: 1024px) {
+    @media (max-width: 1280px) {
         //padding-top: 100px;
         padding-left: 20px;
         padding-right: 20px;
@@ -16,22 +16,27 @@
     }
     &-top{
         position: relative;
+        max-width: 1280px;
     }
     &-container{
         position: relative;
+        margin: 0 auto;
+        max-width: 1200px;
         height: 100%;
         @media (max-width: 900px) {
             height: auto;
         }
     }
     &-content{
-        position: absolute;
-        bottom: 40px;
-        left: 0;
-        right: 0;
+        //position: absolute;
+        // bottom: 40px;
+        // left: 0;
+        // right: 0;
         //height: 100%;
         display: flex;
         gap:0 15px;
+        padding-top: 130px;
+        padding-bottom: 40px;
         @media (max-width: 900px) {
             position: static;
             flex-direction: column;
@@ -159,7 +164,7 @@
     color: rgba(255, 255, 255, 0.8);
     position: absolute;
     right: 0;
-    top: 90px;
+    top: 15px;
     writing-mode: vertical-rl;
     text-orientation: mixed;
     line-height: 1;
@@ -184,7 +189,7 @@
     &-text{
         font-family: "SUIT";
         font-weight: 400;
-        font-size: 35px;
+        font-size: 60px;
         line-height: 1.2;
         b{
             font-weight: 900;
@@ -195,9 +200,19 @@
     }
     &-date{
         font-family: "SUIT";
-        font-weight: 900;
-        font-size: 35px;
+        font-weight: 400;
+        font-size: 40px;
         margin-top: 15px;
+        display: flex;
+        gap: 0 20px;
+        align-items: center;
+        b{
+            font-weight: 900;
+        }
+        span{
+            font-weight: 300;
+            font-size: 34px;
+        }
         @media (max-width: 900px) {
             margin-top: 0;
             font-weight: 400;

@@ -2,12 +2,7 @@ html,
 body{
     overflow-x: hidden;
 }
-html.lenis {
-    height: auto;
-  }
-.lenis.lenis-smooth {
-scroll-behavior: auto;
-}
+
 video{
     background-color: transparent
 }
@@ -51,25 +46,27 @@ video{
     position: relative;
     z-index: 2;
     .bg{
-        background: url("@/assets/images/bg1.svg") no-repeat center center / cover;
+        background: url("@/assets/images/bg1.png") no-repeat center center / cover;
         position: absolute;
         top: 0;
         left: 0;
         width: 100vw;
         height: 100dvh;
         z-index: 1;
-        transition: all 0.6s ease-in-out;
+        transition: all 0.3s ease-in-out;
         &.bg2{
-            background-image: url("@/assets/images/bg2.svg");
+            background-image: url("@/assets/images/bg2.png");
         }
     }
 }
 .home1{
     position: relative;
     z-index: 2;
-    height: 100dvh;
-    padding: 0 8vw;
+    min-height: 100dvh;
+    //padding: 0 8vw;
     //overflow: hidden;
+    margin: 0 auto;
+    max-width: 1280px;
     @media (max-width: 1024px) {
       padding: 70px 20px;
       height: auto;
@@ -138,8 +135,8 @@ video{
     }
     &-shape{
         position: absolute;
-        right: 0;
-        bottom: 0;
+        right: -8vw;
+        bottom: -100px;
         @media screen and (max-width: 1024px) {
             position: static;
             margin-top: 2rem;
@@ -172,27 +169,27 @@ video{
             }
             &.shape-tag-1{
                 top: 133px;
-                left: 86px;
+                left: 200px;
             }
             &.shape-tag-2{
                 top: 233px;
                 left: 85px;
             }
             &.shape-tag-3{
-                top: 293px;
-                left: -51px;
+                top: 340px;
+                left: 140px;
             }
             &.shape-tag-4{
-                top: 63px;
-                right: -54px;
+                top: 200px;
+                right: 120px;
             }
             &.shape-tag-5{
-                top: 227px;
-                right: -15px;
+                top: 290px;
+                left: 260px;
             }
             &.shape-tag-6{
-                top: 350px;
-                right: 48px
+                top: 400px;
+                right: 300px
             }
         }
         .shape-img{
@@ -238,18 +235,18 @@ video{
 .home2{
     position: relative;
     z-index: 2;
-    min-height: 100dvh;
-    padding: 100px 0;
+    
+    //padding: 100px 0;
 //    background: url("@/assets/images/bg2.svg") no-repeat center center / cover;
     @media screen and (max-width: 1024px) {
-        padding: 70px 0;
+        //padding: 70px 0;
         height: auto;
     }
     &-container{
         position: relative;
         display: flex;
         justify-content: space-between;
-        height: 100%;
+        min-height: 100dvh;
         @media screen and (max-width: 1024px) {
             flex-wrap: wrap;
             justify-content: baseline;
@@ -258,6 +255,11 @@ video{
     }
     &-content{
 
+    }
+    .shape-2{
+        position: absolute;
+        right: 0;
+        top: 0;
     }
     &-title{
         color: #fff;
@@ -336,8 +338,8 @@ video{
     }
     &-shape{
         position: absolute;
-        left: 0;
-        bottom: 50px;
+        left: -30px;
+        bottom: -170px;
         @media screen and (max-width: 1024px) {
             position: static;
             margin-top: 2rem;
@@ -347,6 +349,10 @@ video{
         }
         .shape-img{
             position: relative;
+            width: 730px;
+            video{
+                background: transparent;
+            }
             .shape-img-wrap{
                 display: inline-block;
                 vertical-align: top;
@@ -355,4 +361,18 @@ video{
             }
         }
     }
+}
+
+.home2-wraps{padding-top: 100px;position: relative;}
+
+.home2-slogan{
+    text-align: right;
+    font-family: "SUIT";
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 30px;
+    color: #fff;
+    position: absolute;
+    bottom: 200px;
+    right: 90px;
 }

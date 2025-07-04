@@ -55,7 +55,7 @@
                         <div class="home1-shape">
                             <div class="shape-video">
                                 <div class="video">
-                                    <video src="./shape1.mp4" autoplay muted loop></video>
+                                    <video src="./shape2.mp4" autoplay muted loop></video>
                                 </div>
                                 <div class="shape-tag shape-tag-1">AI in HRD</div>
                                 <div class="shape-tag shape-tag-2">Spcial session</div>
@@ -70,6 +70,7 @@
             </div>
             <div class="home2-wraps">
                 <div class="home2">
+                    <div class="shape-2"><img src="./assets/images/shape2.svg" alt=""></div>
                     <div class="home2-container">
                         <div class="home2-left">
                             <div class="home2-content">
@@ -96,10 +97,11 @@
                         <div class="home2-shape">
                             <div class="shape-img">
                                 <div class="video">
-                                    <video src="./shape2.mp4" autoplay muted loop></video>
+                                    <video src="./shape1.webm" autoplay muted loop></video>
                                 </div>
                             </div>
                         </div>
+                        <div class="home2-slogan"> Human Intelligence AI</div>
                     </div>
                 </div>
             </div>
@@ -118,46 +120,183 @@
     <script>
 
         document.addEventListener('DOMContentLoaded', () => {
-            //gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+            gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
             
             const video = document.querySelector('.visual__video video');
             video.addEventListener('loadeddata', () => {
                 video.classList.add('loaded');
             });
 
-            // home1 타임라인: 고정
-            gsap.timeline({
+            // PC에서만 애니메이션 실행 (1024px 이상)
+            const isDesktop = window.innerWidth >= 1024;
+            
+            if (!isDesktop) {
+                return; // 모바일에서는 애니메이션 비활성화
+            }
+
+            // home1 타임라인: 위에서 아래로 + 우에서 좌로 (진짜 부드럽게)
+            const home1TL = gsap.timeline({
                 scrollTrigger: {
                     trigger: ".home1",
-                    start: "top top",
-                    end: "+=150%",
-                    scrub: 0.3,
-                    //pin: true,
+                    start: "top bottom", // 더 위쪽에서 시작
+                    end: "center center",
+                    scrub: 5, // 더 천천히
                 }
             });
 
-            // .bg도 고정 (home 전체에서)
+            // 제목과 내용: 위에서 아래로
+            home1TL.fromTo(".home1-title", {
+                opacity: 0,
+                y: -60
+            }, {
+                opacity: 1,
+                y: 0,
+                duration: 3,
+                ease: "power1.out"
+            })
+            .fromTo(".home1-hi", {
+                opacity: 0,
+                y: -40
+            }, {
+                opacity: 1,
+                y: 0,
+                duration: 2.5,
+                ease: "power1.out"
+            }, "-=2.0")
+            .fromTo(".home1-content-text p", {
+                opacity: 0,
+                y: -30
+            }, {
+                opacity: 1,
+                y: 0,
+                duration: 2,
+                ease: "power1.out",
+                stagger: 0.6
+            }, "-=1.8");
+
+            // shape1: 우에서 좌로
+            home1TL.fromTo(".shape1", {
+                opacity: 0,
+                x: 80
+            }, {
+                opacity: 1,
+                x: 0,
+                duration: 3,
+                ease: "power1.out"
+            }, "-=2.5");
+
+            // home1-shape 비디오: 우에서 좌로
+            home1TL.fromTo(".home1-shape .shape-video", {
+                opacity: 0,
+                x: 70
+            }, {
+                opacity: 1,
+                x: 0,
+                duration: 2.8,
+                ease: "power1.out"
+            }, "-=2.2");
+
+            // shape 태그들: 우에서 좌로 (순차적으로)
+            home1TL.fromTo(".shape-tag", {
+                opacity: 0,
+                x: 50
+            }, {
+                opacity: 1,
+                x: 0,
+                duration: 2,
+                stagger: 0.3,
+                ease: "power1.out"
+            }, "-=2.0");
+
+            // home2 타임라인: 좌에서 우로 (진짜 부드럽게)
+            const home2TL = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".home2",
+                    start: "top bottom", // 더 위쪽에서 시작
+                    end: "center center",
+                    scrub: 5, // 더 천천히
+                }
+            });
+
+            // shape2: 좌에서 우로
+            home2TL.fromTo(".shape-2", {
+                opacity: 0,
+                x: -80
+            }, {
+                opacity: 1,
+                x: 0,
+                duration: 3,
+                ease: "power1.out"
+            });
+
+            // home2-left와 home2-right: 동시에 좌우에서 중앙으로
+            home2TL.fromTo([".home2-left", ".home2-right"], {
+                opacity: 0,
+                x: (i) => i === 0 ? -70 : 70
+            }, {
+                opacity: 1,
+                x: 0,
+                duration: 2.8,
+                ease: "power1.out"
+            }, "-=1.5");
+
+            // home2-shape 비디오: 좌에서 우로
+            home2TL.fromTo(".home2-shape .video", {
+                opacity: 0,
+                x: -60
+            }, {
+                opacity: 1,
+                x: 0,
+                duration: 2.5,
+                ease: "power1.out"
+            }, "-=1.2");
+
+            // home2-slogan: 좌에서 우로
+            home2TL.fromTo(".home2-slogan", {
+                opacity: 0,
+                x: -40
+            }, {
+                opacity: 1,
+                x: 0,
+                duration: 2,
+                ease: "power1.out"
+            }, "-=1.0");
+
+            // .bg 자연스러운 전환 (pin 제거, transition 활용)
             gsap.timeline({
                 scrollTrigger: {
                     trigger: ".home",
                     start: "top top",
-                    end: "+=150%",
-                    scrub: .3,
-                    pin: ".home .bg",
-                    pinSpacing: false, // 배경이라 공간 안 생기게
+                    end: "bottom bottom",
+                    scrub: 5,
                 }
             });
 
-            // home2에 도달하면 .bg2 클래스 추가
+            // home2에 도달하면 .bg2 클래스 추가 (더 부드럽게)
             ScrollTrigger.create({
                 trigger: ".home2",
-                start: "top center",
+                start: "top 80%", // 더 일찍 시작
+                end: "bottom 20%", // 더 늦게 끝남
                 onEnter: () => {
                     document.querySelector(".home .bg").classList.add("bg2");
                 },
                 onLeaveBack: () => {
                     document.querySelector(".home .bg").classList.remove("bg2");
                 }
+            });
+
+            // 리사이즈 시 애니메이션 재설정
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    const newIsDesktop = window.innerWidth >= 1024;
+                    
+                    if (newIsDesktop !== isDesktop) {
+                        // 화면 크기가 변경되면 페이지 새로고침
+                        window.location.reload();
+                    }
+                }, 300);
             });
         })
 

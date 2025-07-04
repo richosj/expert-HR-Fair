@@ -11,8 +11,10 @@
   right: 0;
   bottom: 0;
   z-index: 100;
-  //transition: all 0.3s ease;
+  transition: all 0.5s ease;
   &__btn {
+    position: relative;
+    overflow: hidden;
     width: 60px;
     height: 294px;
     background-color: rgba(44, 123, 239, 1);
@@ -25,9 +27,34 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
-    &:hover{
+    transition: background-color 0.3s ease;
+  
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 200%;
+      height: 100%;
       background: linear-gradient(357.9deg, #441675 30.56%, #0028F4 98.56%);
+      z-index: 0;
+      transition: transform 0.6s ease;
+      transform: translateX(-50%);
+      opacity: 0.7;
+    }
+  
+    &:hover::before {
+      transform: translateX(0%);
+    }
+    &:hover{
+      span{
+        color: #fff;
+      }
+    }
+  
+    span, svg, * {
+      position: relative;
+      z-index: 1;
     }
   }
   @media (max-width: 1024px) {
@@ -53,28 +80,30 @@
   width: 48px;
   height: 117px;
   z-index: 102;
-  display: block;
   background: url("@/assets/images/extend.png") no-repeat center center / contain;
-  display: none;
+  opacity: 0;
+  transition: all 0.5s 0.5s ease;
+  visibility: hidden;
 }
 
 .apply {
   transform: translateX(100%);
   z-index: 101;
-  width: 400px;
+  width: 450px;
   position: fixed;
   right: 0;
   top: 0;
   height: 100dvh;
   background: rgba(17, 17, 19, 1);
   color: #fff;
+  transition: all 0.5s ease;
   @media (max-width: 640px) {
     width: 100%;
   }
   &-wrap{
     overflow-y: auto;
     height: 100%;
-    padding: 25px 20px;
+    padding: 25px 25px;
   }
   &__title {
     font-size: 18px;
@@ -82,7 +111,7 @@
     margin-bottom: 10px;
   }
   &__subtitle {
-    font-size: 12px;
+    font-size: 14px;
     color: #fff;
     margin-bottom: 18px;
     font-weight: 400;
@@ -97,7 +126,7 @@
     display: flex;
     align-items: center;
     gap: 0 42px;
-    font-size: 13px;
+    font-size: 12px;
     margin-bottom: 10px;
     position: relative;
 
@@ -111,7 +140,7 @@
   }
   &__session-title {
     color: #fff;
-    font-size: 14px;
+    font-size: 16px;
   }
   &__session-remove {
     font-size: 0;
@@ -119,7 +148,7 @@
     width: 20px;height: 20px;
   }
   &__notice {
-    font-size: 13px;
+    font-size: 16px;
     color: rgba(150, 150, 150, 1);
     padding-left: 23px;
     background: url("@/assets/images/!.png") no-repeat 0 0;
@@ -181,16 +210,18 @@
   label{
     width: 55px;
     flex-shrink: 0;
+    font-size: 12px;
   }
   &-checkbox{
     display: flex;
     align-items: center;
     justify-content: space-between;
     label{
+      display: inline-block;
       white-space: nowrap;
       color: #fff;
       font-weight: 500;
-      font-size: 14px;
+      font-size: 16px;
     }
     a{
       color: #fff;
@@ -205,7 +236,7 @@
     background: rgba(44, 123, 239, 1);
     height: 53px;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 18px;
     color: #fff;
     margin-top: 17px;
   }
@@ -215,27 +246,29 @@
   padding: 30px 0 40px;
   text-align: center;
   .text{
-    font-size: 14px;
+    font-size: 16px;
     color: rgba(150, 152, 156, 1);
   }
 }
 
 .notice-block{
-  height: 120px;
+  padding: 18px 0;
   background: rgba(58, 60, 65, 1);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap:10px;
+  
   .text{
-    font-size: 14px;
     line-height: 21px;
     text-align: center;
-    font-size: 14px;
+    font-size: 15px;
     color: rgba(189, 223, 248, 1);
   }
-
+  .apply__notice{
+    margin-bottom: 0;
+  }
 }
 
 .apply-success{
@@ -285,7 +318,8 @@
   .apply {
     transform: translateX(0);
     .apply__close{
-      display: block;
+      opacity: 1;
+      visibility: visible;
     }
   }
 }

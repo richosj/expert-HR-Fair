@@ -17,7 +17,7 @@
               2025 <b>HR FAIR</b>
             </div>
             <div class="sub-title-date">
-              <b>2025.9.4</b><br class="mobile-block">대한상공회의소 국제회의장 B2F
+              <b>2025.9.4</b><br class="mobile-block"><span>대한상공회의소 국제회의장 B2F</span>
             </div>
           </div>
           <div class="sub-title-hi-wrap">
@@ -71,54 +71,56 @@
   <script type="module" src="./js/main.js"></script>
   <script>
     window.addEventListener('DOMContentLoaded', () => {
-    // 최상단 섹션 페이드인
-    gsap.to('.session-top', {
-      opacity: 1,
-      y: 0,
-      duration: 1.2,
-      ease: "power4.out"
-    });
+      // 최상단 섹션 페이드인
+      gsap.to('.session-top', {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        ease: "power4.out"
+      });
 
-    // 타이틀 애니메이션 순차 등장
-    gsap.to('.sub-title-text', {
-      delay: 0.4,
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power3.out"
-    });
+      // 타이틀 애니메이션 순차 등장
+      gsap.to('.sub-title-text', {
+        delay: 0.4,
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out"
+      });
 
-    gsap.to('.sub-title-date', {
-      delay: 0.6,
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power3.out"
-    });
+      gsap.to('.sub-title-date', {
+        delay: 0.6,
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out"
+      });
 
-    gsap.to('.sub-title-hi', {
-      delay: 0.8,
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power3.out"
-    });
+      gsap.to('.sub-title-hi', {
+        delay: 0.8,
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out"
+      });
 
-    gsap.to('.sub-hrc-ver', {
-      delay: 1.0,
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power3.out"
-    });
+      gsap.to('.sub-hrc-ver', {
+        delay: 1.0,
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out"
+      });
 
-    gsap.to('.sub-title-video', {
+      gsap.to('.sub-title-video', {
         delay: 1.4,
         onStart: () => {
-            const el = document.querySelector('.sub-title-video');
-            el.classList.add('blur-reveal');
+          const el = document.querySelector('.sub-title-video');
+          el.classList.add('blur-reveal');
         }
+      });
     });
-  });
-</script>
-</body></html>
+  </script>
+</body>
+
+</html>
