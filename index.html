@@ -328,22 +328,12 @@
                 video.classList.add('loaded');
             });
 
-            // 비디오 재생 문제 해결
-            // const video = document.querySelector('.visual__video video');
-            // if (video) {
-            //     video.addEventListener('loadedmetadata', () => {
-            //         video.currentTime = 0;
-            //         video.play().catch(e => console.log('비디오 자동재생 실패:', e));
-            //     });
-                
-            //     // 비디오 로드 실패 시 재시도
-            //     video.addEventListener('error', () => {
-            //         console.log('비디오 로드 실패, 재시도 중...');
-            //         setTimeout(() => {
-            //             video.load();
-            //         }, 1000);
-            //     });
-            // }
+            // PC에서만 애니메이션 실행 (1024px 이상)
+            const isDesktop = window.innerWidth >= 1024;
+            
+            if (!isDesktop) {
+                return; // 모바일에서는 애니메이션 비활성화
+            }
 
             // home1 타임라인: 위에서 아래로 + 우에서 좌로 (진짜 부드럽게)
             const home1TL = gsap.timeline({
@@ -495,6 +485,20 @@
                 onLeaveBack: () => {
                     document.querySelector(".home .bg").classList.remove("bg2");
                 }
+            });
+
+            // 리사이즈 시 애니메이션 재설정
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    const newIsDesktop = window.innerWidth >= 1024;
+                    
+                    if (newIsDesktop !== isDesktop) {
+                        // 화면 크기가 변경되면 페이지 새로고침
+                        window.location.reload();
+                    }
+                }, 300);
             });
         })
 
