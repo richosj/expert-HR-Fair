@@ -656,7 +656,7 @@ video {
   z-index: 2;
 }
 .home .bg {
-  background: url("../images/bg1.svg") no-repeat center center/cover;
+  background: url("../images/bg1.png") no-repeat center center/cover;
   position: absolute;
   top: 0;
   left: 0;
@@ -666,7 +666,7 @@ video {
   transition: all 0.6s ease-in-out;
 }
 .home .bg.bg2 {
-  background-image: url("../images/bg2.svg");
+  background-image: url("../images/bg2.png");
 }
 
 .home1 {
@@ -972,6 +972,10 @@ video {
 }
 .home2-shape .shape-img {
   position: relative;
+  width: 730px;
+}
+.home2-shape .shape-img video {
+  background: transparent;
 }
 .home2-shape .shape-img .shape-img-wrap {
   display: inline-block;
