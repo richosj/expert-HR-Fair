@@ -1,26 +1,20 @@
 html,
 body{
     overflow-x: hidden;
+    background-color: rgb(17, 17, 19);
 }
-html.lenis {
-    height: auto;
-  }
-.lenis.lenis-smooth {
-scroll-behavior: auto;
-}
+
 video{
-    background-color: transparent
+    background-color: transparent;
+    vertical-align: top;
 }
 .visual {
     background-color: #000;
-    // width: 100%;
-    // height: 100dvh;
     overflow: hidden;
     transform-origin: top center;
     position: relative;
+    z-index: 15;
     &__video {
-    //   width: 100%;
-    //   height: 100%;
       position: relative;
       video {
         clip-path: inset(50% 50% 50% 50%);
@@ -29,8 +23,9 @@ video{
         object-fit: cover;
         object-position: center;
         //position: absolute;
-        transition: all 2s;
+        transition: all 2s; // PC에서는 유지
         transform-origin: center center;
+        vertical-align: top;
         &.loaded{
           clip-path: inset(0% 0% 0% 0%);
         }
@@ -46,313 +41,374 @@ video{
         }
       }
     }
-  }
-.home{
+}
+@keyframes updown {
+    0%{ transform: translateY(0); }
+    100%{ transform: translateY(40px); }
+}
+
+.wrap-content{
+    background: url("@/assets/images/main/bg.png") no-repeat center center / cover;
+    padding-bottom: 134px;
+}
+
+.s1{
+    width: 100%;
     position: relative;
-    z-index: 2;
-    .bg{
-        background: url("@/assets/images/bg1.svg") no-repeat center center / cover;
+}
+.s1-inner{
+    margin: 0 auto;
+    position: relative;
+    max-width: 1280px;
+    padding-top: 200px;
+}
+.shape-1{
+    position: absolute;
+    left: 0;
+    top: -60px;
+    display: flex;
+    box-sizing: border-box;
+    align-items: flex-start;
+    justify-content: flex-start;
+    animation: updown 2s infinite ease-in-out alternate;
+}
+
+.shape-2{
+    position: absolute;
+    right: 0;
+    top: 44px;
+    display: flex;
+    box-sizing: border-box;
+    align-items: flex-start;
+    justify-content: flex-start;
+    animation: updown 2s infinite ease-in-out alternate;
+}
+
+.shape-3{
+    position: absolute;
+    right: 0;
+    top: 400px;
+    animation: updown 2s infinite ease-in-out alternate;
+}
+
+.s1-title{
+    text-align: center;
+    color: #fff;
+    font-size: 80px;
+    font-family: 'SUIT';
+    em{
+        font-style: normal;
+        font-weight: 100;
+    }
+    b{
+        font-weight: 900;
+    }
+}
+
+.s1-title-2{
+    font-family: 'SUIT';
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 16.82px;
+    color: #fff;
+}
+
+
+.s2{
+    position: relative;
+    width: 100%;
+    padding-top: 68px;
+}
+.s2-title{
+    font-family: 'SUIT';
+    font-weight: 600;
+    font-size: 33px;
+    line-height: 47px;
+    text-align: center;
+    color: #fff;
+    //padding-top: 68px;
+}
+
+.s2-inner{
+    position: relative;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+.hexagon-wrap-inner{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.hexagon-wrap{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    &::after{
+        content: '';
         position: absolute;
         top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100dvh;
-        z-index: 1;
-        transition: all 0.6s ease-in-out;
-        &.bg2{
-            background-image: url("@/assets/images/bg2.svg");
-        }
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 11px;
+        height: 11px;
+        background: rgba(242, 65, 201, 1);
+        display: block;
+        //background-color: #000;
     }
-}
-.home1{
-    position: relative;
-    z-index: 2;
-    height: 100dvh;
-    padding: 0 8vw;
-    //overflow: hidden;
-    @media (max-width: 1024px) {
-      padding: 70px 20px;
-      height: auto;
+    &.hexagon-1{
+        background-image: url("@/assets/images/main/hexagon-1.png");
+        width: 335px;
+        height: 385px;
     }
-    &-container{
-        position: relative;
-        width: 100%;
+    &.hexagon-2{
+        background-image: url("@/assets/images/main/hexagon-2.png");
+        width: 386px;
+        height: 334px;
+        margin-top: 164px;
     }
-    .shape1{
-        // position: absolute;
-        // top: 0;
-        // left: 8vw
-        img{
-            vertical-align: top;
-        }
-    }
-    &-title{
+    .box{
+        font-family: 'SUIT';
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 40px;
+        text-align: center;
         color: #fff;
-        font-family: "SUIT";
-        padding-top: 25px;
-        &-text{
-            font-size: 60px;
-            b{
-                font-weight: 900;
-            }
+        b{
+            font-weight: 800;
+            font-size: 28px;
+            color: rgba(255, 174, 236, 1);
         }
-        &-date{
-            font-size: 40px;
-            font-weight: 400;
-            padding-top: 16px;
-            b{
-                font-weight: 700;
-            }
-
-        }
-    }
-    &-hi{
-        font-size: 120px;
-        font-weight: 900;
-        line-height: 1;
-        padding-top: 45px;
-    }
-    &-content{
-        position: relative;
-        margin-top: 53px;
-        &-text{
-            color: #fff;
-            font-family: "SUIT";
-            font-weight: 400;
-            font-size: 20px;
-            line-height: 28px;
-            p{
-                +p{
-                    padding-top: 4rem;
-                }
-            }
-            @media screen and (max-width: 1024px) {
-                font-size: 14px;
-                line-height: 20px;
-                text-align: center;
-                p+p{
-                    padding-top: 2rem;
-                }
-            }
-        }
-    }
-    &-shape{
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        @media screen and (max-width: 1024px) {
-            position: static;
-            margin-top: 2rem;
-            display: flex;
-            justify-content: center;
-        }
-        .shape-tag{
+        span{
             display: inline-block;
-            color: #fff;
-            font-family: "SUIT";
-            font-weight: 700;
-            font-size: 20px;
-            line-height: 43px;
-            padding: 0 28px;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(197, 172, 255, .5);
-            // border: 1px solid;
-            // border-image-source: linear-gradient(90deg, #C5ACFF 0%, #6E52E0 100%);
-            border-radius: 150px;
-            //padding: 10px 20px;
-            height: 43px;
-            position: absolute;
-            
-            @media screen and (max-width: 1024px) {
-                font-size: 16px;
-                line-height: 30px;
-                padding: 0 15px;
-            }
-            &.shape-tag-1{
-                top: 133px;
-                left: 86px;
-            }
-            &.shape-tag-2{
-                top: 233px;
-                left: 85px;
-            }
-            &.shape-tag-3{
-                top: 293px;
-                left: -51px;
-            }
-            &.shape-tag-4{
-                top: 63px;
-                right: -54px;
-            }
-            &.shape-tag-5{
-                top: 227px;
-                right: -15px;
-            }
-            &.shape-tag-6{
-                top: 350px;
-                right: 48px
-            }
-        }
-        .shape-img{
-            position: relative;
-            padding-bottom: 40px;
-            .shape-img-wrap{
-                display: inline-block;
-                vertical-align: top;
-                position: relative;
-                animation: floatY 3s ease-in-out infinite;
-            }
-            .shdow{
-                position: absolute;
-                bottom: 0;
-                left: 20%;
-                transform: translateX(-50%);
-                animation: shadowScale 2.5s ease-in-out infinite;
-            }
         }
     }
+    
 }
-@keyframes floatY {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
+@keyframes rotate {
+    0%{ transform: rotate(0deg); }
+    100%{ transform: rotate(360deg); }
 }
-@keyframes shadowScale {
-    0% {
-      transform: scale(1);
-      opacity: 1;
-    }
-    50% {
-      transform: scale(0.8);
-      opacity: 0.7;
-    }
-    100% {
-      transform: scale(1);
-      opacity: 1;
-    }
-  }
-
-  
-.home2{
-    position: relative;
-    z-index: 2;
-    min-height: 100dvh;
-    padding: 100px 0;
-//    background: url("@/assets/images/bg2.svg") no-repeat center center / cover;
-    @media screen and (max-width: 1024px) {
-        padding: 70px 0;
-        height: auto;
-    }
-    &-container{
+.shape-4{
+    position: absolute;
+    left: 50%;
+    top: 81px;
+    transform: translateX(-50%);
+    img{
         position: relative;
-        display: flex;
-        justify-content: space-between;
-        height: 100%;
-        @media screen and (max-width: 1024px) {
-            flex-wrap: wrap;
-            justify-content: baseline;
-            height: auto;
+        animation: rotate 3s infinite linear;
+    }    
+}
+
+.s3{
+    padding-top: 127px;
+    position: relative;
+    width: 100%;
+}
+
+.s3-title{
+    font-family: 'SUIT';
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 28px;
+    text-align: center;
+    color: #fff;
+    padding-bottom: 44px;
+    em{
+        font-style: normal;
+        font-weight: 500;
+    }
+}
+
+.s3-inner{
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.s3-content{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
+}
+
+.square-flip{
+    height: 350px;
+    perspective: 1000;
+    transform: perspective(1000px);
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.square {
+    background-size: cover;
+    background-position: center center;
+    -ms-transition: transform 0.60s cubic-bezier(.5,.3,.3,1);
+    transition: transform 0.60s cubic-bezier(.5,.3,.3,1);
+    -webkit-transition: transform 0.60s cubic-bezier(.5,.3,.3,1);
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.square-flip .square {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+    z-index: 1;
+}
+
+.square-flip:hover .square {
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    transform-style: preserve-3d;
+}
+
+.square2 {
+    background-size: cover;
+    background-position: center center;
+    -ms-transition: transform 0.60s cubic-bezier(.5,.3,.3,1);
+    transition: transform 0.60s cubic-bezier(.5,.3,.3,1);
+    -webkit-transition: transform 0.60s cubic-bezier(.5,.3,.3,1);
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.square-flip .square2 {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+    z-index: 1;
+}
+
+.square-flip:hover .square2 {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+}
+
+.boxing{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .image{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        
+    }
+    .text{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'SUIT';
+        font-weight: 800;
+        font-size: 28px;
+        line-height: 28px;
+        text-align: center;
+        color: #fff;
+        span{
+            white-space: nowrap;
         }
     }
-    &-content{
+}
+
+.square2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .text{
+        font-family: 'SUIT';
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 28px;
+        text-align: center;
+        color: rgba(4, 22, 48, 1);
+        b{ 
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 35px;
+        }
+        div+div{
+            padding-top: 20px;
+        }
+    }
+
+}
+
+.square-flip-1{
+    .square{
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(180deg, #041630 0%, #3555FF 100%);
+    }
+    .square2{
+        height: 100%;
+        width: 100%;
+        background: rgba(190, 201, 255, 1);
+        border: 1px solid rgba(4, 22, 48, 0.8);
+        b{
+            color:rgba(0, 27, 173, 1);
+
+        }
+    }
+}
+
+.square-flip-2{
+    .square{
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(180deg, #041630 0%, #6C43FF 100%);
+    }
+    .square2{
+        height: 100%;
+        width: 100%;
+        background: rgba(209, 204, 255, 1);
+        border: 1px solid rgba(4, 22, 48, 0.8);
+        b{
+            font-size: 22px;
+            color: rgba(4, 22, 48, 1);
+        }
+    }
+}
+
+.square-flip-3{
+    .square{
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(180deg, #041630 0%, #8936EE 100%);
 
     }
-    &-title{
-        color: #fff;
-        font-weight: 700;
-        font-size: 32px;
-        line-height: 32px;
-        @media screen and (max-width: 768px) {
-            font-size: 20px;
-            line-height: 24px;
-        }
-    }
-    &-text{
-        color: #fff;
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 28px;
-        padding-top: 16px;
-        @media screen and (max-width: 738px) {
-            font-size: 14px;
-            line-height: 20px;
-        }
-    }
-    &-right,
-    &-left{
-        width: 50%;
-        border: 1px solid;
-        border-image-source: linear-gradient(90deg, #C5ACFF 0%, #6E52E0 100%);
-        background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        height: 216px;
-        display: flex;
-        align-items: center;
-        @media screen and (max-width: 1024px) {
-            width: 95%;
-            height: 180px;
-        }
-    }
-    &-left{
-        border-left: 0;
-        padding-left: 10vw;
-        border-radius: 0 300px 300px 0;
-        @media screen and (max-width: 1024px) {
-            padding-left: 5vw;
-        }
-        @media screen and (max-width: 768px) {
-            margin-right: 0;
-            width: 100%;
-            text-align: center;
-            padding: 0;
-            border-radius: 0;
-            text-align: center;
-            justify-content: center;
-        }
-    }
-    &-right{
-        border-right: 0;
-        padding-right: 10vw;
-        border-radius: 300px 0 0 300px;
-        transform: translateY(200px);
-        text-align: right;
-        justify-content: flex-end;
-        @media screen and (max-width: 1024px) {
-            padding-right: 5vw;
-            transform: translateY(0);
-            margin-left: 5vw;
-            margin-top: 2rem;
-        }
-        @media screen and (max-width: 768px) {
-            margin-left: 0;
-            width: 100%;
-            text-align: center;
-            padding: 0;
-            border-radius: 0;
-        }
-    }
-    &-shape{
-        position: absolute;
-        left: 0;
-        bottom: 50px;
-        @media screen and (max-width: 1024px) {
-            position: static;
-            margin-top: 2rem;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-        .shape-img{
-            position: relative;
-            .shape-img-wrap{
-                display: inline-block;
-                vertical-align: top;
-                position: relative;
-                animation: floatY 3s ease-in-out infinite;
-            }
+    .square2{
+        height: 100%;
+        width: 100%;
+        background: rgba(236, 222, 255, 1);
+        border: 1px solid rgba(4, 22, 48, 0.8);
+        b{
+            font-size: 22px;
+            color: rgba(4, 22, 48, 1);
+
         }
     }
 }

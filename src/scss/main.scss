@@ -24,6 +24,13 @@
   align-items: center;
   justify-content: center;
   z-index: 10;
+  transition: all 1s ease;
+  opacity: 1;
+  visibility: visible;
+  &.hidden{
+    opacity: 0;
+    visibility: hidden;
+  }
   
   i {
     width: 48px;

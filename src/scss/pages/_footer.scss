@@ -1,7 +1,7 @@
 
 
 .footer{
-    z-index: 2;
+    z-index: 1000;
     position: relative;
     background: rgba(17, 17, 19, 1);
     @media (max-width: 900px) {
@@ -11,20 +11,65 @@
         display: flex;
         justify-content: center;
         padding: 40px 0 45px;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+        border-top: 1px solid #A0A3AD;
+        transition: border 0.4s ease-in;
+        position: relative;
+        &::after{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            //background: rgba(17, 17, 19, 1);
+            background-color: #fff;
+            transition: all 0.2s ease-in;
+        }
+        &:has(a:hover){
+            border-color: #fff;
+            &::after{
+                height: 100%;
+            }
+        }
         a{
           display: flex;
           align-items: center;
-          gap: 0 33px;
+          gap: 0 6.5px;
           font-family: "SUIT";
           font-weight: 500;
           font-size: 30px;
           line-height: 40px;
           color: #fff;
+          position: relative;
+          z-index: 2;
+          transition: all 0.2s ease-in;
+          &:hover{
+            color: #000;
+            i{
+                transform: translateX(15px);
+                opacity: 1;
+                background: #000;
+            }
+          }
           i{
             display: block;
             width: 48px;
             height: 48px;
-            background: url("@/assets/images/line-md_arrow-right.svg") no-repeat center center / contain;
+            forced-color-adjust: none;
+            -webkit-mask-repeat: no-repeat;
+            -webkit-mask-position: center center;
+            -webkit-mask-size: contain;
+            mask-repeat: no-repeat;
+            mask-position: center center;
+            mask-size: contain;
+            display: inline-flex;
+            transition: all .5s;
+            -webkit-mask-image: url("@/assets/images/solar_arrow-right-outline.svg");
+            mask-image: url("@/assets/images/solar_arrow-right-outline.svg");
+            opacity: 1;
+            transition: all 0.3s 0.2s ease;
+            background: rgba(117, 117, 117, 1);
           }
         }
         @media (max-width: 768px) {
@@ -34,10 +79,8 @@
     &-content{
         display: flex;
         justify-content: space-between;
-        border-top: 1px solid #fff;
         padding: 6rem 5rem;
         @media (max-width: 768px) {
-            border-top: 0;
             padding: 30px 0;
             flex-direction: column;
             justify-content: center;
@@ -52,7 +95,7 @@
         i{
             width: 48px;
             height: 48px;
-            background: url("@/assets/images/ico-agent.svg") no-repeat center center / contain;
+            background: url("@/assets/images/call.svg") no-repeat center center / contain;
         }
         a{
             color: #fff;
@@ -85,13 +128,13 @@
             background-position: 50% 50%;
             background-size: contain;
             &.blog{
-                background-image: url("@/assets/images/ico-blog.svg");
+                background-image: url("@/assets/images/blog.png");
             }
             &.youtube{
-                background-image: url("@/assets/images/ico-youtube.svg");
+                background-image: url("@/assets/images/youtube.png");
             }
             &.instargram{
-                background-image: url("@/assets/images/ico-instagram.svg");
+                background-image: url("@/assets/images/instagram.png");
             }
             @media (max-width: 768px) {
                 width: 28px;
@@ -101,10 +144,11 @@
         }
     }
     &-copyright{
-        color: #fff;
+        color: rgba(255, 255, 255, 0.8);
         font-family: "SUIT";
         font-weight: 400;
         font-size: 12px;
+        text-align: right;
         @media (max-width: 768px) {
             text-align: center;
             font-size: 10px;

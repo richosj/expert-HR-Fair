@@ -1,11 +1,23 @@
 
+.session{position: relative;z-index: 1;
+    &-top{
+        position: relative;
+        z-index: 100;
+    }
+    &-track{
+        position: relative;
+        z-index: 99;
+    }
+}
 .location{
-    height: 100dvh;
-    background-color: #000;
-    padding-left: 10vw;
-    padding-right: 10vw;
+    position: relative;
+    z-index: 1;
+    //height: 100dvh;
+    background-color: rgba(17, 17, 19,1);
+    // padding-left: 10vw;
+    // padding-right: 10vw;
     padding-top: 200px;
-    @media (max-width: 1024px) {
+    @media (max-width: 1280px) {
         //padding-top: 100px;
         padding-left: 20px;
         padding-right: 20px;
@@ -16,22 +28,22 @@
     }
     &-top{
         position: relative;
+        max-width: 1280px;
     }
     &-container{
         position: relative;
+        margin: 0 auto;
+        max-width: 1280px;
         height: 100%;
         @media (max-width: 900px) {
             height: auto;
         }
     }
     &-content{
-        position: absolute;
-        bottom: 40px;
-        left: 0;
-        right: 0;
-        //height: 100%;
         display: flex;
         gap:0 15px;
+        padding-top: 130px;
+        padding-bottom: 40px;
         @media (max-width: 900px) {
             position: static;
             flex-direction: column;
@@ -44,7 +56,7 @@
         width: 217px;
         border-radius: 5px;
         background: rgba(255, 255, 255, 0.1);
-        padding: 31px 24px;
+        padding: 98px 24px;
         color: #fff;
         @media (max-width: 768px) {
             width: 100%;
@@ -52,7 +64,9 @@
         }
         .block{
             +.block{
-                margin-top: 25px;
+                margin-top: 42px;
+                padding-top: 50px;
+                border-top: 1px solid rgba(87, 87, 97, 1);
             }
             &-title{
                 font-family: "SUIT";
@@ -159,14 +173,18 @@
     color: rgba(255, 255, 255, 0.8);
     position: absolute;
     right: 0;
-    top: 90px;
+    bottom: 0;
     writing-mode: vertical-rl;
     text-orientation: mixed;
     line-height: 1;
-    transform: rotate(180deg) translateX(-50px);
+    //transform: rotate(180deg) translateX(-50px);
+    text-transform: uppercase;
+    span+span{
+        padding-top: 3px;
+    }
     @media (max-width: 900px) {
         position: static;
-        transform: rotate(180deg) translateX(0px);
+        //transform: rotate(180deg) translateX(0px);
     }
 }
 
@@ -174,7 +192,7 @@
     @media (max-width: 900px) {
         display: flex;
         justify-content: space-between;
-        align-items: flex-end;
+        //align-items: flex-end;
         padding-top: 31px;
     }
 }
@@ -184,25 +202,48 @@
     &-text{
         font-family: "SUIT";
         font-weight: 400;
-        font-size: 35px;
+        font-size: 60px;
         line-height: 1.2;
         b{
             font-weight: 900;
         }
         @media (max-width: 900px) {
             //font-size: 30px;
+            line-height: 1.1;
+            font-size: 30px;
         }
     }
     &-date{
         font-family: "SUIT";
-        font-weight: 900;
-        font-size: 35px;
+        font-weight: 400;
+        font-size: 40px;
         margin-top: 15px;
+        display: flex;
+        gap: 0 20px;
+        align-items: center;
+        
+        b{
+            font-weight: 900;
+            @media (max-width: 768px) {
+                font-size: 20px;
+            }
+        }
+        span{
+            font-weight: 300;
+            font-size: 34px;
+            @media (max-width: 768px) {
+                font-size: 20px;
+            }
+        }
         @media (max-width: 900px) {
             margin-top: 0;
             font-weight: 400;
             font-size: 20px;
             margin-top: 20px;
+            gap:4px;
+        }
+        @media (max-width: 768px) {
+            margin-top: 5px;
         }
     }
     &-hi{
@@ -212,18 +253,37 @@
         color: #fff;
         font-family: "SUIT";
         font-weight: 900;
-        font-size: 80px;
+        font-size: 130px;
         line-height: 1;
         @media (max-width: 900px) {
             //font-size: 40px;
             position: static;
-            
+            font-size: 80px;
+        }
+        @media (max-width: 768px) {
+            font-size: 80px;
         }
     }
     &-video{
         padding-top: 60px;
+        .mobile-image{display: none;}
         @media (max-width: 900px) {
-            padding-top: 70px;
+            padding-top: 0;
+        }
+        @media (max-width: 768px) {
+            #canvas{display: none;}
+            .mobile-image{
+                display: block;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
         }
     }
 }
+
+.re{
+    position: relative;
+}
+

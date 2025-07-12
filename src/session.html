@@ -6,770 +6,767 @@
 </head>
 
 <body>
-<div id="wrap">
-    {{> nav}}
-    <div class="session">
-        <div class="session-top">
-            <div class="session-top-wrap">
-                <div class="sub-title">
-                    <div class="sub-title-text">
-                        EXPERTconsulting 2025 <b>HR Fair</b>
+    <div id="wrap">
+        {{> nav}}
+        <div class="session">
+            <div class="session-top-wraps">
+            <div class="session-top">
+                <div class="session-top-wrap">
+                    <div class="re">
+                        <div class="sub-title">
+                            <div class="sub-title-text">
+                                2025 <b>HR FAIR</b>
+                            </div>
+                            <div class="sub-title-date">
+                                <!-- <b>2025.9.4</b><span>대한상공회의소 국제회의장 B2F</span> -->
+                                <b>2025.9.4</b>Thu <b>10</b>AM
+                            </div>
+                        </div>
+    
+                        <div class="sub-title-hi-wrap">
+                            <div class="sub-hrc-ver">
+                                <span>EXPERT</span> <span>Conference</span>
+                            </div>
+                            <div class="sub-title-hi">
+                                Hi-AI
+                            </div>
+                        </div>
+                        <div class="sub-title-video">
+                            <div class="mobile-image"><img src="./assets/images/program_mobile.png" alt=""></div>
+                            <canvas id="canvas"></canvas>
+                        </div>
                     </div>
-                    <div class="sub-title-date">
-                        2025.9.4 am10~pm5
+
+                    <div class="program-morning">
+                        <div class="program-title">
+                            오전 프로그램
+                        </div>
+
+                        <div class="time-grid">
+                            <div class="column">
+                                <div class="time">10:00~10:30</div>
+                                <div class="h">
+                                    <div class="subject"><strong>참석자 확인 & 부스 관람</strong></div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="time">10:30~11:30</div>
+                                <div class="h">
+                                    <div class="subject">
+                                        <strong>제 21회 인재개발 실태조사 결과발표</strong>
+                                        <button type="button" class="details"></button>
+                                    </div>
+                                    <div class="speaker">
+                                        <span>박선경 사장</span>
+                                        <em>엑스퍼트컨설팅</em>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="time bd0">11:40~12:30</div>
+                                <div class="h bd0">
+                                    <div class="subject ">
+                                        <strong>커리어벗 론칭</strong>
+                                        <button type="button" class="details"></button>
+                                    </div>
+                                    <div class="speaker">
+                                        <span>정진욱 부사장</span>
+                                        <em>엑스퍼트컨설팅</em>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="time-grid-break"><span>12:30~13:30 점심 및 휴식 (간편식 제공)</span></div>
+                        <div class="time-grid-text">*커리어벗은 4세대 AI 채용 플랫폼을 개발하고 서비스하는 엑스퍼트컨설팅 자회사입니다.</div>
                     </div>
-                </div>
-                <div class="sub-title-hi-wrap">
-                    <div class="sub-hrc-ver">
-                      HR FAIR conference
-                    </div>
-                    <div class="sub-title-hi">
-                      Hi-AI
-                    </div>
-                  </div>
-                <div class="sub-title-video"><img src="./assets/images/Location.png" alt=""></div>
 
-                <div class="program-morning">
-                    <div class="program-title">
-                        오전 프로그램
-                    </div>
-                    <ul class="program-list">
-                        <li class="program-item">
-                            <div class="program-item-time">
-                                <div>10:30~11:00</div>
-                                <p>인사말 & 인재개발 실태조사 결과발표</p>
-                            </div>
-                            <div class="speaker">
-                                <div class="speaker-info">
-                                    <div class="name">박선경 사장</div>
-                                    <div class="aff">엑스퍼트컨설팅</div>
-                                </div>
-                                <button type="button" class="details"></button>
-                            </div>
-                        </li>
-                        <li class="program-item">
-                            <div class="program-item-time">
-                                <div>10:30~11:00</div>
-                                <p>인사말 & 인재개발 실태조사 결과발표</p>
-                            </div>
-                            <div class="speaker">
-                                <div class="speaker-info">
-                                    <div class="name">박선경 사장</div>
-                                    <div class="aff">엑스퍼트컨설팅</div>
-                                </div>
-                                <button type="button" class="details"></button>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="scroll-move">
-                <i></i>
-            </div>
-        </div>
-        <!-- //session-top -->
-
-        <div class="session-track">
-            <div class="session-track-wrap">
-                <header class="sticky-header">
-                    <h2>오후 프로그램 <span>TRACK</span></h2>
-                    <button><i class="ico-time"></i>시간별 보기</button>
-                </header>
-
-                <div class="session-content scroll-area">
-                    <div class="session-item">
-                        <div class="session-item-title">
-                            <span>#track1</span>
-                            <div class="session-item-category">Performance</div>
-                        </div>
-
-                        <div class="session-details">
-                            <div class="details-item">
-                                <div class="checkbox">
-                                    <label class="label-chk"><input type="checkbox"></label>
-                                </div>
-                                <div class="session-detail-time">
-                                    <div>10:30~11:00</div>
-                                    <p>인사말 & 인재개발 실태조사 결과발표</p>
-                                </div>
-                                <div class="session-detail-speaker">
-                                    <div class="session-detail-speaker-info">
-                                        <div class="session-detail-speaker-info-name">박선경 사장</div>
-                                        <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
-                                    </div>
-                                    <button type="button" class="details"></button>
-                                </div>
-                            </div>
-                            <div class="details-item">
-                                <div class="checkbox">
-                                    <label class="label-chk"><input type="checkbox"></label>
-                                </div>
-                                <div class="session-detail-time">
-                                    <div>10:30~11:00</div>
-                                    <p>인사말 & 인재개발 실태조사 결과발표</p>
-                                </div>
-                                <div class="session-detail-speaker">
-                                    <div class="session-detail-speaker-info">
-                                        <div class="session-detail-speaker-info-name">박선경 사장</div>
-                                        <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
-                                    </div>
-                                    <button type="button" class="details"></button>
-                                </div>
-                            </div>
-                            <div class="details-item">
-                                <div class="checkbox">
-                                    <label class="label-chk"><input type="checkbox"></label>
-                                </div>
-                                <div class="session-detail-time">
-                                    <div>10:30~11:00</div>
-                                    <p>인사말 & 인재개발 실태조사 결과발표</p>
-                                </div>
-                                <div class="session-detail-speaker">
-                                    <div class="session-detail-speaker-info">
-                                        <div class="session-detail-speaker-info-name">박선경 사장</div>
-                                        <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
-                                    </div>
-                                    <button type="button" class="details"></button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- // 목록 -->
-                    </div>
-                    <!-- // 카테고리1 -->
-                    <div class="session-item">
-                        <div class="session-item-title">
-                            <span>#track2</span>
-                            <div class="session-item-category">AI in HRD</div>
-                        </div>
-
-                        <div class="session-details">
-                            <div class="details-item">
-                                <div class="checkbox">
-                                    <label class="label-chk"><input type="checkbox"></label>
-                                </div>
-                                <div class="session-detail-time">
-                                    <div>10:30~11:00</div>
-                                    <p>인사말 & 인재개발 실태조사 결과발표</p>
-                                </div>
-                                <div class="session-detail-speaker">
-                                    <div class="session-detail-speaker-info">
-                                        <div class="session-detail-speaker-info-name">박선경 사장</div>
-                                        <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
-                                    </div>
-                                    <button type="button" class="details"></button>
-                                </div>
-                            </div>
-                            <div class="details-item">
-                                <div class="checkbox">
-                                    <label class="label-chk"><input type="checkbox"></label>
-                                </div>
-                                <div class="session-detail-time">
-                                    <div>10:30~11:00</div>
-                                    <p>인사말 & 인재개발 실태조사 결과발표</p>
-                                </div>
-                                <div class="session-detail-speaker">
-                                    <div class="session-detail-speaker-info">
-                                        <div class="session-detail-speaker-info-name">박선경 사장</div>
-                                        <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
-                                    </div>
-                                    <button type="button" class="details"></button>
-                                </div>
-                            </div>
-                            <div class="details-item">
-                                <div class="checkbox">
-                                    <label class="label-chk"><input type="checkbox"></label>
-                                </div>
-                                <div class="session-detail-time">
-                                    <div>10:30~11:00</div>
-                                    <p>인사말 & 인재개발 실태조사 결과발표</p>
-                                </div>
-                                <div class="session-detail-speaker">
-                                    <div class="session-detail-speaker-info">
-                                        <div class="session-detail-speaker-info-name">박선경 사장</div>
-                                        <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
-                                    </div>
-                                    <button type="button" class="details"></button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- // 목록 -->
-                    </div>
-                    <!-- // 카테고리2 -->
-                    <div class="session-item">
-                        <div class="session-item-title">
-                            <span>#track3</span>
-                            <div class="session-item-category">New Solution</div>
-                        </div>
-
-                        <div class="session-details">
-                            <div class="details-item">
-                                <div class="checkbox">
-                                    <label class="label-chk"><input type="checkbox"></label>
-                                </div>
-                                <div class="session-detail-time">
-                                    <div>10:30~11:00</div>
-                                    <p>인사말 & 인재개발 실태조사 결과발표</p>
-                                </div>
-                                <div class="session-detail-speaker">
-                                    <div class="session-detail-speaker-info">
-                                        <div class="session-detail-speaker-info-name">박선경 사장</div>
-                                        <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
-                                    </div>
-                                    <button type="button" class="details"></button>
-                                </div>
-                            </div>
-                            <div class="details-item">
-                                <div class="checkbox">
-                                    <label class="label-chk"><input type="checkbox"></label>
-                                </div>
-                                <div class="session-detail-time">
-                                    <div>10:30~11:00</div>
-                                    <p>인사말 & 인재개발 실태조사 결과발표</p>
-                                </div>
-                                <div class="session-detail-speaker">
-                                    <div class="session-detail-speaker-info">
-                                        <div class="session-detail-speaker-info-name">박선경 사장</div>
-                                        <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
-                                    </div>
-                                    <button type="button" class="details"></button>
-                                </div>
-                            </div>
-                            <div class="details-item">
-                                <div class="checkbox">
-                                    <label class="label-chk"><input type="checkbox"></label>
-                                </div>
-                                <div class="session-detail-time">
-                                    <div>10:30~11:00</div>
-                                    <p>인사말 & 인재개발 실태조사 결과발표</p>
-                                </div>
-                                <div class="session-detail-speaker">
-                                    <div class="session-detail-speaker-info">
-                                        <div class="session-detail-speaker-info-name">박선경 사장</div>
-                                        <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
-                                    </div>
-                                    <button type="button" class="details"></button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- // 목록 -->
-                    </div>
-                    <!-- // 카테고리3 -->
-                    <div class="session-item">
-                        <div class="session-item-title">
-                            <span>#track4</span>
-                            <div class="session-item-category">HRM</div>
-                        </div>
-
-                        <div class="session-details">
-                            <div class="details-item">
-                                <div class="checkbox">
-                                    <label class="label-chk"><input type="checkbox"></label>
-                                </div>
-                                <div class="session-detail-time">
-                                    <div>10:30~11:00</div>
-                                    <p>인사말 & 인재개발 실태조사 결과발표</p>
-                                </div>
-                                <div class="session-detail-speaker">
-                                    <div class="session-detail-speaker-info">
-                                        <div class="session-detail-speaker-info-name">박선경 사장</div>
-                                        <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
-                                    </div>
-                                    <button type="button" class="details"></button>
-                                </div>
-                            </div>
-                            <div class="details-item">
-                                <div class="checkbox">
-                                    <label class="label-chk"><input type="checkbox"></label>
-                                </div>
-                                <div class="session-detail-time">
-                                    <div>10:30~11:00</div>
-                                    <p>인사말 & 인재개발 실태조사 결과발표</p>
-                                </div>
-                                <div class="session-detail-speaker">
-                                    <div class="session-detail-speaker-info">
-                                        <div class="session-detail-speaker-info-name">박선경 사장</div>
-                                        <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
-                                    </div>
-                                    <button type="button" class="details"></button>
-                                </div>
-                            </div>
-                            <div class="details-item">
-                                <div class="checkbox">
-                                    <label class="label-chk"><input type="checkbox"></label>
-                                </div>
-                                <div class="session-detail-time">
-                                    <div>10:30~11:00</div>
-                                    <p>인사말 & 인재개발 실태조사 결과발표</p>
-                                </div>
-                                <div class="session-detail-speaker">
-                                    <div class="session-detail-speaker-info">
-                                        <div class="session-detail-speaker-info-name">박선경 사장</div>
-                                        <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
-                                    </div>
-                                    <button type="button" class="details"></button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- // 목록 -->
-                    </div>
-                    <!-- // 카테고리4 -->
-                    <div class="session-item">
-                        <div class="session-item-title">
-                            <span>#track5</span>
-                            <div class="session-item-category">Public HRD</div>
-                        </div>
-
-                        <div class="session-details">
-                            <div class="details-item">
-                                <div class="checkbox">
-                                    <label class="label-chk"><input type="checkbox"></label>
-                                </div>
-                                <div class="session-detail-time">
-                                    <div>10:30~11:00</div>
-                                    <p>인사말 & 인재개발 실태조사 결과발표</p>
-                                </div>
-                                <div class="session-detail-speaker">
-                                    <div class="session-detail-speaker-info">
-                                        <div class="session-detail-speaker-info-name">박선경 사장</div>
-                                        <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
-                                    </div>
-                                    <button type="button" class="details"></button>
-                                </div>
-                            </div>
-                            <div class="details-item">
-                                <div class="checkbox">
-                                    <label class="label-chk"><input type="checkbox"></label>
-                                </div>
-                                <div class="session-detail-time">
-                                    <div>10:30~11:00</div>
-                                    <p>인사말 & 인재개발 실태조사 결과발표</p>
-                                </div>
-                                <div class="session-detail-speaker">
-                                    <div class="session-detail-speaker-info">
-                                        <div class="session-detail-speaker-info-name">박선경 사장</div>
-                                        <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
-                                    </div>
-                                    <button type="button" class="details"></button>
-                                </div>
-                            </div>
-                            <div class="details-item">
-                                <div class="checkbox">
-                                    <label class="label-chk"><input type="checkbox"></label>
-                                </div>
-                                <div class="session-detail-time">
-                                    <div>10:30~11:00</div>
-                                    <p>인사말 & 인재개발 실태조사 결과발표</p>
-                                </div>
-                                <div class="session-detail-speaker">
-                                    <div class="session-detail-speaker-info">
-                                        <div class="session-detail-speaker-info-name">박선경 사장</div>
-                                        <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
-                                    </div>
-                                    <button type="button" class="details"></button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- // 목록 -->
-                    </div>
-                    <!-- // 카테고리5 -->
-                    <div class="session-item">
-                        <div class="session-item-title">
-                            <span>#track6</span>
-                            <div class="session-item-category">Special session</div>
-                        </div>
-
-                        <div class="session-details">
-                            <div class="details-item">
-                                <div class="checkbox">
-                                    <label class="label-chk"><input type="checkbox"></label>
-                                </div>
-                                <div class="session-detail-time">
-                                    <div>10:30~11:00</div>
-                                    <p>인사말 & 인재개발 실태조사 결과발표</p>
-                                </div>
-                                <div class="session-detail-speaker">
-                                    <div class="session-detail-speaker-info">
-                                        <div class="session-detail-speaker-info-name">박선경 사장</div>
-                                        <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
-                                    </div>
-                                    <button type="button" class="details"></button>
-                                </div>
-                            </div>
-                            <div class="details-item">
-                                <div class="checkbox">
-                                    <label class="label-chk"><input type="checkbox"></label>
-                                </div>
-                                <div class="session-detail-time">
-                                    <div>10:30~11:00</div>
-                                    <p>인사말 & 인재개발 실태조사 결과발표</p>
-                                </div>
-                                <div class="session-detail-speaker">
-                                    <div class="session-detail-speaker-info">
-                                        <div class="session-detail-speaker-info-name">박선경 사장</div>
-                                        <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
-                                    </div>
-                                    <button type="button" class="details"></button>
-                                </div>
-                            </div>
-                            <div class="details-item">
-                                <div class="checkbox">
-                                    <label class="label-chk"><input type="checkbox"></label>
-                                </div>
-                                <div class="session-detail-time">
-                                    <div>10:30~11:00</div>
-                                    <p>인사말 & 인재개발 실태조사 결과발표</p>
-                                </div>
-                                <div class="session-detail-speaker">
-                                    <div class="session-detail-speaker-info">
-                                        <div class="session-detail-speaker-info-name">박선경 사장</div>
-                                        <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
-                                    </div>
-                                    <button type="button" class="details"></button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- // 목록 -->
-                    </div>
-                    <!-- // 카테고리6 -->
-                </div>
-            </div>
-            <div class="track-image"><img src="./assets/images/sc1.png" alt=""></div>
-        </div>
-        <!-- //session-track -->
-
-        <div class="session-track" style="display: none;">
-            <div class="session-track-wrap">
-                <header>
-                    <h2>오후 프로그램 <span>TRACK</span></h2>
-                    <button><i class="ico-track"></i>트랙별 보기</button>
-                </header>
-
-                <div class="session-content">
-                    <div class="session-item">
-                        <div class="session-item-title">
-                            <div class="session-item-category"><i class="ico-clock"></i>13:30~14:20</div>
-                        </div>
-
-                        <div class="session-details">
-                            <div class="details-item">
-                                <div class="checkbox">
-                                    <label class="label-chk"><input type="checkbox"></label>
-                                </div>
-                                <div class="session-detail-time">
-                                    <div><span># Performance</span>10:30~11:00</div>
-                                    <p>인사말 & 인재개발 실태조사 결과발표</p>
-                                </div>
-                                <div class="session-detail-speaker">
-                                    <div class="session-detail-speaker-info">
-                                        <div class="session-detail-speaker-info-name">박선경 사장</div>
-                                        <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
-                                    </div>
-                                    <button type="button" class="details"></button>
-                                </div>
-                            </div>
-                            <div class="details-item">
-                                <div class="checkbox">
-                                    <label class="label-chk"><input type="checkbox"></label>
-                                </div>
-                                <div class="session-detail-time">
-                                    <div><span># Performance</span>10:30~11:00</div>
-                                    <p>인사말 & 인재개발 실태조사 결과발표</p>
-                                </div>
-                                <div class="session-detail-speaker">
-                                    <div class="session-detail-speaker-info">
-                                        <div class="session-detail-speaker-info-name">박선경 사장</div>
-                                        <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
-                                    </div>
-                                    <button type="button" class="details"></button>
-                                </div>
-                            </div>
-                            <div class="details-item">
-                                <div class="checkbox">
-                                    <label class="label-chk"><input type="checkbox"></label>
-                                </div>
-                                <div class="session-detail-time">
-                                    <div><span># Performance</span>10:30~11:00</div>
-                                    <p>인사말 & 인재개발 실태조사 결과발표</p>
-                                </div>
-                                <div class="session-detail-speaker">
-                                    <div class="session-detail-speaker-info">
-                                        <div class="session-detail-speaker-info-name">박선경 사장</div>
-                                        <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
-                                    </div>
-                                    <button type="button" class="details"></button>
-                                </div>
-                            </div>
-                            <div class="details-item">
-                                <div class="checkbox">
-                                    <label class="label-chk"><input type="checkbox"></label>
-                                </div>
-                                <div class="session-detail-time">
-                                    <div><span># Performance</span>10:30~11:00</div>
-                                    <p>인사말 & 인재개발 실태조사 결과발표</p>
-                                </div>
-                                <div class="session-detail-speaker">
-                                    <div class="session-detail-speaker-info">
-                                        <div class="session-detail-speaker-info-name">박선경 사장</div>
-                                        <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
-                                    </div>
-                                    <button type="button" class="details"></button>
-                                </div>
-                            </div>
-                            <div class="details-item">
-                                <div class="checkbox">
-                                    <label class="label-chk"><input type="checkbox"></label>
-                                </div>
-                                <div class="session-detail-time">
-                                    <div><span># Performance</span>10:30~11:00</div>
-                                    <p>인사말 & 인재개발 실태조사 결과발표</p>
-                                </div>
-                                <div class="session-detail-speaker">
-                                    <div class="session-detail-speaker-info">
-                                        <div class="session-detail-speaker-info-name">박선경 사장</div>
-                                        <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
-                                    </div>
-                                    <button type="button" class="details"></button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- // 목록 -->
-                    </div>
-                    <!-- // 시간별 -->
-                    <div class="session-item">
-                        <div class="session-item-title">
-                            <div class="session-item-category"><i class="ico-clock"></i>14:30~15:20</div>
-                        </div>
-
-                        <div class="session-details">
-                            <div class="details-item">
-                                <div class="checkbox">
-                                    <label class="label-chk"><input type="checkbox"></label>
-                                </div>
-                                <div class="session-detail-time">
-                                    <div><span># Performance</span>10:30~11:00</div>
-                                    <p>인사말 & 인재개발 실태조사 결과발표</p>
-                                </div>
-                                <div class="session-detail-speaker">
-                                    <div class="session-detail-speaker-info">
-                                        <div class="session-detail-speaker-info-name">박선경 사장</div>
-                                        <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
-                                    </div>
-                                    <button type="button" class="details"></button>
-                                </div>
-                            </div>
-                            <div class="details-item">
-                                <div class="checkbox">
-                                    <label class="label-chk"><input type="checkbox"></label>
-                                </div>
-                                <div class="session-detail-time">
-                                    <div><span># Performance</span>10:30~11:00</div>
-                                    <p>인사말 & 인재개발 실태조사 결과발표</p>
-                                </div>
-                                <div class="session-detail-speaker">
-                                    <div class="session-detail-speaker-info">
-                                        <div class="session-detail-speaker-info-name">박선경 사장</div>
-                                        <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
-                                    </div>
-                                    <button type="button" class="details"></button>
-                                </div>
-                            </div>
-                            <div class="details-item">
-                                <div class="checkbox">
-                                    <label class="label-chk"><input type="checkbox"></label>
-                                </div>
-                                <div class="session-detail-time">
-                                    <div><span># Performance</span>10:30~11:00</div>
-                                    <p>인사말 & 인재개발 실태조사 결과발표</p>
-                                </div>
-                                <div class="session-detail-speaker">
-                                    <div class="session-detail-speaker-info">
-                                        <div class="session-detail-speaker-info-name">박선경 사장</div>
-                                        <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
-                                    </div>
-                                    <button type="button" class="details"></button>
-                                </div>
-                            </div>
-                            <div class="details-item">
-                                <div class="checkbox">
-                                    <label class="label-chk"><input type="checkbox"></label>
-                                </div>
-                                <div class="session-detail-time">
-                                    <div><span># Performance</span>10:30~11:00</div>
-                                    <p>인사말 & 인재개발 실태조사 결과발표</p>
-                                </div>
-                                <div class="session-detail-speaker">
-                                    <div class="session-detail-speaker-info">
-                                        <div class="session-detail-speaker-info-name">박선경 사장</div>
-                                        <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
-                                    </div>
-                                    <button type="button" class="details"></button>
-                                </div>
-                            </div>
-                            <div class="details-item">
-                                <div class="checkbox">
-                                    <label class="label-chk"><input type="checkbox"></label>
-                                </div>
-                                <div class="session-detail-time">
-                                    <div><span># Performance</span>10:30~11:00</div>
-                                    <p>인사말 & 인재개발 실태조사 결과발표</p>
-                                </div>
-                                <div class="session-detail-speaker">
-                                    <div class="session-detail-speaker-info">
-                                        <div class="session-detail-speaker-info-name">박선경 사장</div>
-                                        <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
-                                    </div>
-                                    <button type="button" class="details"></button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- // 목록 -->
-                    </div>
-                    <!-- // 시간별 -->
                     
                 </div>
+
+                <!-- <div class="scroll-move">
+                    <i></i>
+                </div> -->
+            </div>
+            </div>
+            <!-- //session-top -->
+
+            <div class="track-wrap">
+                <div class="session-track" data-mode="track">
+                    <div class="session-track-wrap">
+                        <header class="sticky-header">
+                            <h2>오후 프로그램 <span>TRACK</span></h2>
+                            <div class="session-track-btn">
+                                <button type="button"><i class="ico-time"></i>리스트로 보기</button>
+                            </div>
+                        </header>
+
+                        <div class="session-content scroll-area">
+                            <div class="cate">
+                                <div>Performance</div>
+                                <div>AI in HRD</div>
+                                <div>New Solution_HI</div>
+                                <div>HRM</div>
+                                <div>Public HRD</div>
+                                <div>Special Networking</div>
+                            </div>
+
+                            <div class="tiem-v">
+                                <span>13:30 ~ 14:20</span>
+                            </div>
+
+                            <div class="chk-grid">
+                                <div class="session-chk">
+                                    <div class="chk">
+                                        <label class="label-chk"><input type="checkbox"><span>선택</span></label>
+                                    </div>
+                                    <div class="mcate"><span># Performance</span></div>
+                                    <div class="tit details">
+                                        DC 기반의 리더십 개발 <br>
+                                        -BGF리테일 사례 -
+                                    </div>
+                                    <div class="speaker">
+                                        <div>홍길동과장  <span>BGF리테일</span></div>
+                                        <div>김성림 파트장  <span>엑스퍼트컨설팅</span></div>
+                                    </div>
+                                </div>
+                                <div class="session-chk">
+                                    <div class="chk">
+                                        <label class="label-chk"><input type="checkbox"><span>선택</span></label>
+                                    </div>
+                                    <div class="mcate"><span># Performance</span></div>
+                                    <div class="tit details">
+                                        DC 기반의 리더십 개발 <br>
+                                        -BGF리테일 사례 -
+                                    </div>
+                                    <div class="speaker">
+                                        <div>홍길동과장  <span>BGF리테일</span></div>
+                                        <div>김성림 파트장  <span>엑스퍼트컨설팅</span></div>
+                                    </div>
+                                </div>
+                                <div class="session-chk">
+                                    <div class="chk">
+                                        <label class="label-chk"><input type="checkbox"><span>선택</span></label>
+                                    </div>
+                                    <div class="mcate"><span># Performance</span></div>
+                                    <div class="tit details">
+                                        DC 기반의 리더십 개발 <br>
+                                        -BGF리테일 사례 -
+                                    </div>
+                                    <div class="speaker">
+                                        <div>홍길동과장  <span>BGF리테일</span></div>
+                                        <div>김성림 파트장  <span>엑스퍼트컨설팅</span></div>
+                                    </div>
+                                </div>
+                                <div class="session-chk">
+                                    <div class="chk">
+                                        <label class="label-chk"><input type="checkbox"><span>선택</span></label>
+                                    </div>
+                                    <div class="mcate"><span># Performance</span></div>
+                                    <div class="tit details">
+                                        DC 기반의 리더십 개발 <br>
+                                        -BGF리테일 사례 -
+                                    </div>
+                                    <div class="speaker">
+                                        <div>홍길동과장  <span>BGF리테일</span></div>
+                                        <div>김성림 파트장  <span>엑스퍼트컨설팅</span></div>
+                                    </div>
+                                </div>
+                                <div class="session-chk">
+                                    <div class="chk">
+                                        <label class="label-chk"><input type="checkbox"><span>선택</span></label>
+                                    </div>
+                                    <div class="mcate"><span># Performance</span></div>
+                                    <div class="tit details">
+                                        DC 기반의 리더십 개발 <br>
+                                        -BGF리테일 사례 -
+                                    </div>
+                                    <div class="speaker">
+                                        <div>홍길동과장  <span>BGF리테일</span></div>
+                                        <div>김성림 파트장  <span>엑스퍼트컨설팅</span></div>
+                                    </div>
+                                </div>
+                                <div class="session-chk">
+                                    <div class="chk">
+                                        <label class="label-chk"><input type="checkbox"><span>선택</span></label>
+                                    </div>
+                                    <div class="mcate"><span># Performance</span></div>
+                                    <div class="tit details">
+                                        DC 기반의 리더십 개발 <br>
+                                        -BGF리테일 사례 -
+                                    </div>
+                                    <div class="speaker">
+                                        <div>홍길동과장  <span>BGF리테일</span></div>
+                                        <div>김성림 파트장  <span>엑스퍼트컨설팅</span></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tiem-v">
+                                <span>13:30 ~ 14:20</span>
+                            </div>
+                            <div class="chk-grid">
+                                <div class="session-chk">
+                                    <div class="chk">
+                                        <label class="label-chk"><input type="checkbox"><span>선택</span></label>
+                                    </div>
+                                    <div class="mcate"><span># Performance</span></div>
+                                    <div class="tit details">
+                                        DC 기반의 리더십 개발 <br>
+                                        -BGF리테일 사례 -
+                                    </div>
+                                    <div class="speaker">
+                                        <div>홍길동과장  <span>BGF리테일</span></div>
+                                        <div>김성림 파트장  <span>엑스퍼트컨설팅</span></div>
+                                    </div>
+                                </div>
+                                <div class="session-chk">
+                                    <div class="chk">
+                                        <label class="label-chk"><input type="checkbox"><span>선택</span></label>
+                                    </div>
+                                    <div class="mcate"><span># Performance</span></div>
+                                    <div class="tit details">
+                                        DC 기반의 리더십 개발 <br>
+                                        -BGF리테일 사례 -
+                                    </div>
+                                    <div class="speaker">
+                                        <div>홍길동과장  <span>BGF리테일</span></div>
+                                        <div>김성림 파트장  <span>엑스퍼트컨설팅</span></div>
+                                    </div>
+                                </div>
+                                <div class="session-chk">
+                                    <div class="chk">
+                                        <label class="label-chk"><input type="checkbox"><span>선택</span></label>
+                                    </div>
+                                    <div class="mcate"><span># Performance</span></div>
+                                    <div class="tit details">
+                                        DC 기반의 리더십 개발 <br>
+                                        -BGF리테일 사례 -
+                                    </div>
+                                    <div class="speaker">
+                                        <div>홍길동과장  <span>BGF리테일</span></div>
+                                        <div>김성림 파트장  <span>엑스퍼트컨설팅</span></div>
+                                    </div>
+                                </div>
+                                <div class="session-chk">
+                                    <div class="chk">
+                                        <label class="label-chk"><input type="checkbox"><span>선택</span></label>
+                                    </div>
+                                    <div class="mcate"><span># Performance</span></div>
+                                    <div class="tit details">
+                                        DC 기반의 리더십 개발 <br>
+                                        -BGF리테일 사례 -
+                                    </div>
+                                    <div class="speaker">
+                                        <div>홍길동과장  <span>BGF리테일</span></div>
+                                        <div>김성림 파트장  <span>엑스퍼트컨설팅</span></div>
+                                    </div>
+                                </div>
+                                <div class="session-chk">
+                                    <div class="chk">
+                                        <label class="label-chk"><input type="checkbox"><span>선택</span></label>
+                                    </div>
+                                    <div class="mcate"><span># Performance</span></div>
+                                    <div class="tit details">
+                                        DC 기반의 리더십 개발 <br>
+                                        -BGF리테일 사례 -
+                                    </div>
+                                    <div class="speaker">
+                                        <div>홍길동과장  <span>BGF리테일</span></div>
+                                        <div>김성림 파트장  <span>엑스퍼트컨설팅</span></div>
+                                    </div>
+                                </div>
+                                <div class="session-chk">
+                                    <div class="chk">
+                                        <label class="label-chk"><input type="checkbox"><span>선택</span></label>
+                                    </div>
+                                    <div class="mcate"><span># Performance</span></div>
+                                    <div class="tit details">
+                                        DC 기반의 리더십 개발 <br>
+                                        -BGF리테일 사례 -
+                                    </div>
+                                    <div class="speaker">
+                                        <div>홍길동과장  <span>BGF리테일</span></div>
+                                        <div>김성림 파트장  <span>엑스퍼트컨설팅</span></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tiem-v">
+                                <span>13:30 ~ 14:20</span>
+                            </div>
+                            <div class="chk-grid">
+                                <div class="session-chk">
+                                    <div class="chk">
+                                        <label class="label-chk"><input type="checkbox"><span>선택</span></label>
+                                    </div>
+                                    <div class="mcate"><span># Performance</span></div>
+                                    <div class="tit details">
+                                        DC 기반의 리더십 개발 <br>
+                                        -BGF리테일 사례 -
+                                    </div>
+                                    <div class="speaker">
+                                        <div>홍길동과장  <span>BGF리테일</span></div>
+                                        <div>김성림 파트장  <span>엑스퍼트컨설팅</span></div>
+                                    </div>
+                                </div>
+                                <div class="session-chk">
+                                    <div class="chk">
+                                        <label class="label-chk"><input type="checkbox"><span>선택</span></label>
+                                    </div>
+                                    <div class="mcate"><span># Performance</span></div>
+                                    <div class="tit details">
+                                        DC 기반의 리더십 개발 <br>
+                                        -BGF리테일 사례 -
+                                    </div>
+                                    <div class="speaker">
+                                        <div>홍길동과장  <span>BGF리테일</span></div>
+                                        <div>김성림 파트장  <span>엑스퍼트컨설팅</span></div>
+                                    </div>
+                                </div>
+                                <div class="session-chk">
+                                    <div class="chk">
+                                        <label class="label-chk"><input type="checkbox"><span>선택</span></label>
+                                    </div>
+                                    <div class="mcate"><span># Performance</span></div>
+                                    <div class="tit details">
+                                        DC 기반의 리더십 개발 <br>
+                                        -BGF리테일 사례 -
+                                    </div>
+                                    <div class="speaker">
+                                        <div>홍길동과장  <span>BGF리테일</span></div>
+                                        <div>김성림 파트장  <span>엑스퍼트컨설팅</span></div>
+                                    </div>
+                                </div>
+                                <div class="session-chk">
+                                    <div class="chk">
+                                        <label class="label-chk"><input type="checkbox"><span>선택</span></label>
+                                    </div>
+                                    <div class="mcate"><span># Performance</span></div>
+                                    <div class="tit details">
+                                        DC 기반의 리더십 개발 <br>
+                                        -BGF리테일 사례 -
+                                    </div>
+                                    <div class="speaker">
+                                        <div>홍길동과장  <span>BGF리테일</span></div>
+                                        <div>김성림 파트장  <span>엑스퍼트컨설팅</span></div>
+                                    </div>
+                                </div>
+                                <div class="session-chk">
+                                    <div class="chk">
+                                        <label class="label-chk"><input type="checkbox"><span>선택</span></label>
+                                    </div>
+                                    <div class="mcate"><span># Performance</span></div>
+                                    <div class="tit details">
+                                        DC 기반의 리더십 개발 <br>
+                                        -BGF리테일 사례 -
+                                    </div>
+                                    <div class="speaker">
+                                        <div>홍길동과장  <span>BGF리테일</span></div>
+                                        <div>김성림 파트장  <span>엑스퍼트컨설팅</span></div>
+                                    </div>
+                                </div>
+                                <div class="session-chk special-net">
+                                    <div>스페셜 네트워킹 세션은 <br><b>사전 신청자</b>에 한해 <br>참여 가능합니다. <br>
+                                        (선착순 <b>50</b>명)</div>
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                    <!-- <div class="track-image">
+                        <div><img src="./assets/images/sc1.png" alt=""></div>
+                    </div> -->
+                </div>
+                <!-- //session-track -->
+
+                <div class="session-track" data-mode="time">
+                    <div class="session-track-wrap">
+                        <header class="sticky-header">
+                            <h2>오후 프로그램 <span>TRACK</span></h2>
+                            <div class="session-track-btn">
+                                <button type="button"><i class="ico-track"></i>타임테이블 보기</button>
+                            </div>
+                        </header>
+
+                        <div class="session-content">
+                            <div class="session-item">
+                                <div class="session-item-title">
+                                    <div class="session-item-category"><i class="ico-clock"></i>13:30~14:20</div>
+                                </div>
+
+                                <div class="session-details">
+                                    <div class="details-item">
+                                        <div class="checkbox">
+                                            <label class="label-chk"><input type="checkbox"></label>
+                                        </div>
+                                        <div class="session-detail-time">
+                                            <div><span># Performance</span></div>
+                                            <p>인사말 & 인재개발 실태조사 결과발표</p>
+                                        </div>
+                                        <div class="session-detail-speaker">
+                                            <div class="session-detail-speaker-info">
+                                                <div class="session-detail-speaker-info-name">박선경 사장</div>
+                                                <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
+                                            </div>
+                                            <button type="button" class="details"></button>
+                                        </div>
+                                    </div>
+                                    <div class="details-item">
+                                        <div class="checkbox">
+                                            <label class="label-chk"><input type="checkbox"></label>
+                                        </div>
+                                        <div class="session-detail-time">
+                                            <div><span># Performance</span></div>
+                                            <p>인사말 & 인재개발 실태조사 결과발표</p>
+                                        </div>
+                                        <div class="session-detail-speaker">
+                                            <div class="session-detail-speaker-info">
+                                                <div class="session-detail-speaker-info-name">박선경 사장</div>
+                                                <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
+                                            </div>
+                                            <button type="button" class="details"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- // 목록 -->
+                            </div>
+                            <!-- // 시간별 -->
+                            <div class="session-item">
+                                <div class="session-item-title">
+                                    <div class="session-item-category"><i class="ico-clock"></i>14:30~15:20</div>
+                                </div>
+
+                                <div class="session-details">
+                                    <div class="details-item">
+                                        <div class="checkbox">
+                                            <label class="label-chk"><input type="checkbox"></label>
+                                        </div>
+                                        <div class="session-detail-time">
+                                            <div><span># Performance</span>10:30~11:00</div>
+                                            <p>인사말 & 인재개발 실태조사 결과발표</p>
+                                        </div>
+                                        <div class="session-detail-speaker">
+                                            <div class="session-detail-speaker-info">
+                                                <div class="session-detail-speaker-info-name">박선경 사장</div>
+                                                <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
+                                            </div>
+                                            <button type="button" class="details"></button>
+                                        </div>
+                                    </div>
+                                    <div class="details-item">
+                                        <div class="checkbox">
+                                            <label class="label-chk"><input type="checkbox"></label>
+                                        </div>
+                                        <div class="session-detail-time">
+                                            <div><span># Performance</span>10:30~11:00</div>
+                                            <p>인사말 & 인재개발 실태조사 결과발표</p>
+                                        </div>
+                                        <div class="session-detail-speaker">
+                                            <div class="session-detail-speaker-info">
+                                                <div class="session-detail-speaker-info-name">박선경 사장</div>
+                                                <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
+                                            </div>
+                                            <button type="button" class="details"></button>
+                                        </div>
+                                    </div>
+                                    <div class="details-item">
+                                        <div class="checkbox">
+                                            <label class="label-chk"><input type="checkbox"></label>
+                                        </div>
+                                        <div class="session-detail-time">
+                                            <div><span># Performance</span>10:30~11:00</div>
+                                            <p>인사말 & 인재개발 실태조사 결과발표</p>
+                                        </div>
+                                        <div class="session-detail-speaker">
+                                            <div class="session-detail-speaker-info">
+                                                <div class="session-detail-speaker-info-name">박선경 사장</div>
+                                                <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
+                                            </div>
+                                            <button type="button" class="details"></button>
+                                        </div>
+                                    </div>
+                                    <div class="details-item">
+                                        <div class="checkbox">
+                                            <label class="label-chk"><input type="checkbox"></label>
+                                        </div>
+                                        <div class="session-detail-time">
+                                            <div><span># Performance</span>10:30~11:00</div>
+                                            <p>인사말 & 인재개발 실태조사 결과발표</p>
+                                        </div>
+                                        <div class="session-detail-speaker">
+                                            <div class="session-detail-speaker-info">
+                                                <div class="session-detail-speaker-info-name">박선경 사장</div>
+                                                <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
+                                            </div>
+                                            <button type="button" class="details"></button>
+                                        </div>
+                                    </div>
+                                    <div class="details-item">
+                                        <div class="checkbox">
+                                            <label class="label-chk"><input type="checkbox"></label>
+                                        </div>
+                                        <div class="session-detail-time">
+                                            <div><span># Performance</span>10:30~11:00</div>
+                                            <p>인사말 & 인재개발 실태조사 결과발표</p>
+                                        </div>
+                                        <div class="session-detail-speaker">
+                                            <div class="session-detail-speaker-info">
+                                                <div class="session-detail-speaker-info-name">박선경 사장</div>
+                                                <div class="session-detail-speaker-info-aff">엑스퍼트컨설팅</div>
+                                            </div>
+                                            <button type="button" class="details"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- // 목록 -->
+                            </div>
+                            <!-- // 시간별 -->
+
+                        </div>
+                    </div>
+                </div>
+                <!-- // session-time -->
+                <div class="notice_txt">*비엑스컨설팅은 마케팅,CX,세일즈 컨설팅 등을 전문으로 수행하는 엑스퍼트컨설팅 자회사입니다.</div>
+
+                <div class="apply-s-btn">
+                    <button type="button">
+                        <i class="ico-apply"></i>
+                        <span>참가신청</span>
+                    </button>
+                </div>
+             
+            </div>
+            
+           
+
+        </div>
+        {{> footer}}
+        {{> apply}}
+    </div>
+    <!-- //wrap -->
+
+    <!-- 팝업 -->
+    <div class="custom-modal" id="customModal">
+        <div class="custom-modal__backdrop"></div>
+        <div class="custom-modal__content">
+            <button class="custom-modal__close" id="customModalClose" aria-label="닫기"></button>
+            <div class="custom-modal__time">오전 10:30~11:20</div>
+            <div class="custom-modal__title">
+                Skill Based Curriculum 및 과정 개발 기법 :<br />
+                공공 사례 중심(한수원 사례)
+            </div>
+            <div class="custom-modal__speaker">
+                <div class="custom-modal__name">박선경</div>
+                <div class="custom-modal__aff">수자원공사인재개발원 담당자</div>
+            </div>
+            <hr class="custom-modal__divider" />
+            <div class="custom-modal__desc">
+                기업, 공공기관, 대학의 HRD현황을 파악하고 미래를 예측하는 국내 유일의 HRD서베이!<br />
+                특히 이번에는 경력 성장에 대한 인식, 상황 등에 대한 데이터들을 확인하고 향후 경력 성장의 방향에 대한 논의까지 진행해 보고자 합니다.
             </div>
         </div>
-        <!-- // session-time -->
-         
     </div>
-    {{> footer}}
-    {{> apply}}
-</div>
-<!-- //wrap -->
 
-<!-- 팝업 -->
-<div class="custom-modal" id="customModal">
-  <div class="custom-modal__backdrop"></div>
-  <div class="custom-modal__content">
-    <button class="custom-modal__close" id="customModalClose" aria-label="닫기"></button>
-    <div class="custom-modal__time">오전 10:30~11:20</div>
-    <div class="custom-modal__title">
-      Skill Based Curriculum 및 과정 개발 기법 :<br />
-      공공 사례 중심(한수원 사례)
-    </div>
-    <div class="custom-modal__speaker">
-      <div class="custom-modal__name">박선경</div>
-      <div class="custom-modal__aff">수자원공사인재개발원 담당자</div>
-    </div>
-    <hr class="custom-modal__divider" />
-    <div class="custom-modal__desc">
-      기업, 공공기관, 대학의 HRD현황을 파악하고 미래를 예측하는 국내 유일의 HRD서베이!<br />
-      특히 이번에는 경력 성장에 대한 인식, 상황 등에 대한 데이터들을 확인하고 향후 경력 성장의 방향에 대한 논의까지 진행해 보고자 합니다.
-    </div>
-  </div>
-</div>
+    <script type="module" src="./js/main.js"></script>
 
-<script type="module" src="./js/main.js"></script>
-<script>
-window.addEventListener('DOMContentLoaded', () => {
-    // 최상단 섹션 페이드인
-    gsap.to('.session-top', {
-      opacity: 1,
-      y: 0,
-      duration: 1.2,
-      ease: "power4.out"
-    });
-
-    // 타이틀 애니메이션 순차 등장
-    gsap.to('.sub-title-text', {
-      delay: 0.4,
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power3.out"
-    });
-
-    gsap.to('.sub-title-date', {
-      delay: 0.6,
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power3.out"
-    });
-
-    gsap.to('.sub-title-hi', {
-      delay: 0.8,
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power3.out"
-    });
-
-    gsap.to('.sub-hrc-ver', {
-      delay: 1.0,
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power3.out"
-    });
-
-    gsap.to('.sub-title-video', {
-        delay: 1.4,
-        onStart: () => {
-            const el = document.querySelector('.sub-title-video');
-            el.classList.add('blur-reveal');
+    <style>
+        canvas {
+            max-width: 100%;
+            height: auto;
+            display: block;
         }
-    });
+    </style>
+    <script>
+        const canvas = document.querySelector('.sub-title-video canvas');
+        const ctx = canvas.getContext('2d');
 
-    gsap.to('.program-morning', {
-        delay: 1.7,
-        opacity: 1,
-        scale: 1,
-        filter: 'blur(0px)',
-        duration: 2,
-        ease: "power3.out"
-    });
+        const video = document.createElement('video');
+        video.src = './Program_v6.mp4'; // mp4 위치 정확히
+        video.muted = true;
+        video.autoplay = true;
+        video.loop = true;
+        video.playsInline = true;
+        video.style.display = 'none';
+        document.body.appendChild(video);
 
+        const targetColors = [
+            { r: 3, g: 19, b: 18 }, // #031312
+            { r: 0, g: 0, b: 0 }    // #000000
+        ];
+        const threshold = 10;
+
+        function isSimilar(r, g, b, color) {
+            return (
+                Math.abs(r - color.r) < threshold &&
+                Math.abs(g - color.g) < threshold &&
+                Math.abs(b - color.b) < threshold
+            );
+        }
+
+        function draw() {
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+            const frame = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            const data = frame.data;
+
+            for (let i = 0; i < data.length; i += 4) {
+                const r = data[i];
+                const g = data[i + 1];
+                const b = data[i + 2];
+
+                for (const color of targetColors) {
+                    if (isSimilar(r, g, b, color)) {
+                        data[i + 3] = 0; // 투명화
+                        break;
+                    }
+                }
+            }
+
+            ctx.putImageData(frame, 0, 0);
+            //requestAnimationFrame(draw);
+        }
+
+        video.addEventListener('canplay', () => {
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+
+            // 명시적 재생 시도
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+                playPromise
+                    .then(() => {
+                        draw(); // play 성공하면 draw 시작
+                    })
+                    .catch(err => {
+                        console.warn('Autoplay blocked:', err);
+                    });
+            } else {
+                // 일부 브라우저는 promise 반환 안 함
+                draw();
+            }
+        });
     
+        window.addEventListener('DOMContentLoaded', () => {
+            // 최상단 섹션 페이드인
+            gsap.to('.session-top', {
+                opacity: 1,
+                y: 0,
+                duration: 1.2,
+                ease: "power4.out"
+            });
 
-   // track-image 등장
-ScrollTrigger.create({
-  trigger: '.session-track',
-  start: 'top top',
-  end: 'bottom bottom',
-  onEnter: () => document.querySelector('.track-image').classList.add('show'),
-  onLeaveBack: () => document.querySelector('.track-image').classList.remove('show')
-});
+            // 타이틀 애니메이션 순차 등장
+            gsap.to('.sub-title-text', {
+                delay: 0.4,
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: "power3.out"
+            });
 
-// track-image 사라지게 (footer 도달 시)
-ScrollTrigger.create({
-  trigger: 'footer',
-  start: 'top bottom',
-  onEnter: () => document.querySelector('.track-image').classList.remove('show'),
-  onLeaveBack: () => document.querySelector('.track-image').classList.add('show')
-});
+            gsap.to('.sub-title-date', {
+                delay: 0.6,
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: "power3.out"
+            });
 
-// header 등장
-ScrollTrigger.create({
-  trigger: '.session-track',
-  start: 'top center',
-  end: 'bottom bottom',
-  onEnter: () => document.querySelector('.sticky-header').classList.add('show'),
-  onLeaveBack: () => document.querySelector('.sticky-header').classList.remove('show')
-});
+            gsap.to('.sub-title-hi', {
+                delay: 0.8,
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: "power3.out"
+            });
 
-// session-content 올라오는 애니
-gsap.fromTo('.session-content',
-  { y: 80, opacity: 0 },
-  {
-    y: 0,
-    opacity: 1,
-    duration: 1,
-    ease: 'power3.out',
-    scrollTrigger: {
-      trigger: '.session-track',
-      start: 'top center',
-      end: 'bottom 100%',
-      scrub: true
-    }
-  }
-);
+            gsap.to('.sub-hrc-ver', {
+                delay: 1.0,
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: "power3.out"
+            });
+
+            gsap.to('.sub-title-video', {
+                delay: 1.4,
+                onStart: () => {
+                    const el = document.querySelector('.sub-title-video');
+                    el.classList.add('blur-reveal');
+                }
+            });
+
+            gsap.to('.program-morning', {
+                delay: 1.7,
+                opacity: 1,
+                scale: 1,
+                filter: 'blur(0px)',
+                duration: 2,
+                ease: "power3.out"
+            });
 
 
+            
 
-  });    
-</script>
+            // 시간별/트랙별 보기 토글 기능
+            const trackView = document.querySelector('.session-track[data-mode="track"]');
+            const timeView = document.querySelector('.session-track[data-mode="time"]');
+            const trackBtn = trackView?.querySelector('.sticky-header button');
+            const timeBtn = timeView?.querySelector('.sticky-header button');
+
+            function switchToTimeView() {
+                trackView.style.display = 'none';
+                timeView.style.display = 'block';
+
+                // track-image 전환
+                const trackImage = trackView.querySelector('.track-image');
+                const timeImage = timeView.querySelector('.track-image');
+                if (trackImage) trackImage.classList.remove('show');
+                if (timeImage) timeImage.classList.add('show');
+
+                // header 전환
+                const trackHeader = trackView.querySelector('.sticky-header');
+                const timeHeader = timeView.querySelector('.sticky-header');
+                if (trackHeader) trackHeader.classList.remove('show');
+                if (timeHeader) timeHeader.classList.add('show');
+
+                ScrollTrigger.refresh(true);
+
+
+            }
+
+            function switchToTrackView() {
+                trackView.style.display = 'block';
+                timeView.style.display = 'none';
+
+                // track-image 전환
+                const trackImage = trackView.querySelector('.track-image');
+                const timeImage = timeView.querySelector('.track-image');
+                if (timeImage) timeImage.classList.remove('show');
+                if (trackImage) trackImage.classList.add('show');
+
+                // header 전환
+                const trackHeader = trackView.querySelector('.sticky-header');
+                const timeHeader = timeView.querySelector('.sticky-header');
+                if (timeHeader) timeHeader.classList.remove('show');
+                if (trackHeader) trackHeader.classList.add('show');
+            }
+
+            if (trackBtn) {
+                trackBtn.addEventListener('click', switchToTimeView);
+            }
+
+            if (timeBtn) {
+                timeBtn.addEventListener('click', switchToTrackView);
+            }
+
+            ScrollTrigger.refresh(true);
+
+
+        });    
+    </script>
 
 </body>
-</html>
+
+</html></html>

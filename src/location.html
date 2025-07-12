@@ -8,27 +8,33 @@
 <body>
   <div id="wrap">
     {{> nav}}
-
+    
     <div class="location">
       <div class="location-container">
         <div class="location-top">
           <div class="sub-title">
             <div class="sub-title-text">
-              2025 <b>HR FAIR</b>
+                2025 <b>HR FAIR</b>
             </div>
             <div class="sub-title-date">
-              <b>2025.9.4</b><br class="mobile-block">대한상공회의소 국제회의장 B2F
+                <!-- <b>2025.9.4</b><span>대한상공회의소 국제회의장 B2F</span> -->
+                <b>2025.9.4</b>Thu <b>10</b>AM
             </div>
           </div>
           <div class="sub-title-hi-wrap">
             <div class="sub-hrc-ver">
-              HR FAIR conference
+                <span>EXPERT</span> <span>Conference</span>
             </div>
             <div class="sub-title-hi">
-              Hi-AI
+                Hi-AI
             </div>
+        </div>
+          <div class="sub-title-video">
+            <div class="mobile-image">
+              <img src="./assets/images/location_mobile.png" alt="">
+            </div>
+            <canvas id="canvas"></canvas>
           </div>
-          <div class="sub-title-video"><img src="./assets/images/Location.png" alt=""></div>
         </div>
 
         <div class="location-content">
@@ -62,63 +68,139 @@
         </div>
       </div>
     </div>
-
     {{> footer}}
-
     {{> apply}}
   </div>
   <!-- //wrap -->
+   <style>
+        canvas {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
   <script type="module" src="./js/main.js"></script>
   <script>
     window.addEventListener('DOMContentLoaded', () => {
-    // 최상단 섹션 페이드인
-    gsap.to('.session-top', {
-      opacity: 1,
-      y: 0,
-      duration: 1.2,
-      ease: "power4.out"
-    });
 
-    // 타이틀 애니메이션 순차 등장
-    gsap.to('.sub-title-text', {
-      delay: 0.4,
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power3.out"
-    });
+    const canvas = document.querySelector('.sub-title-video canvas');
+        const ctx = canvas.getContext('2d');
 
-    gsap.to('.sub-title-date', {
-      delay: 0.6,
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power3.out"
-    });
+        const video = document.createElement('video');
+        video.src = './location_v1.mp4'; // mp4 위치 정확히
+        video.muted = true;
+        video.autoplay = true;
+        video.loop = true;
+        video.playsInline = true;
+        video.style.display = 'none';
+        document.body.appendChild(video);
 
-    gsap.to('.sub-title-hi', {
-      delay: 0.8,
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power3.out"
-    });
+        const targetColors = [
+            { r: 3, g: 19, b: 18 }, // #031312
+            { r: 0, g: 0, b: 0 }    // #000000
+        ];
+        const threshold = 10;
 
-    gsap.to('.sub-hrc-ver', {
-      delay: 1.0,
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power3.out"
-    });
+        function isSimilar(r, g, b, color) {
+            return (
+                Math.abs(r - color.r) < threshold &&
+                Math.abs(g - color.g) < threshold &&
+                Math.abs(b - color.b) < threshold
+            );
+        }
 
-    gsap.to('.sub-title-video', {
+        function draw() {
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+            const frame = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            const data = frame.data;
+
+            for (let i = 0; i < data.length; i += 4) {
+                const r = data[i];
+                const g = data[i + 1];
+                const b = data[i + 2];
+
+                for (const color of targetColors) {
+                    if (isSimilar(r, g, b, color)) {
+                        data[i + 3] = 0; // 투명화
+                        break;
+                    }
+                }
+            }
+
+            ctx.putImageData(frame, 0, 0);
+            requestAnimationFrame(draw);
+        }
+
+        video.addEventListener('canplay', () => {
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+
+            // 명시적 재생 시도
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+                playPromise
+                    .then(() => {
+                        draw(); // play 성공하면 draw 시작
+                    })
+                    .catch(err => {
+                        console.warn('Autoplay blocked:', err);
+                    });
+            } else {
+                // 일부 브라우저는 promise 반환 안 함
+                draw();
+            }
+        });
+
+      // 최상단 섹션 페이드인
+      gsap.to('.location-top', {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        ease: "power4.out"
+      });
+
+      // 타이틀 애니메이션 순차 등장
+      gsap.to('.sub-title-text', {
+        delay: 0.4,
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out"
+      });
+
+      gsap.to('.sub-title-date', {
+        delay: 0.6,
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out"
+      });
+
+      gsap.to('.sub-title-hi', {
+        delay: 0.8,
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out"
+      });
+
+      gsap.to('.sub-hrc-ver', {
+        delay: 1.0,
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out"
+      });
+
+      gsap.to('.sub-title-video', {
         delay: 1.4,
         onStart: () => {
-            const el = document.querySelector('.sub-title-video');
-            el.classList.add('blur-reveal');
+          const el = document.querySelector('.sub-title-video');
+          el.classList.add('blur-reveal');
         }
+      });
     });
-  });
-</script>
-</body></html>
+  </script>
+</body>
+
+</html>
