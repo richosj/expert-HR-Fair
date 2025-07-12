@@ -35,40 +35,83 @@
     fetch(link.href, fetchOpts);
   }
 })();
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-if (window.innerWidth > 768) {
-  ScrollTrigger.normalizeScroll(true);
-  ScrollTrigger.config({ autoRefreshEvents: "visibilitychange,DOMContentLoaded,load" });
-  ScrollSmoother.create({
-    wrapper: "#smoother-wrapper",
-    content: "#smoother-content",
-    smooth: 1.1,
-    speed: 1,
-    normalizeScroll: true,
-    ignoreMobileResize: true,
-    smoothTouch: 0.1,
-    effects: true,
-    preventDefault: true,
-    normalizeScroll: { allowNestedScroll: true }
-    // 중첩 스크롤 허용
-  });
-}
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, ScrollSmoother);
 const body = document.querySelector("body");
-const openApplyBtn = document.querySelector(".open-apply__btn");
+document.querySelector(".nav");
+const mobileMenu = document.querySelector(".mobile-menu");
+const mobileMenuClose = document.querySelector(".mobile-menu-close");
+mobileMenu.addEventListener("click", () => {
+  body.classList.add("nav-open");
+});
+mobileMenuClose.addEventListener("click", () => {
+  body.classList.remove("nav-open");
+});
+const openApplyBtn = document.querySelector(".apply-s-btn button");
 document.querySelector(".open-apply");
+const openApplys = document.querySelector(".open-applys");
 const applyClose = document.querySelector(".apply__close");
+openApplys.addEventListener("click", (e) => {
+  e.preventDefault();
+  body.classList.toggle("apply-open");
+});
 openApplyBtn.addEventListener("click", () => {
   body.classList.toggle("apply-open");
 });
 applyClose.addEventListener("click", () => {
   body.classList.remove("apply-open");
 });
+const btnTop = document.querySelector("#btnTop");
 document.querySelector(".open-apply");
 document.querySelector(".footer");
+window.addEventListener("DOMContentLoaded", () => {
+  const scrollMoving = document.querySelector(".scroll-move");
+  if (scrollMoving) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        scrollMoving.classList.add("hidden");
+      } else {
+        scrollMoving.classList.remove("hidden");
+      }
+    });
+  }
+  if (btnTop) {
+    gsap.set(btnTop, { opacity: 0, y: 50, pointerEvents: "none" });
+    ScrollTrigger.create({
+      trigger: "body",
+      start: "top top",
+      end: "bottom bottom",
+      onUpdate: (self) => {
+        if (self.progress > 0.1) {
+          gsap.to(btnTop, {
+            opacity: 1,
+            y: 0,
+            duration: 0.3,
+            pointerEvents: "auto"
+          });
+        } else {
+          gsap.to(btnTop, {
+            opacity: 0,
+            y: 50,
+            duration: 0.3,
+            pointerEvents: "none"
+          });
+        }
+      }
+    });
+    btnTop.addEventListener("click", () => {
+      gsap.to(window, {
+        duration: 0.2,
+        scrollTo: { y: 0 }
+        //ease: 'power2.out'
+      });
+    });
+  }
+});
 const modal = document.getElementById("customModal");
 const modalClose = document.getElementById("customModalClose");
 const modalBackdrop = modal == null ? void 0 : modal.querySelector(".custom-modal__backdrop");
 const detailsBtns = document.querySelectorAll(".details");
+const mobileDetailsBtns = document.querySelectorAll(".session-detail-time");
 function openModal() {
   modal.classList.add("active");
   document.body.style.overflow = "hidden";
@@ -77,6 +120,11 @@ function closeModal() {
   modal.classList.remove("active");
   document.body.style.overflow = "";
 }
+mobileDetailsBtns.forEach((btn) => {
+  if (window.innerWidth < 1024) {
+    btn.addEventListener("click", openModal);
+  }
+});
 detailsBtns.forEach((btn) => {
   btn.addEventListener("click", openModal);
 });
