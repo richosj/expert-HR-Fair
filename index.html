@@ -68,11 +68,12 @@
                     </div>
 
                     <div class="s2">
-                        <div class="shape-3"><img src="./assets/images/3.png" alt=""></div>
+                        
                         <div class="s2-inner">
+                            <div class="shape-3"><img src="./assets/images/3.png" alt=""></div>
                             <div class="s2-title">
                                 <div><span>AI, 특별함이 아닌 일상으로! </span></div>
-                                <div><span>편하게 마주하고 친숙하게 다가가기.</span></div>
+                                <div><span>편하게 마주하고 친숙하게 다가가기</span></div>
                             </div>
                             <div class="hexagon-wrap-inner">
                                 <div class="hexagon-wrap hexagon-1">
@@ -97,7 +98,9 @@
 
                     <div class="s3">
                         <div class="s3-inner">
-                            <div class="s3-title"><span>Trends <em>&</em> Insights</span></div>
+                            <div class="s3-title">
+                                <div><span>Trends <em>&</em> Insights</span></div>
+                            </div>
 
                             <div class="s3-content">
                                 <div class="square-flip square-flip-1">
@@ -398,148 +401,139 @@
             video.addEventListener("loadeddata", () => {
                 video.classList.add("loaded");
             });
-
-
-            // wrap-content 효과
-            const wrapContent = document.querySelector('.wrap-content');
-            if (wrapContent) {
-                // s1 섹션 효과
-                const s1 = document.querySelector('.s1');
-                const s1Title = document.querySelector('.s1-title');
-                const s1Title2 = document.querySelector('.s1-title-2');
-                const shape1 = document.querySelector('.shape-1');
-                const shape2 = document.querySelector('.shape-2');
-
-                if (s1 && s1Title && s1Title2) {
-                    gsap.set([s1Title, s1Title2, shape1, shape2], { opacity: 0, y: 50 });
-
-                    ScrollTrigger.create({
-                        trigger: s1,
-                        start: 'top 80%',
-                        end: 'bottom 20%',
-                        onEnter: () => {
-                            gsap.timeline()
-                                .to(shape1, { opacity: 1, y: 0, duration: 1, ease: 'power3.out' })
-                                .to(shape2, { opacity: 1, y: 0, duration: 1, ease: 'power3.out' }, '-=0.5')
-                                .to(s1Title, { opacity: 1, y: 0, duration: 1.2, ease: 'power3.out' }, '-=0.3')
-                                .to(s1Title2, { opacity: 1, y: 0, duration: 1, ease: 'power3.out' }, '-=0.8');
-                        },
-                        onLeave: () => {
-                            gsap.to([s1Title, s1Title2, shape1, shape2], { opacity: 0.3, y: -20, duration: 0.5 });
-                        },
-                        onEnterBack: () => {
-                            gsap.to([s1Title, s1Title2, shape1, shape2], { opacity: 1, y: 0, duration: 0.8 });
-                        }
-                    });
-                }
-
-                // s2 섹션 효과
-                const s2 = document.querySelector('.s2');
-                const s2Title = document.querySelector('.s2-title');
-                const hexagon1 = document.querySelector('.hexagon-1');
-                const hexagon2 = document.querySelector('.hexagon-2');
-                const shape3 = document.querySelector('.shape-3');
-
-                if (s2 && s2Title && hexagon1 && hexagon2) {
-                    gsap.set([s2Title, hexagon1, hexagon2, shape3], { opacity: 0, scale: 0.8 });
-
-                    ScrollTrigger.create({
-                        trigger: s2,
-                        start: 'top 80%',
-                        end: 'bottom 20%',
-                        onEnter: () => {
-                            gsap.timeline()
-                                .to(s2Title, { opacity: 1, scale: 1, duration: 1, ease: 'power3.out' })
-                                .to(hexagon1, { opacity: 1, scale: 1, duration: 1.2, ease: 'back.out(1.7)' }, '-=0.5')
-                                .to(hexagon2, { opacity: 1, scale: 1, duration: 1.2, ease: 'back.out(1.7)' }, '-=0.8')
-                                .to(shape3, { opacity: 1, scale: 1, duration: 1, ease: 'power3.out' }, '-=0.6');
-                        },
-                        onLeave: () => {
-                            gsap.to([s2Title, hexagon1, hexagon2, shape3], { opacity: 0.5, scale: 0.95, duration: 0.5 });
-                        },
-                        onEnterBack: () => {
-                            gsap.to([s2Title, hexagon1, hexagon2, shape3], { opacity: 1, scale: 1, duration: 0.8 });
-                        }
-                    });
-                }
-
-                // s3 섹션 효과
-                const s3 = document.querySelector('.s3');
-                const s3Title = document.querySelector('.s3-title');
-                const squareFlips = document.querySelectorAll('.square-flip');
-
-                if (s3 && s3Title && squareFlips.length > 0) {
-                    gsap.set([s3Title, ...squareFlips], { opacity: 0, y: 50 });
-
-                    ScrollTrigger.create({
-                        trigger: s3,
-                        start: 'top 80%',
-                        end: 'bottom 20%',
-                        onEnter: () => {
-                            gsap.timeline()
-                                .to(s3Title, { opacity: 1, y: 0, duration: 1, ease: 'power3.out' })
-                                .to(squareFlips, {
-                                    opacity: 1,
-                                    y: 0,
-                                    duration: 1,
-                                    ease: 'power3.out',
-                                    stagger: 0.2
-                                }, '-=0.5');
-                        },
-                        onLeave: () => {
-                            gsap.to([s3Title, ...squareFlips], { opacity: 0.5, y: -20, duration: 0.5 });
-                        },
-                        onEnterBack: () => {
-                            gsap.to([s3Title, ...squareFlips], { opacity: 1, y: 0, duration: 0.8 });
-                        }
-                    });
-                }
-
-                // 패럴랙스 효과
-                const shapes = document.querySelectorAll('.shape-1, .shape-2, .shape-3, .shape-4');
-                shapes.forEach((shape, index) => {
-                    ScrollTrigger.create({
-                        trigger: wrapContent,
-                        start: 'top bottom',
-                        end: 'bottom top',
-                        onUpdate: (self) => {
-                            const speed = 0.5 + (index * 0.1);
-                            const y = self.progress * 100 * speed;
-                            gsap.set(shape, { y: y });
-                        }
-                    });
-                });
-
-                // 호버 효과
-                const hexagons = document.querySelectorAll('.hexagon-wrap');
-                hexagons.forEach(hexagon => {
-                    hexagon.addEventListener('mouseenter', () => {
-                        gsap.to(hexagon, {
-                            scale: 1.05,
-                            duration: 0.3,
-                            ease: 'power2.out'
-                        });
-                    });
-
-                    hexagon.addEventListener('mouseleave', () => {
-                        gsap.to(hexagon, {
-                            scale: 1,
-                            duration: 0.3,
-                            ease: 'power2.out'
-                        });
-                    });
-                });
-
-                
-            }
-
-            // 메인 효과
+        
             ScrollTrigger.matchMedia({
                 "(min-width: 1024px)": function () {
+                    const s1Title1 = document.querySelector('.s1-title-1 span');
+                    const s1Title2 = document.querySelector('.s1-title-2 span');
 
+                    // s1 애니메이션
+                    const timeLine1 = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: '.s1',
+                        start: 'top center',
+                        end: 'bottom center',
+                        scrub: 2,
+                    },
+                    });
 
-                }
-            });
+                    timeLine1.to(s1Title1, { y: 0, ease: 'power3.out' });
+                    timeLine1.to(s1Title2, { y: 0, ease: 'power3.out' });
+
+                    // s2 애니메이션
+                    const timeLine2 = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: '.s2',
+                        start: 'top center',
+                        end: 'bottom center',
+                        scrub: 2,
+                    },
+                    });
+
+                    timeLine2.to('.s2-title span', {
+                    y: 0,
+                    ease: 'power3.out',
+                    stagger: 0.25,
+                    });
+
+                    // hexagon 영역 애니
+                    gsap.set('.shape-4', { opacity: 0 });
+                    gsap.set('.hexagon-1', { x: -100, scale: 1.2, opacity: 0 });
+                    gsap.set('.hexagon-2', { y: 100, opacity: 0 });
+
+                    const hexTimeline = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: '.hexagon-wrap-inner',
+                        start: 'top 80%',
+                        end: 'bottom 40%',
+                        scrub: 2,
+                    },
+                    });
+
+                    hexTimeline
+                    .to('.hexagon-1', {
+                        x: 0,
+                        scale: 1,
+                        opacity: 1,
+                        duration: 1.2,
+                        ease: 'power3.out',
+                    })
+                    .to(
+                        '.hexagon-1 .box span',
+                        {
+                        y: 0,
+                        opacity: 1,
+                        stagger: 0.2,
+                        ease: 'power2.out',
+                        },
+                        '<0.3'
+                    )
+                    .to(
+                        '.hexagon-2',
+                        {
+                        y: 0,
+                        opacity: 1,
+                        duration: 1,
+                        ease: 'power3.out',
+                        },
+                        '+=0.4'
+                    )
+                    .to(
+                        '.hexagon-2 .box span',
+                        {
+                        y: 0,
+                        opacity: 1,
+                        stagger: 0.2,
+                        ease: 'power2.out',
+                        },
+                        '<0.3'
+                    )
+                    .to(
+                        '.shape-4',
+                        {
+                        opacity: 1,
+                        duration: 1,
+                        ease: 'power1.out',
+                        },
+                        '+=0.3'
+                    );
+
+                    // s3 영역
+                    gsap.set('.s3-title span', { y: 40, opacity: 0 });
+                            gsap.set('.square-flip', {
+                            opacity: 0,
+                            scale: 1.15,
+                            transformOrigin: 'center center',
+                            });
+
+                            const s3Timeline = gsap.timeline({
+                            scrollTrigger: {
+                                trigger: '.s3',
+                                start: 'top 100%',
+                                end: 'bottom 50%',
+                                scrub: 2,
+                                // markers: true, // 디버깅시 켜도 됨
+                            },
+                            });
+
+                            s3Timeline
+                            .to('.s3-title span', {
+                                y: 0,
+                                opacity: 1,
+                                ease: 'power2.out',
+                                duration: 1,
+                            })
+                            .to('.square-flip', {
+                                opacity: 1,
+                                scale: 1,
+                                duration: 2,
+                                //stagger: 0.4,
+                                ease: 'power3.out',
+                            }, '+=0.3');
+
+                },
+                });
+
             function handleVideoSource() {
                 const video = document.getElementById("heroVideo");
                 if (!video) return;

@@ -1019,8 +1019,11 @@ video {
 .shape-3 {
   position: absolute;
   right: 0;
-  top: 400px;
+  top: 0;
   animation: updown 2s infinite ease-in-out alternate;
+}
+.shape-3 img {
+  animation: rotate2 12s infinite linear;
 }
 
 .s1-title {
@@ -1035,6 +1038,15 @@ video {
 }
 .s1-title b {
   font-weight: 900;
+}
+.s1-title span {
+  display: inline-block;
+  transform: translateY(120%);
+}
+
+.s1-title-1,
+.s1-title-2 {
+  overflow: hidden;
 }
 
 .s1-title-2 {
@@ -1059,10 +1071,17 @@ video {
   text-align: center;
   color: #fff;
 }
+.s2-title div {
+  overflow: hidden;
+}
+.s2-title span {
+  display: inline-block;
+  transform: translateY(120%);
+}
 
 .s2-inner {
   position: relative;
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -1079,6 +1098,8 @@ video {
   justify-content: center;
   background-repeat: no-repeat;
   background-position: 0 0;
+  opacity: 0;
+  transform-origin: center center;
 }
 .hexagon-wrap::after {
   content: "";
@@ -1110,6 +1131,9 @@ video {
   text-align: center;
   color: #fff;
 }
+.hexagon-wrap .box div {
+  overflow: hidden;
+}
 .hexagon-wrap .box b {
   font-weight: 800;
   font-size: 28px;
@@ -1117,8 +1141,17 @@ video {
 }
 .hexagon-wrap .box span {
   display: inline-block;
+  transform: translateY(120%);
 }
 
+@keyframes rotate2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
@@ -1153,9 +1186,22 @@ video {
   color: #fff;
   padding-bottom: 44px;
 }
+.s3-title div {
+  overflow: hidden;
+}
+.s3-title span {
+  display: inline-block;
+  transform: translateY(120%);
+}
 .s3-title em {
   font-style: normal;
   font-weight: 500;
+}
+
+.s3-content .square-flip {
+  opacity: 0;
+  transform: scale(1.15);
+  transform-origin: center center;
 }
 
 .s3-inner {
