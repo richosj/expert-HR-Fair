@@ -18,66 +18,120 @@ document.addEventListener("DOMContentLoaded", () => {
             const year = document.querySelector('.s1-title-1 .l');
             const fair = document.querySelector('.s1-title-1 .r');
             const date = document.querySelector('.s1-title-2 span');
+            const s2title = document.querySelector('.s2-title .fir');
+            const s2title2 = document.querySelector('.s2-title .sec');
+            const hex1 = document.querySelector('.hexagon-1');
+            const hex2 = document.querySelector('.hexagon-2');
+            const hex1Text = gsap.utils.toArray('.hexagon-1 .box span');
+            const hex2Text = gsap.utils.toArray('.hexagon-2 .box span');
 
-            gsap.set([year, fair], { opacity: 0, x: (i) => i === 0 ? '-50%' : '50%' });
-            //gsap.set(date, { y: '110%' });
+            const shape1 = document.querySelector('.shape-1');
+            const shape2 = document.querySelector('.shape-2');
+            const shape3 = document.querySelector('.shape-3');
+            const shape4 = document.querySelector('.shape-4');
+            const shape5 = document.querySelector('.shape-5');
 
-            gsap.timeline({
+            // 초기 상태
+            gsap.set(year, { y: 100, x: '50%', opacity: 0 });
+            gsap.set(fair, { x: '-50%', opacity: 0 });
+            gsap.set(date, { opacity: 0 });
+            gsap.set(shape1, { opacity: 0 });
+            gsap.set(shape2, { opacity: 0 });
+            gsap.set(shape3, { opacity: 0 });
+            gsap.set(shape4, { opacity: 0 });
+            gsap.set(shape5, { opacity: 0 });
+            gsap.set(s2title, { opacity: 0, y: '50%' });
+            gsap.set(s2title2, { opacity: 0, y: '50%' });
+
+            gsap.set(hex1, { scale: 1.2, opacity: 0 });
+            gsap.set(hex2, { scale: 1.2, y: 50, opacity: 0 });
+            gsap.set(hex1Text, { y: 20, opacity: 0 });
+            gsap.set(hex2Text, { y: 20, opacity: 0 });
+
+            // 통합 타임라인
+            const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: '.s1-title',
                     start: 'top 80%',
                     toggleActions: 'play none none none',
                 }
+            });
+
+            tl.to(shape1, { opacity: 1, duration: .5, ease: 'power3.out' }, '+=0.1')
+            .to(shape2, { opacity: 1, duration: .5, ease: 'power3.out' }, '>')
+
+            tl.to(year, { y: 0, opacity: 1, duration: 1.2, ease: 'power3.out' }) // 아래 → 센터
+            .to([year, fair], {
+                x: '0%',
+                opacity: 1,
+                duration: 1.0,
+                ease: 'power3.out',
+            }, '>')
+            .to(date, { opacity: 1, duration: 1.0, ease: 'power2.out' }, '>')
+
+            tl.to(s2title, { opacity: 1, y: 0, duration: .8, ease: 'power3.out' }, '>')
+            .to(s2title2, { opacity: 1, y: 0, duration: .9, ease: 'power3.out' }, '>')
+            tl.to(hex1, {
+                opacity: 1,
+                scale: 1.15,
+                duration: 0.3,
+                ease: 'sine.inOut',
             })
-                .to(year, { x: 0, opacity: 1, duration: 1.4, ease: 'power3.out' })
-                .to(fair, { x: 0, opacity: 1, duration: 1.4, ease: 'power3.out' }, '<0.1')
-                .to(date, { opacity: 1, duration: 1.4, ease: 'power2.out' }, '<0.2');
-
-            // ✅ s2 텍스트
-            gsap.set('.s2-title div.fir', { y: '100%', opacity: 0 });
-            gsap.set('.s2-title div.sec', { y: '100%', opacity: 0 });
-
-            gsap.timeline({
-                scrollTrigger: {
-                    trigger: '.s2-title',
-                    start: 'top 85%',
-                    toggleActions: 'play none none none',
-                }
+            .to(hex1, {
+                scale: 1.0,
+                duration: 0.3,
+                ease: 'sine.inOut',
             })
-                .to('.s2-title div.fir', { y: 0, opacity: 1, duration: 0.8, ease: 'power2.out' })
-                .to('.s2-title div.sec', { y: 0, opacity: 1, duration: 0.8, ease: 'power2.out' }, '<0.2');
-
-            // ✅ hexagon 도형 & 텍스트 순차 등장
-            gsap.set('.hexagon-1', { x: -50, opacity: 0, scale: 1.1 });
-            gsap.set('.hexagon-2', { y: 50, opacity: 0 });
-            gsap.set('.shape-4', { opacity: 0 });
-
-            gsap.set('.hexagon-1 .box span, .hexagon-2 .box span', { y: 20, opacity: 0 });
-
-            gsap.timeline({
-                scrollTrigger: {
-                    trigger: '.hexagon-wrap-inner',
-                    start: 'top 80%',
-                    toggleActions: 'play none none none',
-                }
+            .to(hex1, {
+                scale: 1.15,
+                duration: 0.4,
+                ease: 'sine.inOut',
             })
-                .to('.hexagon-1', { x: 0, opacity: 1, scale: 1, duration: 1.5, ease: 'power3.out' })
-                .to('.hexagon-2', { y: 0, opacity: 1, duration: 1.5, ease: 'power3.out' }, '-=0.5')
-                .to('.hexagon-1 .box span', {
-                    y: 0,
-                    opacity: 1,
-                    stagger: 0.1,
-                    ease: 'power2.out',
-                    duration: 0.6,
-                }, '-=0.3')
-                .to('.hexagon-2 .box span', {
-                    y: 0,
-                    opacity: 1,
-                    stagger: 0.1,
-                    ease: 'power2.out',
-                    duration: 0.6,
-                }, '-=0.2')
-                .to('.shape-4', { opacity: 1, duration: 0.6 }, '-=0.1');
+            .to(hex1, {
+                scale: 1.0,
+                duration: 0.4,
+                ease: 'sine.inOut',
+            })
+            .to(hex1Text, {
+                y: 0,
+                opacity: 1,
+                stagger: 0.1,
+                ease: 'power2.out',
+                duration: 0.8,
+            }, '+=0.3')
+            .to(hex2, {
+                y: 0,
+                opacity: 1,
+                scale: 1.2,
+                duration: 0.3,
+                ease: 'sine.inOut',
+            }, '-=0.1')
+            .to(hex2, {
+                scale: 1.0,
+                duration: 0.3,
+                ease: 'sine.inOut',
+            })
+            .to(hex2, {
+                scale: 1.15,
+                duration: 0.4,
+                ease: 'sine.inOut',
+            })
+            .to(hex2, {
+                scale: 1.0,
+                duration: 0.4,
+                ease: 'sine.inOut',
+            })
+            // hex2 텍스트
+            .to(hex2Text, {
+                y: 0,
+                opacity: 1,
+                stagger: 0.1,
+                ease: 'power2.out',
+                duration: 0.8,
+            }, '>')
+            .to(shape5, { opacity: 1, duration: 1.2, ease: 'power3.out' }, '>')
+            .to(shape3, { opacity: 1, duration: 1.2, ease: 'power3.out' }, '>')
+            .to(shape4, { opacity: 1, duration: 1.2, ease: 'power3.out' }, '>')
 
             // ✅ s3 타이틀 + 카드
             gsap.set('.s3-title span', { y: 40, opacity: 0 });
@@ -90,7 +144,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     toggleActions: 'play none none none',
                 }
             })
-                .to('.s3-title span', { y: 0, opacity: 1, duration: 0.8, ease: 'power2.out' });
+            .to('.s3-title span', { y: 0, opacity: 1, duration: 0.8, ease: 'power2.out' });
+
+            
 
             gsap.timeline({
                 scrollTrigger: {
