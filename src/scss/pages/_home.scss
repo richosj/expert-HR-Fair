@@ -87,7 +87,7 @@ video{
 .shape-3{
     position: absolute;
     right: 0;
-    top: 0;
+    top: -80px;
     animation: updown 2s infinite ease-in-out alternate;
     img{
         animation: rotate2 12s infinite linear;
@@ -99,30 +99,35 @@ video{
     color: #fff;
     font-size: 80px;
     font-family: 'SUIT';
-    em{
-        font-style: normal;
-        font-weight: 100;
+    .l{
+        display: inline-block;
+        font-weight: 600;
     }
-    b{
+    .r{
+        display: inline-block;
         font-weight: 900;
     }
     span{
         display: inline-block;
-        transform: translateY(120%);
     }
-}
-.s1-title-1,
-.s1-title-2{
-    overflow: hidden;
 }
 
 .s1-title-2{
+    overflow: hidden;
+    font-size: 22px;
     font-family: 'SUIT';
     font-weight: 400;
-    font-size: 22px;
-    line-height: 16.82px;
-    color: #fff;
+    span{
+        line-height: 16.82px;
+        color: rgba(209, 209, 234, 1);
+        display: inline-block;
+        vertical-align: top;
+        opacity: 0;
+        //transform: translateY(110%);
+    }
 }
+
+
 
 
 .s2{
@@ -138,17 +143,18 @@ video{
     text-align: center;
     color: #fff;
     //padding-top: 68px;
-    div{overflow: hidden;}
+    div{opacity: 0; transform: translateY(110%);}
     span{
-        display: inline-block;
-        transform: translateY(120%);
+        // display: inline-block;
+        // transform: translateY(120%);
     }
 }
 
 .s2-inner{
     position: relative;
-    max-width: 1200px;
+    max-width: 1280px;
     margin: 0 auto;
+    padding-bottom: 50px;
 }
 .hexagon-wrap-inner{
     position: relative;
@@ -180,12 +186,15 @@ video{
         background-image: url("@/assets/images/main/hexagon-1.png");
         width: 335px;
         height: 385px;
+        margin-left: 168px;
+        margin-top: 36px;
     }
     &.hexagon-2{
         background-image: url("@/assets/images/main/hexagon-2.png");
         width: 386px;
         height: 334px;
         margin-top: 164px;
+        margin-right: 200px;
     }
     .box{
         font-family: 'SUIT';
@@ -226,6 +235,18 @@ video{
     img{
         position: relative;
         animation: rotate 3s infinite linear;
+    }    
+}
+.shape-5{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    //transform: translateX(-50%);
+    //transform: translateX(-50%);
+    margin-left: -70px;
+    img{
+        position: relative;
+        //animation: rotate 3s infinite linear;
     }    
 }
 
