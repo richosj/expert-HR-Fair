@@ -997,12 +997,12 @@ video {
 .shape-1 {
   position: absolute;
   left: 0;
-  top: -60px;
+  top: -40px;
   display: flex;
   box-sizing: border-box;
   align-items: flex-start;
   justify-content: flex-start;
-  animation: updown 2s infinite ease-in-out alternate;
+  animation: updown 3s infinite ease-in-out alternate;
 }
 
 .shape-2 {
@@ -1013,7 +1013,7 @@ video {
   box-sizing: border-box;
   align-items: flex-start;
   justify-content: flex-start;
-  animation: updown 2s infinite ease-in-out alternate;
+  animation: updown 4s infinite ease-in-out alternate;
 }
 
 .shape-3 {
@@ -1163,9 +1163,8 @@ video {
 }
 .shape-4 {
   position: absolute;
-  left: 50%;
-  top: 81px;
-  transform: translateX(-50%);
+  left: 0;
+  top: -76px;
 }
 .shape-4 img {
   position: relative;
