@@ -1122,7 +1122,7 @@ video {
   width: 386px;
   height: 334px;
   margin-top: 164px;
-  margin-right: 200px;
+  margin-right: 250px;
 }
 .hexagon-wrap .box {
   font-family: "SUIT";
@@ -1174,11 +1174,13 @@ video {
 .shape-5 {
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -50px;
+  transform: translateX(-30%);
   margin-left: -70px;
 }
 .shape-5 img {
   position: relative;
+  animation: rotate2 10s infinite linear;
 }
 
 .s3 {
