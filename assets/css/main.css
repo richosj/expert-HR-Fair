@@ -1019,7 +1019,7 @@ video {
 .shape-3 {
   position: absolute;
   right: 0;
-  top: 0;
+  top: -80px;
   animation: updown 2s infinite ease-in-out alternate;
 }
 .shape-3 img {
@@ -1032,29 +1032,30 @@ video {
   font-size: 80px;
   font-family: "SUIT";
 }
-.s1-title em {
-  font-style: normal;
-  font-weight: 100;
+.s1-title .l {
+  display: inline-block;
+  font-weight: 600;
 }
-.s1-title b {
+.s1-title .r {
+  display: inline-block;
   font-weight: 900;
 }
 .s1-title span {
   display: inline-block;
-  transform: translateY(120%);
 }
 
-.s1-title-1,
 .s1-title-2 {
   overflow: hidden;
-}
-
-.s1-title-2 {
+  font-size: 22px;
   font-family: "SUIT";
   font-weight: 400;
-  font-size: 22px;
+}
+.s1-title-2 span {
   line-height: 16.82px;
-  color: #fff;
+  color: rgb(209, 209, 234);
+  display: inline-block;
+  vertical-align: top;
+  opacity: 0;
 }
 
 .s2 {
@@ -1072,17 +1073,14 @@ video {
   color: #fff;
 }
 .s2-title div {
-  overflow: hidden;
+  opacity: 0;
+  transform: translateY(110%);
 }
-.s2-title span {
-  display: inline-block;
-  transform: translateY(120%);
-}
-
 .s2-inner {
   position: relative;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
+  padding-bottom: 50px;
 }
 
 .hexagon-wrap-inner {
@@ -1116,12 +1114,15 @@ video {
   background-image: url("../images/hexagon-1.png");
   width: 335px;
   height: 385px;
+  margin-left: 168px;
+  margin-top: 36px;
 }
 .hexagon-wrap.hexagon-2 {
   background-image: url("../images/hexagon-2.png");
   width: 386px;
   height: 334px;
   margin-top: 164px;
+  margin-right: 200px;
 }
 .hexagon-wrap .box {
   font-family: "SUIT";
@@ -1169,6 +1170,16 @@ video {
 .shape-4 img {
   position: relative;
   animation: rotate 3s infinite linear;
+}
+
+.shape-5 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin-left: -70px;
+}
+.shape-5 img {
+  position: relative;
 }
 
 .s3 {
