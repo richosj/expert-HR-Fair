@@ -1254,14 +1254,14 @@ video {
 .hexagon-wrap .box {
   font-family: "SUIT";
   font-weight: 500;
-  font-size: 28px;
+  font-size: 26px;
   line-height: 40px;
   text-align: center;
   color: #fff;
 }
 @media (max-width: 768px) {
   .hexagon-wrap .box {
-    font-size: 25px;
+    font-size: 23px;
     line-height: 35px;
   }
 }
@@ -1270,12 +1270,12 @@ video {
 }
 .hexagon-wrap .box b {
   font-weight: 800;
-  font-size: 28px;
+  font-size: 26px;
   color: rgb(255, 174, 236);
 }
 @media (max-width: 768px) {
   .hexagon-wrap .box b {
-    font-size: 25px;
+    font-size: 23px;
   }
 }
 .hexagon-wrap .box span {
