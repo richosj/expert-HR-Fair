@@ -61,6 +61,12 @@ video{
     position: relative;
     max-width: 1280px;
     padding-top: 200px;
+    @media (max-width:1024px) {
+        padding-top: 150px;
+    }
+    @media (max-width:768px) {
+        padding-top: 120px;
+    }
 }
 .shape-1{
     position: absolute;
@@ -71,6 +77,10 @@ video{
     align-items: flex-start;
     justify-content: flex-start;
     animation: updown 3s infinite ease-in-out alternate;
+    @media (max-width:768px) {
+        left: -50px;
+        top: -60px;
+    }
 }
 
 .shape-2{
@@ -82,6 +92,12 @@ video{
     align-items: flex-start;
     justify-content: flex-start;
     animation: updown 4s infinite ease-in-out alternate;
+    @media (max-width:1024px) {
+        top: 20px;
+    }
+    @media (max-width:768px) {
+        display: none;
+    }
 }
 
 .shape-3{
@@ -92,6 +108,9 @@ video{
     img{
         animation: rotate2 12s infinite linear;
     }
+    @media (max-width:768px) {
+        display: none;
+    }
 }
 
 .s1-title{
@@ -99,6 +118,12 @@ video{
     color: #fff;
     font-size: 80px;
     font-family: 'SUIT';
+    @media (max-width:1024px) {
+        font-size: 40px;
+    }
+    @media (max-width:768px) {
+        font-size: 32px;
+    }
     .l{
         display: inline-block;
         font-weight: 600;
@@ -124,8 +149,11 @@ video{
         color: rgba(209, 209, 234, 1);
         display: inline-block;
         vertical-align: top;
-        opacity: 0;
+        //opacity: 0;
         //transform: translateY(110%);
+    }
+    @media (max-width:768px) {
+        font-size: 16px;
     }
 }
 
@@ -136,6 +164,9 @@ video{
     position: relative;
     width: 100%;
     padding-top: 68px;
+    @media (max-width:768px) {
+        padding-top: 50px;
+    }
 }
 .s2-title{
     font-family: 'SUIT';
@@ -145,10 +176,16 @@ video{
     text-align: center;
     color: #fff;
     //padding-top: 68px;
-    div{opacity: 0; transform: translateY(110%);}
+    //div{opacity: 0; transform: translateY(110%);}
     span{
         // display: inline-block;
         // transform: translateY(120%);
+    }
+    @media (max-width:768px) {
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 30px;
+        padding-bottom: 50px;
     }
 }
 
@@ -162,6 +199,12 @@ video{
     position: relative;
     display: flex;
     justify-content: space-between;
+    @media (max-width:1024px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 60px;
+        padding: 0 20px;
+    }
 }
 .hexagon-wrap{
     position: relative;
@@ -170,7 +213,7 @@ video{
     justify-content: center;
     background-repeat: no-repeat;
     background-position: 0 0;
-    opacity: 0;
+    //opacity: 0;
     transform-origin: center center;
     &::after{
         content: '';
@@ -183,13 +226,32 @@ video{
         background: rgba(242, 65, 201, 1);
         display: block;
         //background-color: #000;
+        @media (max-width:768px) {
+            width: 10px;
+            height: 10px;
+        }
     }
+    .m-shape{display: none;position: absolute;}
     &.hexagon-1{
         background-image: url("@/assets/images/main/hexagon-1.png");
         width: 335px;
         height: 385px;
         margin-left: 198px;
         margin-top: 36px;
+        @media (max-width:1024px) {
+            margin-left: 100px;
+        }
+        @media (max-width:768px) {
+            margin: 0 auto;
+            max-width: 100%;
+            background-size: 100% auto;
+            //background-image: url("@/assets/images/main/hexagon-1-m.png");
+            .m-shape{display: block;left:-30px;bottom: 0;width: 130px;
+                img{max-width: 100%;
+                    animation: rotate2 12s infinite linear;
+                }
+            }
+        }
     }
     &.hexagon-2{
         background-image: url("@/assets/images/main/hexagon-2.png");
@@ -197,26 +259,52 @@ video{
         height: 334px;
         margin-top: 144px;
         margin-right: 240px;
+        @media (max-width:1024px) {
+            margin-right: 100px;
+        }
+        @media (max-width:768px) {
+            margin: 0 auto;
+            max-width: 100%;
+            //background-image: url("@/assets/images/main/hexagon-2-m.png");
+            height: auto;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            &::before {
+                content: "";
+                display: block;
+                padding-top: calc(334 / 386 * 100%); /* 약 86.5% */
+            }
+            .m-shape{display: block;bottom: 0;right: 0;
+                animation: rotate 15s infinite linear;
+            }
+        }
     }
     .box{
         font-family: 'SUIT';
         font-weight: 500;
-        font-size: 28px;
+        font-size: 26px;
         line-height: 40px;
         text-align: center;
         color: #fff;
-
+        @media (max-width:768px) {
+            font-size: 23px;
+            line-height: 35px;
+        }
         div{
             overflow: hidden;
         }
         b{
             font-weight: 800;
-            font-size: 28px;
+            font-size: 26px;
             color: rgba(255, 174, 236, 1);
+            @media (max-width:768px) {
+                font-size: 23px;
+            }
         }
         span{
             display: inline-block;
-            transform: translateY(120%);
+            //transform: translateY(120%);
         }
     }
     
@@ -238,6 +326,9 @@ video{
         position: relative;
         animation: rotate 3s infinite linear;
     }    
+    @media (max-width:768px) {
+        display: none;
+    }
 }
 .shape-5{
     position: absolute;
@@ -249,13 +340,19 @@ video{
     img{
         position: relative;
         animation: rotate2 10s infinite linear;
-    }    
+    }
+    @media (max-width:768px) {
+        display: none;
+    }
 }
 
 .s3{
     padding-top: 127px;
     position: relative;
     width: 100%;
+    @media (max-width:768px) {
+        padding-top: 50px;
+    }
 }
 
 .s3-title{
@@ -266,10 +363,13 @@ video{
     text-align: center;
     color: #fff;
     padding-bottom: 44px;
+    @media (max-width:768px) {
+        
+    }
     div{overflow: hidden;}
     span{
         display: inline-block;
-        transform: translateY(120%);
+        //transform: translateY(120%);
     }
     em{
         font-style: normal;
@@ -279,8 +379,8 @@ video{
 
 .s3-content{
     .square-flip{
-        opacity: 0;
-        transform: scale(1.15);
+        // opacity: 0;
+        // transform: scale(1.15);
         transform-origin: center center;
     }
 }
@@ -289,12 +389,23 @@ video{
     max-width: 1280px;
     margin: 0 auto;
     position: relative;
+    @media (max-width:1280px) {
+        padding-left: 37px;
+        padding-right: 37px;
+    }
 }
 
 .s3-content{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 36px;
+    @media (max-width:1024px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap:30px;
+    }
+    @media (max-width:768px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 .square-flip{
@@ -377,13 +488,19 @@ video{
         position: absolute;
         bottom: 10px;
         right: 10px;
+        @media (max-width:768px) {
+            display: none;
+        }
     }
     .image{
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        
+        @media (max-width:768px) {
+            width: 100%;
+            text-align: center;
+        }
     }
     .text{
         position: absolute;
@@ -399,6 +516,10 @@ video{
         span{
             white-space: nowrap;
         }
+        @media (max-width:768px) {
+            font-size: 24px;
+        }
+
     }
 }
 
@@ -413,10 +534,18 @@ video{
         line-height: 28px;
         text-align: center;
         color: rgba(4, 22, 48, 1);
+        @media (max-width:768px) {
+            font-size: 16px;
+            line-height: 20px;
+        }
         b{ 
             font-weight: 700;
             font-size: 28px;
             line-height: 35px;
+            @media (max-width:768px) {
+                font-size: 20px;
+                line-height: 26px;
+            }
         }
         div+div{
             padding-top: 20px;
@@ -457,6 +586,9 @@ video{
         b{
             font-size: 22px;
             color: rgba(4, 22, 48, 1);
+            @media (max-width:768px) {
+                font-size: 16px;
+            }
         }
     }
 }
@@ -476,7 +608,9 @@ video{
         b{
             font-size: 22px;
             color: rgba(4, 22, 48, 1);
-
+            @media (max-width:768px) {
+                font-size: 16px;
+            }
         }
     }
 }

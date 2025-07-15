@@ -162,6 +162,10 @@
   justify-content: center;
   width: 6rem;
   margin-top: 1rem;
+  position: fixed;
+  bottom: 60px;
+  right: 10px;
+  z-index: 1001;
   i{
     display: inline-block;
     width: 3.6rem;
